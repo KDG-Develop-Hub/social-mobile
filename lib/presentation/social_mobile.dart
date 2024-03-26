@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:social_mobile/presentation/home/home.dart';
+import 'package:social_mobile/presentation/home/home_screen.dart';
 
 class SocialMobile extends HookConsumerWidget {
   const SocialMobile({super.key});
@@ -12,7 +12,7 @@ class SocialMobile extends HookConsumerWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Home(title: 'Flutter Demo Home Page'),
+      home: const HomeScreen(title: 'Flutter Demo Home Page'),
     );
   }
 }
