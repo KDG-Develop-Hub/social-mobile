@@ -1,5 +1,5 @@
 import 'package:social_mobile/domain/user/user_entity.dart';
 
-abstract class UserRepository {
+abstract interface class UserRepository {
   Future<UserEntity> fetch();
 }
