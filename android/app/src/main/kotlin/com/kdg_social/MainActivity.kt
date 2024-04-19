@@ -1,4 +1,4 @@
-package com.myFave.social_mobile
+package com.kdg_social
 
 import io.flutter.embedding.android.FlutterActivity
 
