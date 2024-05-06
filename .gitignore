@@ -122,3 +122,4 @@ lib/generated_plugin_registrant.dart
 
 # for different enviroment
 **/dart_defines/
+**/ios/Flutter/Dart-Defines.xcconfig
