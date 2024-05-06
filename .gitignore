@@ -21,6 +21,23 @@ migrate_working_dir/
 # is commented out by default.
 #.vscode/
 
+### Firebase ###
+.idea
+**/node_modules/*
+**/.firebaserc
+
+**/android/app/google-services.json
+**/android/app/src/dev/google-services.json
+**/android/app/src/prod/google-services.json
+
+**/ios/Runner/GoogleService-Info.plist
+**/ios/dev/GoogleService-Info.plist
+**/ios/prod/GoogleService-Info.plist
+
+### Firebase Patch ###
+.runtimeconfig.json
+.firebase/
+
 # Flutter/Dart/Pub related
 **/doc/api/
 **/ios/Flutter/.last_build_id
@@ -119,3 +136,7 @@ lib/generated_plugin_registrant.dart
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
 
 # End of https://www.toptal.com/developers/gitignore/api/flutter,firebase
+
+# for different enviroment
+**/dart_defines/
+**/ios/Flutter/Dart-Defines.xcconfig

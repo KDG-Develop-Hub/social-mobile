@@ -10,6 +10,34 @@ fvm use 3.19.1
 fvm flutter pub get
 ```
 
+3. 環境変数のダウンロード
+
+ClickUpの[オンボーディングドキュメント](https://app.clickup.com/9003252999/v/dc/8ca5f87-618/8ca5f87-318)からdart_defines.zipをダウンロードし、解凍したフォルダをsocial_mobileプロジェクトのルートに設置
+ClickUpに招待されていない場合、小林春か大村健心か塩野結に連絡
+
+4. 環境変数ファイルを正しい位置に配置する
+
+> [!WARNING]
+> 配置するファイルを間違えないで
+
+`dart_defines/dev/`配下にある`google-services.json`を`android/app/src/dev/`配下に移動する
+`dart_defines/dev/`配下にある`GoogleService-Info.plist`を`ios/dev/`配下に移動する
+
+`dart_defines/prod/`配下にある`google-services.json`を`android/app/src/prod/`配下に移動する
+`dart_defines/prod/`配下にある`GoogleService-Info.plist`を`ios/prod/`配下に移動する
+
+完了したら、dart_definesフォルダからdevフォルダとprodフォルダを削除する
+
+5. iosのスクリプトに実行権限を与える
+
+```chmod 755 ios/scripts/extract_dart_defines.sh```
+
+6. vscodeのRun and DebugからFlavorを選択して実行する
+
+基本は`Debug dev`で実行
+
+<img width="272" alt="スクリーンショット 2024-05-07 3 26 26" src="https://github.com/KDG-Develop-Hub/social-mobile/assets/103411556/bf36b679-dfb7-43ce-8642-765aa7e6573f">
+
 ### done🎉
 
 <br>
