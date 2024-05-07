@@ -10,7 +10,7 @@ class MockUserRepository implements UserRepository {
 
   @override
   Future<UserEntity> fetch() async {
-    Future.delayed(const Duration(seconds: 3));
+    await Future<void>.delayed(const Duration(seconds: 3));
     return UserEntity(
       id: id,
       name: name,
