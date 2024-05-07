@@ -39,7 +39,8 @@ class DefaultFirebaseOptions {
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: String.fromEnvironment('firebaseAndroidApiKey'),
     appId: String.fromEnvironment('firebaseAndroidAppId'),
-    messagingSenderId: String.fromEnvironment('firebaseAndroidMessagingSenderId'),
+    messagingSenderId:
+        String.fromEnvironment('firebaseAndroidMessagingSenderId'),
     projectId: String.fromEnvironment('firebaseAndroidProjectId'),
     storageBucket: String.fromEnvironment('firebaseAndroidStorageBucket'),
   );
