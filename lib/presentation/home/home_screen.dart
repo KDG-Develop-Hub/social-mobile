@@ -31,7 +31,7 @@ class HomeScreen extends HookConsumerWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => counterNotifier.increment(),
+        onPressed: counterNotifier.increment,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),
