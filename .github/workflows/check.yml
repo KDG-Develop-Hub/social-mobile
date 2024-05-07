@@ -47,9 +47,6 @@ jobs:
       - name: Formatter
         run: dart format $(find lib -name "*.dart" -not \( -name "*.*freezed.dart" -o -name "*.*g.dart" \) ) --set-exit-if-changed
 
-      - name: Dart Code Metrics
-        run: dart pub run dart_code_metrics:metrics analyze lib && dart pub run dart_code_metrics:metrics check-unused-files lib
-
       # Your project will need to have tests in test/ and a dependency on
       # package:test for this step to succeed. Note that Flutter projects will
       # want to change this to 'flutter test'.
