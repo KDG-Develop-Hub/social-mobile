@@ -77,7 +77,6 @@ app.*.map.json
 .dart_tool/
 .flutter-plugins
 .flutter-plugins-dependencies
-.fvm/flutter_sdk
 .packages
 .pub-cache/
 .pub/
@@ -144,3 +143,6 @@ lib/generated_plugin_registrant.dart
 # for different enviroment
 **/dart_defines/
 **/ios/Flutter/Dart-Defines.xcconfig
+
+# FVM Version Cache
+.fvm/
