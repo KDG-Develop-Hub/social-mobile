@@ -1,21 +1,26 @@
 # Getting Started
 
-1. 今回fvmでバージョン管理をし、3.19.1に設定しているので、適用させる
+1. リポジトリをクローンする
+```
+git clone https://github.com/KDG-Develop-Hub/social-mobile.git
+```
+
+2. 今回fvmでバージョン管理をし、3.19.1に設定しているので、適用させる
 ```terminal
 fvm use 3.19.1
 ```
 
-2. 依存関係の取得
+3. 依存関係の取得
 ```terminal
-fvm flutter pub get
+flutter pub get
 ```
 
-3. 環境変数のダウンロード
+4. 環境変数のダウンロード
 
 ClickUpの[オンボーディングドキュメント](https://app.clickup.com/9003252999/v/dc/8ca5f87-618/8ca5f87-318)からdart_defines.zipをダウンロードし、解凍したフォルダをsocial_mobileプロジェクトのルートに設置
 ClickUpに招待されていない場合、小林春か大村健心か塩野結に連絡
 
-4. 環境変数ファイルを正しい位置に配置する
+5. 環境変数ファイルを正しい位置に配置する
 
 > [!WARNING]
 > 配置するファイルを間違えないで
@@ -28,11 +33,11 @@ ClickUpに招待されていない場合、小林春か大村健心か塩野結�
 
 完了したら、dart_definesフォルダからdevフォルダとprodフォルダを削除する
 
-5. iosのスクリプトに実行権限を与える
+6. iosのスクリプトに実行権限を与える
 
 ```chmod 755 ios/scripts/extract_dart_defines.sh```
 
-6. vscodeのRun and DebugからFlavorを選択して実行する
+7. vscodeのRun and DebugからFlavorを選択して実行する
 
 基本は`Debug dev`で実行
 
