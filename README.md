@@ -109,11 +109,13 @@ lib
 │       └── vew_model
 │           └── post_view_model.dart
 ├── utils
-│   ├── constants
+│   ├── theme
 │   │   │
-│   │   │ // 定数をまとめる(なぜ: 今後大規模なUI修正がしやすかったり、違った色の使用ミスを抑制する)
+│   │   ├── extension
+│   │   │ // 元から存在するFlutterのThemeDataクラスの拡張を作成し、定数をまとめる(なぜ: 今後大規模なUI修正がしやすかったり、違った色の使用ミスを抑制する)
 │   │   │
-│   │   └── app_color.dart
+│   │   │
+│   │   └── theme.dart // カスタムテーマを返す関数を定義する
 │   │
 │   ├── extensions
 │   │   │

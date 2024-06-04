@@ -8,7 +8,9 @@ part of 'overlay_loading_provider.dart';
 
 String _$overlayLoadingHash() => r'22db185e596fb0ff0779d6b2d398cca5ed6f46db';
 
-/// See also [overlayLoading].
+/// アプリ全体に二度押し防止のローディングを重ねるかどうかを管理するStateProvider
+///
+/// Copied from [overlayLoading].
 @ProviderFor(overlayLoading)
 final overlayLoadingProvider = Provider<bool>.internal(
   overlayLoading,
