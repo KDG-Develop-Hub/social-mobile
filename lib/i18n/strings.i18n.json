@@ -1,0 +1,20 @@
+{
+    "navigationBar": {
+        "home": {
+            "title": "home"
+        },
+        "settings": {
+            "title": "settings"
+        }
+    },
+    "settings": {
+        "language": {
+            "title": "Language",
+            "currentLanguage": "English"
+        }
+    },
+    "locales(map)": {
+        "en": "English",
+        "ja": "Japanese"
+    }
+}
