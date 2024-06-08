@@ -7,6 +7,11 @@
             "title": "設定"
         }
     },
+    "socialMobilePage": {
+        "pushExplanation": {"title": "ちみはこれくらい押したどん:"},
+        "languageExplanation": {"title": "ちみの今の言語は日本語だどん"},
+        "changeLanguage": {"title": "言語を変えるどん"}
+    },
     "settings": {
         "language": {
             "title": "言語",

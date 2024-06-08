@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 12 (6 per locale)
+/// Strings: 18 (9 per locale)
 ///
-/// Built on 2024-06-07 at 15:00 UTC
+/// Built on 2024-06-08 at 01:06 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -149,6 +149,7 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 
 	// Translations
 	late final _StringsNavigationBarEn navigationBar = _StringsNavigationBarEn._(_root);
+	late final _StringsSocialMobilePageEn socialMobilePage = _StringsSocialMobilePageEn._(_root);
 	late final _StringsSettingsEn settings = _StringsSettingsEn._(_root);
 	Map<String, String> get locales => {
 		'en': 'English',
@@ -165,6 +166,18 @@ class _StringsNavigationBarEn {
 	// Translations
 	late final _StringsNavigationBarHomeEn home = _StringsNavigationBarHomeEn._(_root);
 	late final _StringsNavigationBarSettingsEn settings = _StringsNavigationBarSettingsEn._(_root);
+}
+
+// Path: socialMobilePage
+class _StringsSocialMobilePageEn {
+	_StringsSocialMobilePageEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	late final _StringsSocialMobilePagePushExplanationEn pushExplanation = _StringsSocialMobilePagePushExplanationEn._(_root);
+	late final _StringsSocialMobilePageLanguageExplanationEn languageExplanation = _StringsSocialMobilePageLanguageExplanationEn._(_root);
+	late final _StringsSocialMobilePageChangeLanguageEn changeLanguage = _StringsSocialMobilePageChangeLanguageEn._(_root);
 }
 
 // Path: settings
@@ -195,6 +208,36 @@ class _StringsNavigationBarSettingsEn {
 
 	// Translations
 	String get title => 'settings';
+}
+
+// Path: socialMobilePage.pushExplanation
+class _StringsSocialMobilePagePushExplanationEn {
+	_StringsSocialMobilePagePushExplanationEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get title => 'You have pushed the button this many times:';
+}
+
+// Path: socialMobilePage.languageExplanation
+class _StringsSocialMobilePageLanguageExplanationEn {
+	_StringsSocialMobilePageLanguageExplanationEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get title => 'Your language is English now';
+}
+
+// Path: socialMobilePage.changeLanguage
+class _StringsSocialMobilePageChangeLanguageEn {
+	_StringsSocialMobilePageChangeLanguageEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get title => 'Change language';
 }
 
 // Path: settings.language
@@ -233,6 +276,7 @@ class _StringsJa implements Translations {
 
 	// Translations
 	@override late final _StringsNavigationBarJa navigationBar = _StringsNavigationBarJa._(_root);
+	@override late final _StringsSocialMobilePageJa socialMobilePage = _StringsSocialMobilePageJa._(_root);
 	@override late final _StringsSettingsJa settings = _StringsSettingsJa._(_root);
 	@override Map<String, String> get locales => {
 		'en': '英語',
@@ -249,6 +293,18 @@ class _StringsNavigationBarJa implements _StringsNavigationBarEn {
 	// Translations
 	@override late final _StringsNavigationBarHomeJa home = _StringsNavigationBarHomeJa._(_root);
 	@override late final _StringsNavigationBarSettingsJa settings = _StringsNavigationBarSettingsJa._(_root);
+}
+
+// Path: socialMobilePage
+class _StringsSocialMobilePageJa implements _StringsSocialMobilePageEn {
+	_StringsSocialMobilePageJa._(this._root);
+
+	@override final _StringsJa _root; // ignore: unused_field
+
+	// Translations
+	@override late final _StringsSocialMobilePagePushExplanationJa pushExplanation = _StringsSocialMobilePagePushExplanationJa._(_root);
+	@override late final _StringsSocialMobilePageLanguageExplanationJa languageExplanation = _StringsSocialMobilePageLanguageExplanationJa._(_root);
+	@override late final _StringsSocialMobilePageChangeLanguageJa changeLanguage = _StringsSocialMobilePageChangeLanguageJa._(_root);
 }
 
 // Path: settings
@@ -281,6 +337,36 @@ class _StringsNavigationBarSettingsJa implements _StringsNavigationBarSettingsEn
 	@override String get title => '設定';
 }
 
+// Path: socialMobilePage.pushExplanation
+class _StringsSocialMobilePagePushExplanationJa implements _StringsSocialMobilePagePushExplanationEn {
+	_StringsSocialMobilePagePushExplanationJa._(this._root);
+
+	@override final _StringsJa _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'ちみはこれくらい押したどん:';
+}
+
+// Path: socialMobilePage.languageExplanation
+class _StringsSocialMobilePageLanguageExplanationJa implements _StringsSocialMobilePageLanguageExplanationEn {
+	_StringsSocialMobilePageLanguageExplanationJa._(this._root);
+
+	@override final _StringsJa _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'ちみの今の言語は日本語だどん';
+}
+
+// Path: socialMobilePage.changeLanguage
+class _StringsSocialMobilePageChangeLanguageJa implements _StringsSocialMobilePageChangeLanguageEn {
+	_StringsSocialMobilePageChangeLanguageJa._(this._root);
+
+	@override final _StringsJa _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => '言語を変えるどん';
+}
+
 // Path: settings.language
 class _StringsSettingsLanguageJa implements _StringsSettingsLanguageEn {
 	_StringsSettingsLanguageJa._(this._root);
@@ -300,6 +386,9 @@ extension on Translations {
 		switch (path) {
 			case 'navigationBar.home.title': return 'home';
 			case 'navigationBar.settings.title': return 'settings';
+			case 'socialMobilePage.pushExplanation.title': return 'You have pushed the button this many times:';
+			case 'socialMobilePage.languageExplanation.title': return 'Your language is English now';
+			case 'socialMobilePage.changeLanguage.title': return 'Change language';
 			case 'settings.language.title': return 'Language';
 			case 'settings.language.currentLanguage': return 'English';
 			case 'locales.en': return 'English';
@@ -314,6 +403,9 @@ extension on _StringsJa {
 		switch (path) {
 			case 'navigationBar.home.title': return 'ホーム';
 			case 'navigationBar.settings.title': return '設定';
+			case 'socialMobilePage.pushExplanation.title': return 'ちみはこれくらい押したどん:';
+			case 'socialMobilePage.languageExplanation.title': return 'ちみの今の言語は日本語だどん';
+			case 'socialMobilePage.changeLanguage.title': return '言語を変えるどん';
 			case 'settings.language.title': return '言語';
 			case 'settings.language.currentLanguage': return '日本語';
 			case 'locales.en': return '英語';
