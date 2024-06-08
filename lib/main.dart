@@ -14,7 +14,7 @@ Future<void> main() async {
   );
   runApp(
     ProviderScope(
-      child: TranslationProvider(child: SocialMobile()),
+      child: TranslationProvider(child: const SocialMobile()),
     ),
   );
 }
