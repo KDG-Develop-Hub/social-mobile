@@ -96,6 +96,7 @@ class ColorThemeExtension extends ThemeExtension<ColorThemeExtension>
     required this.primary,
     required this.secondary,
     required this.teriary,
+    required this.error,
   });
 
   factory ColorThemeExtension.light() {
@@ -104,6 +105,7 @@ class ColorThemeExtension extends ThemeExtension<ColorThemeExtension>
         98: const Color(0xFFFCFCF8),
         96: const Color(0xFFF7F7F3),
         94: const Color(0xFFF0F0EC),
+        90: const Color(0xFFE8E8E3),
         80: const Color(0xFFCECECA),
         70: const Color(0xFFB5B5B0),
         60: const Color(0xFF9D9D95),
@@ -146,6 +148,17 @@ class ColorThemeExtension extends ThemeExtension<ColorThemeExtension>
         20: const Color(0xFF191F4C),
         10: const Color(0xFF0D1026),
       },
+      error: {
+        90: const Color(0xFFF8D5D3),
+        80: const Color(0xFFF0ACA8),
+        70: const Color(0xFFE9827C),
+        60: const Color(0xFFE25850),
+        50: const Color(0xFFDA2E25),
+        40: const Color(0xFFAF251D),
+        30: const Color(0xFF831C16),
+        20: const Color(0xFF57130F),
+        10: const Color(0xFF2C0907),
+      },
     );
   }
 
@@ -153,4 +166,5 @@ class ColorThemeExtension extends ThemeExtension<ColorThemeExtension>
   final Map<int, Color> primary;
   final Map<int, Color> secondary;
   final Map<int, Color> teriary;
+  final Map<int, Color> error;
 }
