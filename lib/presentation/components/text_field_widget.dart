@@ -49,12 +49,12 @@ class TextFieldWidget extends HookWidget {
           counter: Text(
             '${inputTextLength.value}/$maxLength',
             style: textTheme.body.copyWith(
-              color: colorTheme.neutral[10],
+              color: colorTheme.neutral[30],
             ),
           ),
           helperText: helperText,
           helperStyle: textTheme.body.copyWith(
-            color: colorTheme.neutral[10],
+            color: colorTheme.neutral[30],
           ),
           errorStyle: textTheme.body.copyWith(
             color: colorTheme.error[40],
