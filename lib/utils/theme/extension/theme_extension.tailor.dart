@@ -148,6 +148,7 @@ mixin _$ColorThemeExtensionTailorMixin on ThemeExtension<ColorThemeExtension> {
   Map<int, Color> get primary;
   Map<int, Color> get secondary;
   Map<int, Color> get teriary;
+  Map<int, Color> get error;
 
   @override
   ColorThemeExtension copyWith({
@@ -155,12 +156,14 @@ mixin _$ColorThemeExtensionTailorMixin on ThemeExtension<ColorThemeExtension> {
     Map<int, Color>? primary,
     Map<int, Color>? secondary,
     Map<int, Color>? teriary,
+    Map<int, Color>? error,
   }) {
     return ColorThemeExtension(
       neutral: neutral ?? this.neutral,
       primary: primary ?? this.primary,
       secondary: secondary ?? this.secondary,
       teriary: teriary ?? this.teriary,
+      error: error ?? this.error,
     );
   }
 
@@ -173,6 +176,7 @@ mixin _$ColorThemeExtensionTailorMixin on ThemeExtension<ColorThemeExtension> {
       primary: t < 0.5 ? primary : other.primary,
       secondary: t < 0.5 ? secondary : other.secondary,
       teriary: t < 0.5 ? teriary : other.teriary,
+      error: t < 0.5 ? error : other.error,
     );
   }
 
@@ -184,7 +188,8 @@ mixin _$ColorThemeExtensionTailorMixin on ThemeExtension<ColorThemeExtension> {
             const DeepCollectionEquality().equals(neutral, other.neutral) &&
             const DeepCollectionEquality().equals(primary, other.primary) &&
             const DeepCollectionEquality().equals(secondary, other.secondary) &&
-            const DeepCollectionEquality().equals(teriary, other.teriary));
+            const DeepCollectionEquality().equals(teriary, other.teriary) &&
+            const DeepCollectionEquality().equals(error, other.error));
   }
 
   @override
@@ -195,6 +200,7 @@ mixin _$ColorThemeExtensionTailorMixin on ThemeExtension<ColorThemeExtension> {
       const DeepCollectionEquality().hash(primary),
       const DeepCollectionEquality().hash(secondary),
       const DeepCollectionEquality().hash(teriary),
+      const DeepCollectionEquality().hash(error),
     );
   }
 }
