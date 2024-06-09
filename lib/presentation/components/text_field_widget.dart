@@ -56,6 +56,9 @@ class TextFieldWidget extends HookWidget {
           helperStyle: textTheme.body.copyWith(
             color: colorTheme.neutral[10],
           ),
+          errorStyle: textTheme.body.copyWith(
+            color: colorTheme.error[40],
+          ),
           contentPadding: const EdgeInsets.all(16),
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: colorTheme.neutral[50]!),
