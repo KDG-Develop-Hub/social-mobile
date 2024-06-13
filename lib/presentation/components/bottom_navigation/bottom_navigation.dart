@@ -15,6 +15,7 @@ class BottomNavigation extends ConsumerWidget {
     final theme = Theme.of(context);
     final colorTheme = theme.customThemeExtension.colorTheme;
     final index = ref.watch(bottomNavigationNotifierProvider);
+
     return Scaffold(
       bottomNavigationBar: NavigationBar(
         backgroundColor: colorTheme.neutral[94],
@@ -40,31 +41,31 @@ class BottomNavigation extends ConsumerWidget {
         destinations: [
           NavigationDestination(
             icon: SvgPicture.asset(
-              Assets.images.apudeIcon,
+              Assets.icons.updateIcon,
             ),
             label: 'アプデ',
           ),
           NavigationDestination(
             icon: SvgPicture.asset(
-              Assets.images.mitukeruIcon,
+              Assets.icons.searchIcon,
             ),
             label: '見つける',
           ),
           NavigationDestination(
             icon: SvgPicture.asset(
-              Assets.images.kimitohaIcon,
+              Assets.icons.profileIcon,
             ),
             label: '君とは',
           ),
           NavigationDestination(
             icon: SvgPicture.asset(
-              Assets.images.siriaiIcon,
+              Assets.icons.friendsIcon,
             ),
             label: '知り合い',
           ),
           NavigationDestination(
             icon: SvgPicture.asset(
-              Assets.images.setteIcon,
+              Assets.icons.settingsIcon,
             ),
             label: 'せってー',
           ),
