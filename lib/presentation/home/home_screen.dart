@@ -15,25 +15,24 @@ class HomeScreen extends HookConsumerWidget {
     final localeState = ref.watch(localeServiceProvider);
     final translations = Translations.of(context);
     final socialMobilePageI18n = translations.socialMobilePage;
-    final settingLanguageTitle = socialMobilePageI18n.changeLanguage.title;
+    final settingLanguageTitle = socialMobilePageI18n.changeLanguage;
 
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(translations.settings.language.title),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              socialMobilePageI18n.pushExplanation.title,
+              socialMobilePageI18n.pushExplanation,
             ),
             Text(
               '$counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
-            Text(socialMobilePageI18n.languageExplanation.title),
+            Text(socialMobilePageI18n.languageExplanation),
             const Padding(padding: EdgeInsets.all(30)),
             SizedBox(
               width: 200,
