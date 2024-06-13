@@ -8,7 +8,7 @@ import 'package:social_mobile/presentation/settings/settings_screen.dart';
 import 'package:social_mobile/presentation/update/update_screen.dart';
 
 final appRouter = GoRouter(
-  initialLocation: '/apude',
+  initialLocation: '/update',
   routes: [
     ShellRoute(
       navigatorKey: GlobalKey<NavigatorState>(),
