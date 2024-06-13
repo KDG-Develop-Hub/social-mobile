@@ -8,7 +8,7 @@
         }
     },
     "navigationBar": {
-        "home": "update",
+        "update": "update",
         "search": "search",
         "profile": "profile",
         "friends": "friends",
