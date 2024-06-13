@@ -3,9 +3,9 @@ import 'package:go_router/go_router.dart';
 import 'package:social_mobile/presentation/components/bottom_navigation/bottom_navigation.dart';
 import 'package:social_mobile/presentation/friends/friends_screen.dart';
 import 'package:social_mobile/presentation/home/apude_screen.dart';
-import 'package:social_mobile/presentation/home/sette_screen.dart';
 import 'package:social_mobile/presentation/profile/profile_screen.dart';
 import 'package:social_mobile/presentation/search/search_screen.dart';
+import 'package:social_mobile/presentation/settings/settings_screen.dart';
 
 final appRouter = GoRouter(
   initialLocation: '/apude',
@@ -41,9 +41,9 @@ final appRouter = GoRouter(
           ),
         ),
         GoRoute(
-          path: '/sette',
+          path: '/settings',
           pageBuilder: (context, state) => const NoTransitionPage(
-            child: SetteScreen(),
+            child: SettingsScreen(),
           ),
         ),
       ],

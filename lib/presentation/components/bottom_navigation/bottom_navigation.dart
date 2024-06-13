@@ -37,7 +37,7 @@ class BottomNavigation extends ConsumerWidget {
             case 3:
               context.go('/friends');
             case 4:
-              context.go('/sette');
+              context.go('/settings');
           }
         },
         destinations: [
