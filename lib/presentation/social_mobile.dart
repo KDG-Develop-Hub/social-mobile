@@ -3,7 +3,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:social_mobile/i18n/strings.g.dart';
 import 'package:social_mobile/presentation/home/home_screen.dart';
-import 'package:social_mobile/presentation/home/view_model/locale_view_model.dart';
+import 'package:social_mobile/presentation/provider/locale_service.dart';
 import 'package:social_mobile/utils/theme/theme.dart';
 
 class SocialMobile extends HookConsumerWidget {
@@ -11,7 +11,7 @@ class SocialMobile extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     // NOTE for setting locale
-    final currentLocale = ref.watch(localeViewModelProvider);
+    final currentLocale = ref.watch(localeServiceProvider);
 
     return MaterialApp(
       title: 'Flutter Demo',

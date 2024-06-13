@@ -1,26 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'locale_view_model.dart';
+part of 'locale_service.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$localeViewModelHash() => r'1c96c05768b16dfe70e9a383f16d2f6f9a80527f';
+String _$localeServiceHash() => r'fa7d0cc9fa66ba7c3acf5b5781242856b446f8f8';
 
-/// See also [LocaleViewModel].
-@ProviderFor(LocaleViewModel)
-final localeViewModelProvider =
-    AutoDisposeNotifierProvider<LocaleViewModel, AppLocale>.internal(
-  LocaleViewModel.new,
-  name: r'localeViewModelProvider',
+/// See also [LocaleService].
+@ProviderFor(LocaleService)
+final localeServiceProvider =
+    AutoDisposeNotifierProvider<LocaleService, AppLocale>.internal(
+  LocaleService.new,
+  name: r'localeServiceProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$localeViewModelHash,
+      : _$localeServiceHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$LocaleViewModel = AutoDisposeNotifier<AppLocale>;
+typedef _$LocaleService = AutoDisposeNotifier<AppLocale>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
