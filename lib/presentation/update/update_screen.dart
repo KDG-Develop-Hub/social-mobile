@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:social_mobile/i18n/strings.g.dart';
-import 'package:social_mobile/presentation/home/provider/home_notifier.dart';
 import 'package:social_mobile/presentation/provider/locale_service.dart';
+import 'package:social_mobile/presentation/update/provider/update_notifier.dart';
 
-class HomeScreen extends HookConsumerWidget {
-  const HomeScreen({super.key, required this.title});
-  final String title;
+class UpdateScreen extends ConsumerWidget {
+  const UpdateScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final counter = ref.watch(homeNotifierProvider);
-    final counterNotifier = ref.read(homeNotifierProvider.notifier);
+    final counter = ref.watch(updateNotifierProvider);
+    final counterNotifier = ref.read(updateNotifierProvider.notifier);
     final localeState = ref.watch(localeServiceProvider);
     final translations = Translations.of(context);
     final socialMobilePageI18n = translations.socialMobilePage;

@@ -29,7 +29,7 @@ class BottomNavigation extends ConsumerWidget {
               .setIndex(newIndex);
           switch (newIndex) {
             case 0:
-              context.go('/apude');
+              context.go('/update');
             case 1:
               context.go('/search');
             case 2:
