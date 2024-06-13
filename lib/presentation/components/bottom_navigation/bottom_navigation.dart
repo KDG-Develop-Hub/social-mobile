@@ -19,7 +19,7 @@ class BottomNavigation extends ConsumerWidget {
       bottomNavigationBar: NavigationBar(
         backgroundColor: colorTheme.neutral[94],
         selectedIndex: index,
-        indicatorColor: const Color.fromRGBO(209, 229, 184, 1),
+        indicatorColor: colorTheme.secondary[90],
         onDestinationSelected: (int newIndex) {
           ref
               .read(bottomNavigationNotifierProvider.notifier)
