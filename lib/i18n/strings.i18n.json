@@ -1,0 +1,25 @@
+{
+    "navigationBar": {
+        "home": {
+            "title": "home"
+        },
+        "settings": {
+            "title": "settings"
+        }
+    },
+    "socialMobilePage": {
+        "pushExplanation": {"title": "You have pushed the button this many times:"},
+        "languageExplanation": {"title": "Your language is English now"},
+        "changeLanguage": {"title": "Change language"}
+    },
+    "settings": {
+        "language": {
+            "title": "Language",
+            "currentLanguage": "English"
+        }
+    },
+    "locales(map)": {
+        "en": "English",
+        "ja": "Japanese"
+    }
+}
