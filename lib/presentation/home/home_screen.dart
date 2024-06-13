@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:social_mobile/i18n/strings.g.dart';
-import 'package:social_mobile/presentation/home/view_model/home_view_model.dart';
+import 'package:social_mobile/presentation/home/provider/home_notifier.dart';
 import 'package:social_mobile/presentation/provider/locale_service.dart';
 
 class HomeScreen extends HookConsumerWidget {
@@ -10,8 +10,8 @@ class HomeScreen extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final counter = ref.watch(homeViewModelProvider);
-    final counterNotifier = ref.read(homeViewModelProvider.notifier);
+    final counter = ref.watch(homeNotifierProvider);
+    final counterNotifier = ref.read(homeNotifierProvider.notifier);
     final localeState = ref.watch(localeServiceProvider);
     final translations = Translations.of(context);
     final socialMobilePageI18n = translations.socialMobilePage;
