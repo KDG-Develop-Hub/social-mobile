@@ -9,7 +9,7 @@
     },
     "navigationBar": {
         "home": "update",
-        "search": "browse",
+        "search": "search",
         "profile": "profile",
         "friends": "friends",
         "settings": "settings"

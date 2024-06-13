@@ -6,7 +6,7 @@
 /// Locales: 2
 /// Strings: 24 (12 per locale)
 ///
-/// Built on 2024-06-13 at 15:41 UTC
+/// Built on 2024-06-13 at 15:45 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -176,7 +176,7 @@ class _StringsNavigationBarEn {
 
 	// Translations
 	String get home => 'update';
-	String get search => 'browse';
+	String get search => 'search';
 	String get profile => 'profile';
 	String get friends => 'friends';
 	String get settings => 'settings';
@@ -313,7 +313,7 @@ extension on Translations {
 			case 'appBar.home.title': return 'home';
 			case 'appBar.settings.title': return 'settings';
 			case 'navigationBar.home': return 'update';
-			case 'navigationBar.search': return 'browse';
+			case 'navigationBar.search': return 'search';
 			case 'navigationBar.profile': return 'profile';
 			case 'navigationBar.friends': return 'friends';
 			case 'navigationBar.settings': return 'settings';
