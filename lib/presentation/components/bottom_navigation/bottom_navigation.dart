@@ -33,7 +33,7 @@ class BottomNavigation extends ConsumerWidget {
             case 1:
               context.go('/search');
             case 2:
-              context.go('/kimitoha');
+              context.go('/profile');
             case 3:
               context.go('/friends');
             case 4:
