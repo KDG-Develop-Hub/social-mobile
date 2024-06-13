@@ -10,12 +10,11 @@ class SocialMobile extends HookConsumerWidget {
   const SocialMobile({super.key});
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // NOTE for setting locale
     final currentLocale = ref.watch(localeServiceProvider);
 
     return MaterialApp.router(
       title: 'Flutter Demo',
-      theme: lightTheme(),      // NOTE for setting locale
+      theme: lightTheme(),
       locale: currentLocale.flutterLocale,
       supportedLocales: AppLocaleUtils.supportedLocales,
       localizationsDelegates: GlobalMaterialLocalizations.delegates,
