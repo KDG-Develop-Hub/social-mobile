@@ -7,9 +7,9 @@ import 'package:social_mobile/presentation/home/kimitoha_screen.dart';
 import 'package:social_mobile/presentation/home/mitukeru_screen.dart';
 import 'package:social_mobile/presentation/home/sette_screen.dart';
 import 'package:social_mobile/presentation/home/siriai_screen.dart';
+import 'package:social_mobile/presentation/home/view_model/bottom_navigation_notifier.dart';
 import 'package:social_mobile/utils/gen/assets.gen.dart';
-
-final bottomNavigationIndexProvider = StateProvider<int>((ref) => 0);
+import 'package:social_mobile/utils/theme/extension/theme_extension.dart';
 
 final appRouter = GoRouter(
   initialLocation: '/apude',
@@ -61,21 +61,19 @@ class BottomNavigation extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final index = ref.watch(bottomNavigationIndexProvider);
+    final theme = Theme.of(context);
+    final colorTheme = theme.customThemeExtension.colorTheme;
+    final index = ref.watch(bottomNavigationNotifierProvider);
     return Scaffold(
-      body: child,
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: index,
-        type: BottomNavigationBarType.fixed,
-        selectedLabelStyle: const TextStyle(
-          fontWeight: FontWeight.bold,
-        ),
-        selectedItemColor: Colors.black,
-        unselectedItemColor: Colors.black,
-        backgroundColor: const Color.fromRGBO(240, 240, 236, 1),
-        onTap: (int index) {
-          ref.read(bottomNavigationIndexProvider.notifier).state = index;
-          switch (index) {
+      bottomNavigationBar: NavigationBar(
+        backgroundColor: colorTheme.neutral[94],
+        selectedIndex: index,
+        indicatorColor: const Color.fromRGBO(209, 229, 184, 1),
+        onDestinationSelected: (int newIndex) {
+          ref
+              .read(bottomNavigationNotifierProvider.notifier)
+              .setIndex(newIndex);
+          switch (newIndex) {
             case 0:
               context.go('/apude');
             case 1:
@@ -88,39 +86,40 @@ class BottomNavigation extends ConsumerWidget {
               context.go('/sette');
           }
         },
-        items: [
-          BottomNavigationBarItem(
-            icon: index == 0
-                ? SvgPicture.asset(Assets.images.selectedApudeIcon)
-                : SvgPicture.asset(Assets.images.apudeIcon),
+        destinations: [
+          NavigationDestination(
+            icon: SvgPicture.asset(
+              Assets.images.apudeIcon,
+            ),
             label: 'アプデ',
           ),
-          BottomNavigationBarItem(
-            icon: index == 1
-                ? SvgPicture.asset(Assets.images.selectedMitukeruIcon)
-                : SvgPicture.asset(Assets.images.mitukeruIcon),
+          NavigationDestination(
+            icon: SvgPicture.asset(
+              Assets.images.mitukeruIcon,
+            ),
             label: '見つける',
           ),
-          BottomNavigationBarItem(
-            icon: index == 2
-                ? SvgPicture.asset(Assets.images.selectedKimitohaIcon)
-                : SvgPicture.asset(Assets.images.kimitohaIcon),
+          NavigationDestination(
+            icon: SvgPicture.asset(
+              Assets.images.kimitohaIcon,
+            ),
             label: '君とは',
           ),
-          BottomNavigationBarItem(
-            icon: index == 3
-                ? SvgPicture.asset(Assets.images.selectedSiriaiIcon)
-                : SvgPicture.asset(Assets.images.siriaiIcon),
+          NavigationDestination(
+            icon: SvgPicture.asset(
+              Assets.images.siriaiIcon,
+            ),
             label: '知り合い',
           ),
-          BottomNavigationBarItem(
-            icon: index == 4
-                ? SvgPicture.asset(Assets.images.selectedSetteIcon)
-                : SvgPicture.asset(Assets.images.setteIcon),
+          NavigationDestination(
+            icon: SvgPicture.asset(
+              Assets.images.setteIcon,
+            ),
             label: 'せってー',
           ),
         ],
       ),
+      body: child,
     );
   }
 }
