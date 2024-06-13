@@ -3,9 +3,9 @@ import 'package:go_router/go_router.dart';
 import 'package:social_mobile/presentation/components/bottom_navigation/bottom_navigation.dart';
 import 'package:social_mobile/presentation/home/apude_screen.dart';
 import 'package:social_mobile/presentation/home/kimitoha_screen.dart';
-import 'package:social_mobile/presentation/home/mitukeru_screen.dart';
 import 'package:social_mobile/presentation/home/sette_screen.dart';
 import 'package:social_mobile/presentation/home/siriai_screen.dart';
+import 'package:social_mobile/presentation/search/search_screen.dart';
 
 final appRouter = GoRouter(
   initialLocation: '/apude',
@@ -23,9 +23,9 @@ final appRouter = GoRouter(
           ),
         ),
         GoRoute(
-          path: '/mitukeru',
+          path: '/search',
           pageBuilder: (context, state) => const NoTransitionPage(
-            child: MitukeruScreen(),
+            child: SearchScreen(),
           ),
         ),
         GoRoute(
