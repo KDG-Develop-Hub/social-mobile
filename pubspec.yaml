@@ -42,6 +42,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   freezed: ^2.4.7
+  go_router_builder: ^2.7.0
   json_serializable: ^6.7.1
   pedantic_mono: any
   riverpod_generator: ^2.4.0
