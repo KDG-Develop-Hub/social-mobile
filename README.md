@@ -54,6 +54,14 @@ ClickUpに招待されていない場合、小林春か大村健心か塩野結�
 2. ``` make runner ```コマンドでdartコードにコンバートする
 3. ```Translation.of(context). ・・・```で呼び出せる
 
+### jsonの定義
+命名はページ・コンポーネントであれば、小文字のキャメルケースで書く。
+文字列自体の場合は、文字列の内容に則ったものにする。
+以下の際にインデント分けして書く
+- ページごと
+- グローバルコンポーネントごと
+- ページ内でのコンポーネントごと
+
 # フォルダ構成の説明
 [レイヤードアーキテクチャ](https://zenn.dev/flutteruniv/books/flutter-architecture/viewer/5_layered-architecture)と[MVVMアーキテクチャ](https://zenn.dev/flutteruniv/books/flutter-architecture/viewer/3_mvvm)を融合させたようなフォルダ構成です。
 
