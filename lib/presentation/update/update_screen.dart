@@ -1,39 +1,37 @@
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:social_mobile/i18n/strings.g.dart';
-import 'package:social_mobile/presentation/home/view_model/home_view_model.dart';
 import 'package:social_mobile/presentation/provider/locale_service.dart';
+import 'package:social_mobile/presentation/update/provider/update_notifier.dart';
 
-class HomeScreen extends HookConsumerWidget {
-  const HomeScreen({super.key, required this.title});
-  final String title;
+class UpdateScreen extends ConsumerWidget {
+  const UpdateScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final counter = ref.watch(homeViewModelProvider);
-    final counterNotifier = ref.read(homeViewModelProvider.notifier);
+    final counter = ref.watch(updateNotifierProvider);
+    final counterNotifier = ref.read(updateNotifierProvider.notifier);
     final localeState = ref.watch(localeServiceProvider);
     final translations = Translations.of(context);
     final socialMobilePageI18n = translations.socialMobilePage;
-    final settingLanguageTitle = socialMobilePageI18n.changeLanguage.title;
+    final settingLanguageTitle = socialMobilePageI18n.changeLanguage;
 
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(translations.settings.language.title),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              socialMobilePageI18n.pushExplanation.title,
+              socialMobilePageI18n.pushExplanation,
             ),
             Text(
               '$counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
-            Text(socialMobilePageI18n.languageExplanation.title),
+            Text(socialMobilePageI18n.languageExplanation),
             const Padding(padding: EdgeInsets.all(30)),
             SizedBox(
               width: 200,

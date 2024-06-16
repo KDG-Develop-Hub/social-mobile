@@ -1,5 +1,5 @@
 {
-    "navigationBar": {
+    "appBar": {
         "home": {
             "title": "ホーム"
         },
@@ -7,16 +7,17 @@
             "title": "設定"
         }
     },
-    "socialMobilePage": {
-        "pushExplanation": {"title": "ちみはこれくらい押したどん:"},
-        "languageExplanation": {"title": "ちみの今の言語は日本語だどん"},
-        "changeLanguage": {"title": "言語を変えるどん"}
+    "navigationBar": {
+        "update": "アプデ",
+        "search": "みつける",
+        "profile": "君とは",
+        "friends": "知り合い",
+        "settings": "せってー"
     },
-    "settings": {
-        "language": {
-            "title": "言語",
-            "currentLanguage": "日本語"
-        }
+    "socialMobilePage": {
+        "pushExplanation": "ちみはこれくらい押したどん:",
+        "languageExplanation": "ちみの今の言語は日本語だどん",
+        "changeLanguage": "言語を変えるどん"
     },
     "locales(map)": {
         "en": "英語",

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class SiriaiScreen extends StatelessWidget {
-  const SiriaiScreen({super.key});
+class SearchScreen extends StatelessWidget {
+  const SearchScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text('知り合い'),
+        child: Text('見つける'),
       ),
     );
   }
