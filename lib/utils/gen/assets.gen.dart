@@ -7,56 +7,31 @@
 // ignore_for_file: type=lint
 // ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
 
-class $AssetsImagesGen {
-  const $AssetsImagesGen();
+class $AssetsIconsGen {
+  const $AssetsIconsGen();
 
-  /// File path: assets/images/apude_icon.svg
-  String get apudeIcon => 'assets/images/apude_icon.svg';
+  /// File path: assets/icons/friends_icon.svg
+  String get friendsIcon => 'assets/icons/friends_icon.svg';
 
-  /// File path: assets/images/kimitoha_icon.svg
-  String get kimitohaIcon => 'assets/images/kimitoha_icon.svg';
+  /// File path: assets/icons/profile_icon.svg
+  String get profileIcon => 'assets/icons/profile_icon.svg';
 
-  /// File path: assets/images/mitukeru_icon.svg
-  String get mitukeruIcon => 'assets/images/mitukeru_icon.svg';
+  /// File path: assets/icons/search_icon.svg
+  String get searchIcon => 'assets/icons/search_icon.svg';
 
-  /// File path: assets/images/selected_apude_icon.svg
-  String get selectedApudeIcon => 'assets/images/selected_apude_icon.svg';
+  /// File path: assets/icons/settings_icon.svg
+  String get settingsIcon => 'assets/icons/settings_icon.svg';
 
-  /// File path: assets/images/selected_kimitoha_icon.svg
-  String get selectedKimitohaIcon => 'assets/images/selected_kimitoha_icon.svg';
-
-  /// File path: assets/images/selected_mitukeru_icon.svg
-  String get selectedMitukeruIcon => 'assets/images/selected_mitukeru_icon.svg';
-
-  /// File path: assets/images/selected_sette_icon.svg
-  String get selectedSetteIcon => 'assets/images/selected_sette_icon.svg';
-
-  /// File path: assets/images/selected_siriai_icon.svg
-  String get selectedSiriaiIcon => 'assets/images/selected_siriai_icon.svg';
-
-  /// File path: assets/images/sette_icon.svg
-  String get setteIcon => 'assets/images/sette_icon.svg';
-
-  /// File path: assets/images/siriai_icon.svg
-  String get siriaiIcon => 'assets/images/siriai_icon.svg';
+  /// File path: assets/icons/update_icon.svg
+  String get updateIcon => 'assets/icons/update_icon.svg';
 
   /// List of all assets
-  List<String> get values => [
-        apudeIcon,
-        kimitohaIcon,
-        mitukeruIcon,
-        selectedApudeIcon,
-        selectedKimitohaIcon,
-        selectedMitukeruIcon,
-        selectedSetteIcon,
-        selectedSiriaiIcon,
-        setteIcon,
-        siriaiIcon
-      ];
+  List<String> get values =>
+      [friendsIcon, profileIcon, searchIcon, settingsIcon, updateIcon];
 }
 
 class Assets {
   Assets._();
 
-  static const $AssetsImagesGen images = $AssetsImagesGen();
+  static const $AssetsIconsGen icons = $AssetsIconsGen();
 }

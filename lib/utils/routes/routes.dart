@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:social_mobile/presentation/components/bottom_navigation/bottom_navigation.dart';
-import 'package:social_mobile/presentation/home/apude_screen.dart';
-import 'package:social_mobile/presentation/home/kimitoha_screen.dart';
-import 'package:social_mobile/presentation/home/mitukeru_screen.dart';
-import 'package:social_mobile/presentation/home/sette_screen.dart';
-import 'package:social_mobile/presentation/home/siriai_screen.dart';
+import 'package:social_mobile/presentation/friends/friends_screen.dart';
+import 'package:social_mobile/presentation/profile/profile_screen.dart';
+import 'package:social_mobile/presentation/search/search_screen.dart';
+import 'package:social_mobile/presentation/settings/settings_screen.dart';
+import 'package:social_mobile/presentation/update/update_screen.dart';
 
 final appRouter = GoRouter(
-  initialLocation: '/apude',
+  initialLocation: '/update',
   routes: [
     ShellRoute(
       navigatorKey: GlobalKey<NavigatorState>(),
@@ -17,33 +17,33 @@ final appRouter = GoRouter(
       },
       routes: [
         GoRoute(
-          path: '/apude',
+          path: '/update',
           pageBuilder: (context, state) => const NoTransitionPage(
-            child: ApudeScreen(),
+            child: UpdateScreen(),
           ),
         ),
         GoRoute(
-          path: '/mitukeru',
+          path: '/search',
           pageBuilder: (context, state) => const NoTransitionPage(
-            child: MitukeruScreen(),
+            child: SearchScreen(),
           ),
         ),
         GoRoute(
-          path: '/kimitoha',
+          path: '/profile',
           pageBuilder: (context, state) => const NoTransitionPage(
-            child: KimitohaScreen(),
+            child: ProfileScreen(),
           ),
         ),
         GoRoute(
-          path: '/siriai',
+          path: '/friends',
           pageBuilder: (context, state) => const NoTransitionPage(
-            child: SiriaiScreen(),
+            child: FriendsScreen(),
           ),
         ),
         GoRoute(
-          path: '/sette',
+          path: '/settings',
           pageBuilder: (context, state) => const NoTransitionPage(
-            child: SetteScreen(),
+            child: SettingsScreen(),
           ),
         ),
       ],

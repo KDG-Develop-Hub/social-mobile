@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class MitukeruScreen extends StatelessWidget {
-  const MitukeruScreen({super.key});
+class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text('見つける'),
+        child: Text('君とは'),
       ),
     );
   }

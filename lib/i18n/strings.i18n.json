@@ -1,5 +1,5 @@
 {
-    "navigationBar": {
+    "appBar": {
         "home": {
             "title": "home"
         },
@@ -7,16 +7,17 @@
             "title": "settings"
         }
     },
-    "socialMobilePage": {
-        "pushExplanation": {"title": "You have pushed the button this many times:"},
-        "languageExplanation": {"title": "Your language is English now"},
-        "changeLanguage": {"title": "Change language"}
+    "navigationBar": {
+        "update": "update",
+        "search": "search",
+        "profile": "profile",
+        "friends": "friends",
+        "settings": "settings"
     },
-    "settings": {
-        "language": {
-            "title": "Language",
-            "currentLanguage": "English"
-        }
+    "socialMobilePage": {
+        "pushExplanation": "You have pushed the button this many times:",
+        "languageExplanation": "Your language is English now",
+        "changeLanguage": "Change language"
     },
     "locales(map)": {
         "en": "English",

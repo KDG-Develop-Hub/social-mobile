@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 18 (9 per locale)
+/// Strings: 24 (12 per locale)
 ///
-/// Built on 2024-06-08 at 01:06 UTC
+/// Built on 2024-06-13 at 16:01 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -148,13 +148,24 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	late final Translations _root = this; // ignore: unused_field
 
 	// Translations
+	late final _StringsAppBarEn appBar = _StringsAppBarEn._(_root);
 	late final _StringsNavigationBarEn navigationBar = _StringsNavigationBarEn._(_root);
 	late final _StringsSocialMobilePageEn socialMobilePage = _StringsSocialMobilePageEn._(_root);
-	late final _StringsSettingsEn settings = _StringsSettingsEn._(_root);
 	Map<String, String> get locales => {
 		'en': 'English',
 		'ja': 'Japanese',
 	};
+}
+
+// Path: appBar
+class _StringsAppBarEn {
+	_StringsAppBarEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	late final _StringsAppBarHomeEn home = _StringsAppBarHomeEn._(_root);
+	late final _StringsAppBarSettingsEn settings = _StringsAppBarSettingsEn._(_root);
 }
 
 // Path: navigationBar
@@ -164,8 +175,11 @@ class _StringsNavigationBarEn {
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	late final _StringsNavigationBarHomeEn home = _StringsNavigationBarHomeEn._(_root);
-	late final _StringsNavigationBarSettingsEn settings = _StringsNavigationBarSettingsEn._(_root);
+	String get update => 'update';
+	String get search => 'search';
+	String get profile => 'profile';
+	String get friends => 'friends';
+	String get settings => 'settings';
 }
 
 // Path: socialMobilePage
@@ -175,24 +189,14 @@ class _StringsSocialMobilePageEn {
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	late final _StringsSocialMobilePagePushExplanationEn pushExplanation = _StringsSocialMobilePagePushExplanationEn._(_root);
-	late final _StringsSocialMobilePageLanguageExplanationEn languageExplanation = _StringsSocialMobilePageLanguageExplanationEn._(_root);
-	late final _StringsSocialMobilePageChangeLanguageEn changeLanguage = _StringsSocialMobilePageChangeLanguageEn._(_root);
+	String get pushExplanation => 'You have pushed the button this many times:';
+	String get languageExplanation => 'Your language is English now';
+	String get changeLanguage => 'Change language';
 }
 
-// Path: settings
-class _StringsSettingsEn {
-	_StringsSettingsEn._(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-	late final _StringsSettingsLanguageEn language = _StringsSettingsLanguageEn._(_root);
-}
-
-// Path: navigationBar.home
-class _StringsNavigationBarHomeEn {
-	_StringsNavigationBarHomeEn._(this._root);
+// Path: appBar.home
+class _StringsAppBarHomeEn {
+	_StringsAppBarHomeEn._(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -200,55 +204,14 @@ class _StringsNavigationBarHomeEn {
 	String get title => 'home';
 }
 
-// Path: navigationBar.settings
-class _StringsNavigationBarSettingsEn {
-	_StringsNavigationBarSettingsEn._(this._root);
+// Path: appBar.settings
+class _StringsAppBarSettingsEn {
+	_StringsAppBarSettingsEn._(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
 	String get title => 'settings';
-}
-
-// Path: socialMobilePage.pushExplanation
-class _StringsSocialMobilePagePushExplanationEn {
-	_StringsSocialMobilePagePushExplanationEn._(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-	String get title => 'You have pushed the button this many times:';
-}
-
-// Path: socialMobilePage.languageExplanation
-class _StringsSocialMobilePageLanguageExplanationEn {
-	_StringsSocialMobilePageLanguageExplanationEn._(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-	String get title => 'Your language is English now';
-}
-
-// Path: socialMobilePage.changeLanguage
-class _StringsSocialMobilePageChangeLanguageEn {
-	_StringsSocialMobilePageChangeLanguageEn._(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-	String get title => 'Change language';
-}
-
-// Path: settings.language
-class _StringsSettingsLanguageEn {
-	_StringsSettingsLanguageEn._(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-	String get title => 'Language';
-	String get currentLanguage => 'English';
 }
 
 // Path: <root>
@@ -275,13 +238,24 @@ class _StringsJa implements Translations {
 	@override late final _StringsJa _root = this; // ignore: unused_field
 
 	// Translations
+	@override late final _StringsAppBarJa appBar = _StringsAppBarJa._(_root);
 	@override late final _StringsNavigationBarJa navigationBar = _StringsNavigationBarJa._(_root);
 	@override late final _StringsSocialMobilePageJa socialMobilePage = _StringsSocialMobilePageJa._(_root);
-	@override late final _StringsSettingsJa settings = _StringsSettingsJa._(_root);
 	@override Map<String, String> get locales => {
 		'en': '英語',
 		'ja': '日本語',
 	};
+}
+
+// Path: appBar
+class _StringsAppBarJa implements _StringsAppBarEn {
+	_StringsAppBarJa._(this._root);
+
+	@override final _StringsJa _root; // ignore: unused_field
+
+	// Translations
+	@override late final _StringsAppBarHomeJa home = _StringsAppBarHomeJa._(_root);
+	@override late final _StringsAppBarSettingsJa settings = _StringsAppBarSettingsJa._(_root);
 }
 
 // Path: navigationBar
@@ -291,8 +265,11 @@ class _StringsNavigationBarJa implements _StringsNavigationBarEn {
 	@override final _StringsJa _root; // ignore: unused_field
 
 	// Translations
-	@override late final _StringsNavigationBarHomeJa home = _StringsNavigationBarHomeJa._(_root);
-	@override late final _StringsNavigationBarSettingsJa settings = _StringsNavigationBarSettingsJa._(_root);
+	@override String get update => 'アプデ';
+	@override String get search => 'みつける';
+	@override String get profile => '君とは';
+	@override String get friends => '知り合い';
+	@override String get settings => 'せってー';
 }
 
 // Path: socialMobilePage
@@ -302,24 +279,14 @@ class _StringsSocialMobilePageJa implements _StringsSocialMobilePageEn {
 	@override final _StringsJa _root; // ignore: unused_field
 
 	// Translations
-	@override late final _StringsSocialMobilePagePushExplanationJa pushExplanation = _StringsSocialMobilePagePushExplanationJa._(_root);
-	@override late final _StringsSocialMobilePageLanguageExplanationJa languageExplanation = _StringsSocialMobilePageLanguageExplanationJa._(_root);
-	@override late final _StringsSocialMobilePageChangeLanguageJa changeLanguage = _StringsSocialMobilePageChangeLanguageJa._(_root);
+	@override String get pushExplanation => 'ちみはこれくらい押したどん:';
+	@override String get languageExplanation => 'ちみの今の言語は日本語だどん';
+	@override String get changeLanguage => '言語を変えるどん';
 }
 
-// Path: settings
-class _StringsSettingsJa implements _StringsSettingsEn {
-	_StringsSettingsJa._(this._root);
-
-	@override final _StringsJa _root; // ignore: unused_field
-
-	// Translations
-	@override late final _StringsSettingsLanguageJa language = _StringsSettingsLanguageJa._(_root);
-}
-
-// Path: navigationBar.home
-class _StringsNavigationBarHomeJa implements _StringsNavigationBarHomeEn {
-	_StringsNavigationBarHomeJa._(this._root);
+// Path: appBar.home
+class _StringsAppBarHomeJa implements _StringsAppBarHomeEn {
+	_StringsAppBarHomeJa._(this._root);
 
 	@override final _StringsJa _root; // ignore: unused_field
 
@@ -327,55 +294,14 @@ class _StringsNavigationBarHomeJa implements _StringsNavigationBarHomeEn {
 	@override String get title => 'ホーム';
 }
 
-// Path: navigationBar.settings
-class _StringsNavigationBarSettingsJa implements _StringsNavigationBarSettingsEn {
-	_StringsNavigationBarSettingsJa._(this._root);
+// Path: appBar.settings
+class _StringsAppBarSettingsJa implements _StringsAppBarSettingsEn {
+	_StringsAppBarSettingsJa._(this._root);
 
 	@override final _StringsJa _root; // ignore: unused_field
 
 	// Translations
 	@override String get title => '設定';
-}
-
-// Path: socialMobilePage.pushExplanation
-class _StringsSocialMobilePagePushExplanationJa implements _StringsSocialMobilePagePushExplanationEn {
-	_StringsSocialMobilePagePushExplanationJa._(this._root);
-
-	@override final _StringsJa _root; // ignore: unused_field
-
-	// Translations
-	@override String get title => 'ちみはこれくらい押したどん:';
-}
-
-// Path: socialMobilePage.languageExplanation
-class _StringsSocialMobilePageLanguageExplanationJa implements _StringsSocialMobilePageLanguageExplanationEn {
-	_StringsSocialMobilePageLanguageExplanationJa._(this._root);
-
-	@override final _StringsJa _root; // ignore: unused_field
-
-	// Translations
-	@override String get title => 'ちみの今の言語は日本語だどん';
-}
-
-// Path: socialMobilePage.changeLanguage
-class _StringsSocialMobilePageChangeLanguageJa implements _StringsSocialMobilePageChangeLanguageEn {
-	_StringsSocialMobilePageChangeLanguageJa._(this._root);
-
-	@override final _StringsJa _root; // ignore: unused_field
-
-	// Translations
-	@override String get title => '言語を変えるどん';
-}
-
-// Path: settings.language
-class _StringsSettingsLanguageJa implements _StringsSettingsLanguageEn {
-	_StringsSettingsLanguageJa._(this._root);
-
-	@override final _StringsJa _root; // ignore: unused_field
-
-	// Translations
-	@override String get title => '言語';
-	@override String get currentLanguage => '日本語';
 }
 
 /// Flat map(s) containing all translations.
@@ -384,13 +310,16 @@ class _StringsSettingsLanguageJa implements _StringsSettingsLanguageEn {
 extension on Translations {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
-			case 'navigationBar.home.title': return 'home';
-			case 'navigationBar.settings.title': return 'settings';
-			case 'socialMobilePage.pushExplanation.title': return 'You have pushed the button this many times:';
-			case 'socialMobilePage.languageExplanation.title': return 'Your language is English now';
-			case 'socialMobilePage.changeLanguage.title': return 'Change language';
-			case 'settings.language.title': return 'Language';
-			case 'settings.language.currentLanguage': return 'English';
+			case 'appBar.home.title': return 'home';
+			case 'appBar.settings.title': return 'settings';
+			case 'navigationBar.update': return 'update';
+			case 'navigationBar.search': return 'search';
+			case 'navigationBar.profile': return 'profile';
+			case 'navigationBar.friends': return 'friends';
+			case 'navigationBar.settings': return 'settings';
+			case 'socialMobilePage.pushExplanation': return 'You have pushed the button this many times:';
+			case 'socialMobilePage.languageExplanation': return 'Your language is English now';
+			case 'socialMobilePage.changeLanguage': return 'Change language';
 			case 'locales.en': return 'English';
 			case 'locales.ja': return 'Japanese';
 			default: return null;
@@ -401,13 +330,16 @@ extension on Translations {
 extension on _StringsJa {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
-			case 'navigationBar.home.title': return 'ホーム';
-			case 'navigationBar.settings.title': return '設定';
-			case 'socialMobilePage.pushExplanation.title': return 'ちみはこれくらい押したどん:';
-			case 'socialMobilePage.languageExplanation.title': return 'ちみの今の言語は日本語だどん';
-			case 'socialMobilePage.changeLanguage.title': return '言語を変えるどん';
-			case 'settings.language.title': return '言語';
-			case 'settings.language.currentLanguage': return '日本語';
+			case 'appBar.home.title': return 'ホーム';
+			case 'appBar.settings.title': return '設定';
+			case 'navigationBar.update': return 'アプデ';
+			case 'navigationBar.search': return 'みつける';
+			case 'navigationBar.profile': return '君とは';
+			case 'navigationBar.friends': return '知り合い';
+			case 'navigationBar.settings': return 'せってー';
+			case 'socialMobilePage.pushExplanation': return 'ちみはこれくらい押したどん:';
+			case 'socialMobilePage.languageExplanation': return 'ちみの今の言語は日本語だどん';
+			case 'socialMobilePage.changeLanguage': return '言語を変えるどん';
 			case 'locales.en': return '英語';
 			case 'locales.ja': return '日本語';
 			default: return null;

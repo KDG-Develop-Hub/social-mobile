@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class SetteScreen extends StatelessWidget {
-  const SetteScreen({super.key});
+class FriendsScreen extends StatelessWidget {
+  const FriendsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text('せってー'),
+        child: Text('知り合い'),
       ),
     );
   }
