@@ -1,26 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:social_mobile/utils/theme/extension/theme_extension.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-ThemeData lightTheme() {
-  final theme = CustomThemeExtension.light();
-
-  return ThemeData.light().copyWith(
-    navigationBarTheme: NavigationBarThemeData(
-      labelTextStyle: MaterialStateTextStyle.resolveWith(
-        (states) {
-          if (states.contains(MaterialState.selected)) {
-            return theme.textTheme.labelSmallStrong.copyWith(
-              color: theme.colorTheme.primary[10],
-            );
-          }
-          return theme.textTheme.labelSmall.copyWith(
-            color: theme.colorTheme.neutral[10],
-          );
-        },
-      ),
-    ),
-    extensions: [
-      theme,
-    ],
+TextTheme createTextTheme(
+  BuildContext context,
+  String bodyFontString,
+  String displayFontString,
+) {
+  final baseTextTheme = Theme.of(context).textTheme;
+  final bodyTextTheme = GoogleFonts.getTextTheme(bodyFontString, baseTextTheme);
+  final displayTextTheme =
+      GoogleFonts.getTextTheme(displayFontString, baseTextTheme);
+  final textTheme = displayTextTheme.copyWith(
+    bodyLarge: bodyTextTheme.bodyLarge,
+    bodyMedium: bodyTextTheme.bodyMedium,
+    bodySmall: bodyTextTheme.bodySmall,
+    labelLarge: bodyTextTheme.labelLarge,
+    labelMedium: bodyTextTheme.labelMedium,
+    labelSmall: bodyTextTheme.labelSmall,
   );
+  return textTheme;
 }
