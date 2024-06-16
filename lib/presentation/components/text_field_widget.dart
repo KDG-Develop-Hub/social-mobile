@@ -21,9 +21,6 @@ class TextFieldWidget extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final textTheme = theme.customThemeExtension.textTheme;
-    final colorTheme = theme.customThemeExtension.colorTheme;
     final inputTextLength = useState(0);
 
     return Padding(
@@ -35,49 +32,49 @@ class TextFieldWidget extends HookWidget {
           inputTextLength.value = value.length;
         },
         onFieldSubmitted: onFieldSubmitted,
-        style: textTheme.body.copyWith(
-          color: colorTheme.neutral[10],
-        ),
+        // style: textTheme.body.copyWith(
+        //   color: colorTheme.neutral[10],
+        // ),
         maxLength: maxLength,
-        cursorColor: colorTheme.primary[40],
-        cursorErrorColor: colorTheme.error[40],
+        // cursorColor: colorTheme.primary[40],
+        // cursorErrorColor: colorTheme.error[40],
         decoration: InputDecoration(
           labelText: labelText,
-          labelStyle: textTheme.body.copyWith(
-            color: colorTheme.neutral[30],
-          ),
+          // labelStyle: textTheme.body.copyWith(
+          //   color: colorTheme.neutral[30],
+          // ),
           counter: Text(
             '${inputTextLength.value}/$maxLength',
-            style: textTheme.body.copyWith(
-              color: colorTheme.neutral[30],
-            ),
+            // style: textTheme.body.copyWith(
+            //   color: colorTheme.neutral[30],
+            // ),
           ),
           helperText: helperText,
-          helperStyle: textTheme.body.copyWith(
-            color: colorTheme.neutral[30],
-          ),
-          errorStyle: textTheme.body.copyWith(
-            color: colorTheme.error[40],
-          ),
+          // helperStyle: textTheme.body.copyWith(
+          //   color: colorTheme.neutral[30],
+          // ),
+          // errorStyle: textTheme.body.copyWith(
+          //   color: colorTheme.error[40],
+          // ),
           contentPadding: const EdgeInsets.all(16),
-          enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: colorTheme.neutral[50]!),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-              color: colorTheme.primary[40]!,
-              width: 2,
-            ),
-          ),
-          errorBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: colorTheme.error[40]!),
-          ),
-          focusedErrorBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-              color: colorTheme.error[40]!,
-              width: 2,
-            ),
-          ),
+          // enabledBorder: OutlineInputBorder(
+          //   borderSide: BorderSide(color: colorTheme.neutral[50]!),
+          // ),
+          // focusedBorder: OutlineInputBorder(
+          //   borderSide: BorderSide(
+          //     color: colorTheme.primary[40]!,
+          //     width: 2,
+          //   ),
+          // ),
+          // errorBorder: OutlineInputBorder(
+          //   borderSide: BorderSide(color: colorTheme.error[40]!),
+          // ),
+          // focusedErrorBorder: OutlineInputBorder(
+          //   borderSide: BorderSide(
+          //     color: colorTheme.error[40]!,
+          //     width: 2,
+          //   ),
+          // ),
         ),
       ),
     );
