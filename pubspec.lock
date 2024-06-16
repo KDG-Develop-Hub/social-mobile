@@ -493,6 +493,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "14.1.4"
+  go_router_builder:
+    dependency: "direct dev"
+    description:
+      name: go_router_builder
+      sha256: "51eca134e77d84c78a5297242ed45dc6988c66531a97cb4bf49d149e8f60d809"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.7.0"
   google_fonts:
     dependency: "direct main"
     description:
