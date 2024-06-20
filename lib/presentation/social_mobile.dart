@@ -12,8 +12,8 @@ class SocialMobile extends StatefulHookConsumerWidget {
   @override
   ConsumerState<ConsumerStatefulWidget> createState() => _SocialMobileState();
 }
-class _SocialMobileState extends ConsumerState<SocialMobile> {
 
+class _SocialMobileState extends ConsumerState<SocialMobile> {
   // NOTE update locale with the locale of shared preferences
   @override
   void initState() {
