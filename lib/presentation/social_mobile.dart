@@ -6,10 +6,25 @@ import 'package:social_mobile/presentation/provider/locale_service.dart';
 import 'package:social_mobile/utils/routes/app_router.dart';
 import 'package:social_mobile/utils/theme/theme.dart';
 
-class SocialMobile extends HookConsumerWidget {
+class SocialMobile extends StatefulHookConsumerWidget {
   const SocialMobile({super.key});
+
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<ConsumerStatefulWidget> createState() => _SocialMobileState();
+}
+class _SocialMobileState extends ConsumerState<SocialMobile> {
+
+  // NOTE update locale with the locale of shared preferences
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      ref.read(localeServiceProvider.notifier).changeLocaleWithPreviousValue();
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final currentLocale = ref.watch(localeServiceProvider);
     final goRouter = ref.watch(goRouterProvider);
 
@@ -18,7 +33,11 @@ class SocialMobile extends HookConsumerWidget {
       theme: lightTheme(),
       locale: currentLocale.flutterLocale,
       supportedLocales: AppLocaleUtils.supportedLocales,
-      localizationsDelegates: GlobalMaterialLocalizations.delegates,
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
       routerDelegate: goRouter.routerDelegate,
       routeInformationProvider: goRouter.routeInformationProvider,
       routeInformationParser: goRouter.routeInformationParser,
