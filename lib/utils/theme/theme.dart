@@ -40,7 +40,6 @@ TextTheme createTextTheme(
   return textThemeX;
 }
 
-
 /// if you wanna use labelProminentLarge or labelProminentMedium, must be used explicitly in the code
 class TextThemeX extends TextTheme {
   const TextThemeX({
