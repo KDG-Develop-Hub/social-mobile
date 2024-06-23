@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:social_mobile/utils/theme/extension/theme_extension.dart';
 
 class TextFieldWidget extends HookWidget {
   const TextFieldWidget({
@@ -22,6 +21,8 @@ class TextFieldWidget extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final inputTextLength = useState(0);
+    final colorTheme = Theme.of(context).colorScheme;
+    final textTheme = Theme.of(context).textTheme;
 
     return Padding(
       padding: const EdgeInsets.all(8),
@@ -32,49 +33,49 @@ class TextFieldWidget extends HookWidget {
           inputTextLength.value = value.length;
         },
         onFieldSubmitted: onFieldSubmitted,
-        // style: textTheme.body.copyWith(
-        //   color: colorTheme.neutral[10],
-        // ),
+        style: textTheme.bodyLarge?.copyWith(
+          color: colorTheme.onSurface,
+        ),
         maxLength: maxLength,
-        // cursorColor: colorTheme.primary[40],
-        // cursorErrorColor: colorTheme.error[40],
+        cursorColor: colorTheme.onSurface,
+        cursorErrorColor: colorTheme.error,
         decoration: InputDecoration(
           labelText: labelText,
-          // labelStyle: textTheme.body.copyWith(
-          //   color: colorTheme.neutral[30],
-          // ),
+          labelStyle: textTheme.bodyLarge?.copyWith(
+            color: colorTheme.onSurfaceVariant,
+          ),
           counter: Text(
             '${inputTextLength.value}/$maxLength',
-            // style: textTheme.body.copyWith(
-            //   color: colorTheme.neutral[30],
-            // ),
+            style: textTheme.bodyLarge?.copyWith(
+              color: colorTheme.onSurfaceVariant,
+            ),
           ),
           helperText: helperText,
-          // helperStyle: textTheme.body.copyWith(
-          //   color: colorTheme.neutral[30],
-          // ),
-          // errorStyle: textTheme.body.copyWith(
-          //   color: colorTheme.error[40],
-          // ),
+          helperStyle: textTheme.bodyLarge?.copyWith(
+            color: colorTheme.onSurfaceVariant,
+          ),
+          errorStyle: textTheme.bodyLarge?.copyWith(
+            color: colorTheme.error,
+          ),
           contentPadding: const EdgeInsets.all(16),
-          // enabledBorder: OutlineInputBorder(
-          //   borderSide: BorderSide(color: colorTheme.neutral[50]!),
-          // ),
-          // focusedBorder: OutlineInputBorder(
-          //   borderSide: BorderSide(
-          //     color: colorTheme.primary[40]!,
-          //     width: 2,
-          //   ),
-          // ),
-          // errorBorder: OutlineInputBorder(
-          //   borderSide: BorderSide(color: colorTheme.error[40]!),
-          // ),
-          // focusedErrorBorder: OutlineInputBorder(
-          //   borderSide: BorderSide(
-          //     color: colorTheme.error[40]!,
-          //     width: 2,
-          //   ),
-          // ),
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: colorTheme.outline),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: colorTheme.primary,
+              width: 2,
+            ),
+          ),
+          errorBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: colorTheme.error),
+          ),
+          focusedErrorBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: colorTheme.error,
+              width: 2,
+            ),
+          ),
         ),
       ),
     );

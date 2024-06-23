@@ -4,7 +4,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:social_mobile/i18n/strings.g.dart';
 import 'package:social_mobile/utils/gen/assets.gen.dart';
-import 'package:social_mobile/utils/theme/extension/theme_extension.dart';
 
 class BottomNavigation extends ConsumerWidget {
   const BottomNavigation({
@@ -15,15 +14,11 @@ class BottomNavigation extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final theme = Theme.of(context);
-    final colorTheme = theme.customThemeExtension.colorTheme;
     final i18nTabItem = Translations.of(context).navigationBar;
 
     return Scaffold(
       bottomNavigationBar: NavigationBar(
-        backgroundColor: colorTheme.neutral[94],
         selectedIndex: navigationShell.currentIndex,
-        indicatorColor: colorTheme.secondary[90],
         onDestinationSelected: (int index) {
           navigationShell.goBranch(
             index,
