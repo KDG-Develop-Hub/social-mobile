@@ -18,15 +18,15 @@ class SharedPreferencesService extends _$SharedPreferencesService {
     required String key,
     required String value,
   }) {
-    ref.watch(sharedPreferencesProvider).setString(key, value);
+    ref.read(sharedPreferencesProvider).setString(key, value);
   }
 
   String getStringValue({required String key}) {
-    final value = ref.watch(sharedPreferencesProvider).getString(key);
+    final value = ref.read(sharedPreferencesProvider).getString(key);
     return value ?? '';
   }
 
   void removeValue({required String key}) {
-    ref.watch(sharedPreferencesProvider).remove(key);
+    ref.read(sharedPreferencesProvider).remove(key);
   }
 }
