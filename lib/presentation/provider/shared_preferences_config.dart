@@ -1,8 +1,8 @@
 class SharedPreferencesKey {
-  static const languageCodeKey = 'languageCode';
+  static const languageCode = 'languageCode';
 }
 
 class SharedPreferencesValue {
-  static const languageEnglishValue = 'en';
-  static const languageJapaneseValue = 'ja';
+  static const languageEnglish = 'en';
+  static const languageJapanese = 'ja';
 }

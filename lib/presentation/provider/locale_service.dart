@@ -14,15 +14,15 @@ class LocaleService extends _$LocaleService {
   @override
   AppLocale build() {
     final userLocale = sharedPreferencesService.getStringValue(
-      key: SharedPreferencesKey.languageCodeKey,
+      key: SharedPreferencesKey.languageCode,
     );
-    if (userLocale == SharedPreferencesValue.languageEnglishValue) {
+    if (userLocale == SharedPreferencesValue.languageEnglish) {
       return AppLocale.en;
-    } else if (userLocale == SharedPreferencesValue.languageJapaneseValue) {
+    } else if (userLocale == SharedPreferencesValue.languageJapanese) {
       return AppLocale.ja;
     } else {
       final locale = WidgetsBinding.instance.platformDispatcher.locale;
-      return locale.languageCode == SharedPreferencesValue.languageEnglishValue
+      return locale.languageCode == SharedPreferencesValue.languageEnglish
           ? AppLocale.en
           : AppLocale.ja;
     }
@@ -32,7 +32,7 @@ class LocaleService extends _$LocaleService {
   void changeLocale(AppLocale newLocale) {
     state = newLocale;
     sharedPreferencesService.setStringValue(
-      key: SharedPreferencesKey.languageCodeKey,
+      key: SharedPreferencesKey.languageCode,
       value: newLocale.name,
     );
     LocaleSettings.setLocale(newLocale);
