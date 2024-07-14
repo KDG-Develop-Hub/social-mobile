@@ -24,7 +24,7 @@ class ProfileScreen extends StatelessWidget {
             indicatorPadding: const EdgeInsets.symmetric(horizontal: 8),
             tabs: [
               ProfileTab(tabName: profilePageI18n.tabs.tweet),
-              ProfileTab(tabName: profilePageI18n.tabs.reply),
+              ProfileTab(tabName: profilePageI18n.tabs.comment),
               ProfileTab(tabName: profilePageI18n.tabs.media),
             ],
           ),

@@ -6,7 +6,7 @@
 /// Locales: 2
 /// Strings: 32 (16 per locale)
 ///
-/// Built on 2024-07-14 at 07:49 UTC
+/// Built on 2024-07-14 at 08:14 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -234,7 +234,7 @@ class _StringsProfilePageTabsEn {
 
 	// Translations
 	String get tweet => 'tweet';
-	String get reply => 'reply';
+	String get comment => 'comment';
 	String get media => 'media';
 }
 
@@ -358,7 +358,7 @@ class _StringsProfilePageTabsJa implements _StringsProfilePageTabsEn {
 
 	// Translations
 	@override String get tweet => 'つぶやき';
-	@override String get reply => '返信';
+	@override String get comment => 'コメント';
 	@override String get media => 'メディア';
 }
 
@@ -391,7 +391,7 @@ extension on Translations {
 			case 'locales.en': return 'English';
 			case 'locales.ja': return 'Japanese';
 			case 'profilePage.tabs.tweet': return 'tweet';
-			case 'profilePage.tabs.reply': return 'reply';
+			case 'profilePage.tabs.comment': return 'comment';
 			case 'profilePage.tabs.media': return 'media';
 			case 'profilePage.profileHeader.buttonText': return 'Edit your profile';
 			default: return null;
@@ -415,7 +415,7 @@ extension on _StringsJa {
 			case 'locales.en': return '英語';
 			case 'locales.ja': return '日本語';
 			case 'profilePage.tabs.tweet': return 'つぶやき';
-			case 'profilePage.tabs.reply': return '返信';
+			case 'profilePage.tabs.comment': return 'コメント';
 			case 'profilePage.tabs.media': return 'メディア';
 			case 'profilePage.profileHeader.buttonText': return 'プロフィールをいじる';
 			default: return null;
