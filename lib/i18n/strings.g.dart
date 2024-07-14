@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 24 (12 per locale)
+/// Strings: 32 (16 per locale)
 ///
-/// Built on 2024-07-10 at 12:06 UTC
+/// Built on 2024-07-14 at 07:49 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -155,6 +155,7 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 		'en': 'English',
 		'ja': 'Japanese',
 	};
+	late final _StringsProfilePageEn profilePage = _StringsProfilePageEn._(_root);
 }
 
 // Path: appBar
@@ -194,6 +195,17 @@ class _StringsSocialMobilePageEn {
 	String get changeLanguage => 'Change language';
 }
 
+// Path: profilePage
+class _StringsProfilePageEn {
+	_StringsProfilePageEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	late final _StringsProfilePageTabsEn tabs = _StringsProfilePageTabsEn._(_root);
+	late final _StringsProfilePageProfileHeaderEn profileHeader = _StringsProfilePageProfileHeaderEn._(_root);
+}
+
 // Path: appBar.home
 class _StringsAppBarHomeEn {
 	_StringsAppBarHomeEn._(this._root);
@@ -212,6 +224,28 @@ class _StringsAppBarSettingsEn {
 
 	// Translations
 	String get title => 'settings';
+}
+
+// Path: profilePage.tabs
+class _StringsProfilePageTabsEn {
+	_StringsProfilePageTabsEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get tweet => 'tweet';
+	String get reply => 'reply';
+	String get media => 'media';
+}
+
+// Path: profilePage.profileHeader
+class _StringsProfilePageProfileHeaderEn {
+	_StringsProfilePageProfileHeaderEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get buttonText => 'Edit your profile';
 }
 
 // Path: <root>
@@ -245,6 +279,7 @@ class _StringsJa implements Translations {
 		'en': '英語',
 		'ja': '日本語',
 	};
+	@override late final _StringsProfilePageJa profilePage = _StringsProfilePageJa._(_root);
 }
 
 // Path: appBar
@@ -284,6 +319,17 @@ class _StringsSocialMobilePageJa implements _StringsSocialMobilePageEn {
 	@override String get changeLanguage => '言語を変えるどん';
 }
 
+// Path: profilePage
+class _StringsProfilePageJa implements _StringsProfilePageEn {
+	_StringsProfilePageJa._(this._root);
+
+	@override final _StringsJa _root; // ignore: unused_field
+
+	// Translations
+	@override late final _StringsProfilePageTabsJa tabs = _StringsProfilePageTabsJa._(_root);
+	@override late final _StringsProfilePageProfileHeaderJa profileHeader = _StringsProfilePageProfileHeaderJa._(_root);
+}
+
 // Path: appBar.home
 class _StringsAppBarHomeJa implements _StringsAppBarHomeEn {
 	_StringsAppBarHomeJa._(this._root);
@@ -304,6 +350,28 @@ class _StringsAppBarSettingsJa implements _StringsAppBarSettingsEn {
 	@override String get title => '設定';
 }
 
+// Path: profilePage.tabs
+class _StringsProfilePageTabsJa implements _StringsProfilePageTabsEn {
+	_StringsProfilePageTabsJa._(this._root);
+
+	@override final _StringsJa _root; // ignore: unused_field
+
+	// Translations
+	@override String get tweet => 'つぶやき';
+	@override String get reply => '返信';
+	@override String get media => 'メディア';
+}
+
+// Path: profilePage.profileHeader
+class _StringsProfilePageProfileHeaderJa implements _StringsProfilePageProfileHeaderEn {
+	_StringsProfilePageProfileHeaderJa._(this._root);
+
+	@override final _StringsJa _root; // ignore: unused_field
+
+	// Translations
+	@override String get buttonText => 'プロフィールをいじる';
+}
+
 /// Flat map(s) containing all translations.
 /// Only for edge cases! For simple maps, use the map function of this library.
 
@@ -322,6 +390,10 @@ extension on Translations {
 			case 'socialMobilePage.changeLanguage': return 'Change language';
 			case 'locales.en': return 'English';
 			case 'locales.ja': return 'Japanese';
+			case 'profilePage.tabs.tweet': return 'tweet';
+			case 'profilePage.tabs.reply': return 'reply';
+			case 'profilePage.tabs.media': return 'media';
+			case 'profilePage.profileHeader.buttonText': return 'Edit your profile';
 			default: return null;
 		}
 	}
@@ -342,6 +414,10 @@ extension on _StringsJa {
 			case 'socialMobilePage.changeLanguage': return '言語を変えるどん';
 			case 'locales.en': return '英語';
 			case 'locales.ja': return '日本語';
+			case 'profilePage.tabs.tweet': return 'つぶやき';
+			case 'profilePage.tabs.reply': return '返信';
+			case 'profilePage.tabs.media': return 'メディア';
+			case 'profilePage.profileHeader.buttonText': return 'プロフィールをいじる';
 			default: return null;
 		}
 	}
