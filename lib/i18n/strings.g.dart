@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 24 (12 per locale)
+/// Strings: 18 (9 per locale)
 ///
-/// Built on 2024-06-20 at 03:33 UTC
+/// Built on 2024-07-14 at 09:18 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -150,7 +150,6 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	// Translations
 	late final _StringsAppBarEn appBar = _StringsAppBarEn._(_root);
 	late final _StringsNavigationBarEn navigationBar = _StringsNavigationBarEn._(_root);
-	late final _StringsSocialMobilePageEn socialMobilePage = _StringsSocialMobilePageEn._(_root);
 	Map<String, String> get locales => {
 		'en': 'English',
 		'ja': 'Japanese',
@@ -180,18 +179,6 @@ class _StringsNavigationBarEn {
 	String get profile => 'profile';
 	String get friends => 'friends';
 	String get settings => 'settings';
-}
-
-// Path: socialMobilePage
-class _StringsSocialMobilePageEn {
-	_StringsSocialMobilePageEn._(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-	String get pushExplanation => 'You have pushed the button this many times:';
-	String get languageExplanation => 'Your language is English now';
-	String get changeLanguage => 'Change language';
 }
 
 // Path: appBar.home
@@ -240,7 +227,6 @@ class _StringsJa implements Translations {
 	// Translations
 	@override late final _StringsAppBarJa appBar = _StringsAppBarJa._(_root);
 	@override late final _StringsNavigationBarJa navigationBar = _StringsNavigationBarJa._(_root);
-	@override late final _StringsSocialMobilePageJa socialMobilePage = _StringsSocialMobilePageJa._(_root);
 	@override Map<String, String> get locales => {
 		'en': '英語',
 		'ja': '日本語',
@@ -270,18 +256,6 @@ class _StringsNavigationBarJa implements _StringsNavigationBarEn {
 	@override String get profile => '君とは';
 	@override String get friends => '知り合い';
 	@override String get settings => 'せってー';
-}
-
-// Path: socialMobilePage
-class _StringsSocialMobilePageJa implements _StringsSocialMobilePageEn {
-	_StringsSocialMobilePageJa._(this._root);
-
-	@override final _StringsJa _root; // ignore: unused_field
-
-	// Translations
-	@override String get pushExplanation => 'ちみはこれくらい押したどん:';
-	@override String get languageExplanation => 'ちみの今の言語は日本語だどん';
-	@override String get changeLanguage => '言語を変えるどん';
 }
 
 // Path: appBar.home
@@ -317,9 +291,6 @@ extension on Translations {
 			case 'navigationBar.profile': return 'profile';
 			case 'navigationBar.friends': return 'friends';
 			case 'navigationBar.settings': return 'settings';
-			case 'socialMobilePage.pushExplanation': return 'You have pushed the button this many times:';
-			case 'socialMobilePage.languageExplanation': return 'Your language is English now';
-			case 'socialMobilePage.changeLanguage': return 'Change language';
 			case 'locales.en': return 'English';
 			case 'locales.ja': return 'Japanese';
 			default: return null;
@@ -337,9 +308,6 @@ extension on _StringsJa {
 			case 'navigationBar.profile': return '君とは';
 			case 'navigationBar.friends': return '知り合い';
 			case 'navigationBar.settings': return 'せってー';
-			case 'socialMobilePage.pushExplanation': return 'ちみはこれくらい押したどん:';
-			case 'socialMobilePage.languageExplanation': return 'ちみの今の言語は日本語だどん';
-			case 'socialMobilePage.changeLanguage': return '言語を変えるどん';
 			case 'locales.en': return '英語';
 			case 'locales.ja': return '日本語';
 			default: return null;

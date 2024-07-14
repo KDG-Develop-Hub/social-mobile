@@ -14,11 +14,6 @@
         "friends": "friends",
         "settings": "settings"
     },
-    "socialMobilePage": {
-        "pushExplanation": "You have pushed the button this many times:",
-        "languageExplanation": "Your language is English now",
-        "changeLanguage": "Change language"
-    },
     "locales(map)": {
         "en": "English",
         "ja": "Japanese"
