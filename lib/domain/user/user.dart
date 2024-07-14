@@ -17,5 +17,5 @@ abstract class User with _$User {
     @DateTimeConverter() DateTime? updatedAt,
   }) = _User;
 
-  factory User.fromJson(Map<String, dynamic> json) =>_$UserFromJson(json);
+  factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 }

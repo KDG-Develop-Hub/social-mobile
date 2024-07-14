@@ -8,7 +8,7 @@ abstract class Role with _$Role {
   const factory Role({
     required String id,
     required String name,
-}) = _Role;
+  }) = _Role;
 
-factory Role.fromJson(Map<String, dynamic> json) =>_$RoleFromJson(json);
+  factory Role.fromJson(Map<String, dynamic> json) => _$RoleFromJson(json);
 }
