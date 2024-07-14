@@ -19,7 +19,7 @@ class ProfileTab extends StatelessWidget {
           const SizedBox(width: 4),
           Text(
             tabName,
-            style: Theme.of(context).textTheme.bodyMedium,
+            style: Theme.of(context).textTheme.labelLarge,
           ),
         ],
       ),

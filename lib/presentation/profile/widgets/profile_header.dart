@@ -38,7 +38,7 @@ class ProfileHeader extends StatelessWidget {
                 ),
                 Text(
                   'imeankenshin',
-                  style: Theme.of(context).textTheme.labelSmall,
+                  style: Theme.of(context).textTheme.bodyLarge,
                 ),
               ],
             ),
@@ -48,7 +48,7 @@ class ProfileHeader extends StatelessWidget {
         ElevatedButton(
           style: ElevatedButton.styleFrom(
             foregroundColor: Theme.of(context).colorScheme.primary,
-            textStyle: Theme.of(context).textTheme.labelMedium,
+            textStyle: Theme.of(context).textTheme.labelLarge,
             side: BorderSide(
               color: Theme.of(context).colorScheme.outline,
             ),
@@ -61,7 +61,7 @@ class ProfileHeader extends StatelessWidget {
         const SizedBox(height: 16),
         Text(
           '小さな頭に大きな夢を持っています。エンジニアを目指す現役高校生じゃーい！',
-          style: Theme.of(context).textTheme.bodyLarge,
+          style: Theme.of(context).textTheme.bodyMedium,
           softWrap: true,
           maxLines: 2,
         ),
