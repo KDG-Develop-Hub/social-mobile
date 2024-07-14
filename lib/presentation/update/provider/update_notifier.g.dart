@@ -6,12 +6,12 @@ part of 'update_notifier.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$updateNotifierHash() => r'064940e86ba91a434826a1c24c9c161c92431242';
+String _$updateNotifierHash() => r'bcc1cd67d18e573ac6c161e7950121db7974ea46';
 
 /// See also [UpdateNotifier].
 @ProviderFor(UpdateNotifier)
 final updateNotifierProvider =
-    AutoDisposeNotifierProvider<UpdateNotifier, int>.internal(
+    AutoDisposeAsyncNotifierProvider<UpdateNotifier, List<Post>>.internal(
   UpdateNotifier.new,
   name: r'updateNotifierProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
@@ -21,6 +21,6 @@ final updateNotifierProvider =
   allTransitiveDependencies: null,
 );
 
-typedef _$UpdateNotifier = AutoDisposeNotifier<int>;
+typedef _$UpdateNotifier = AutoDisposeAsyncNotifier<List<Post>>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
