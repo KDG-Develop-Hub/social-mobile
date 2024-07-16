@@ -1,0 +1,73 @@
+import 'package:flutter/material.dart';
+import 'package:social_mobile/i18n/strings.g.dart';
+
+class ProfileHeader extends StatelessWidget {
+  const ProfileHeader({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final translations = Translations.of(context);
+    final profileScreenI18n = translations.profileScreen;
+    final textTheme = Theme.of(context).textTheme;
+    final colorScheme = Theme.of(context).colorScheme;
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          children: [
+            Container(
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                image: const DecorationImage(
+                  image: NetworkImage(
+                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR36cWx-s4D8DVd14R6CcqEa5WMed68mVEQ5w&s',
+                  ),
+                  fit: BoxFit.cover,
+                ),
+                borderRadius: BorderRadius.circular(16),
+              ),
+              height: 64,
+              width: 64,
+            ),
+            const SizedBox(width: 16),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  '大村健心',
+                  style: textTheme.headlineMedium,
+                ),
+                Text(
+                  'imeankenshin',
+                  style: textTheme.bodyLarge,
+                ),
+              ],
+            ),
+          ],
+        ),
+        const SizedBox(height: 16),
+        ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            foregroundColor: colorScheme.primary,
+            textStyle: textTheme.labelLarge,
+            side: BorderSide(
+              color: colorScheme.outline,
+            ),
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            elevation: 0,
+          ),
+          onPressed: () {},
+          child: Text(profileScreenI18n.profileHeader.buttonText),
+        ),
+        const SizedBox(height: 16),
+        Text(
+          '小さな頭に大きな夢を持っています。エンジニアを目指す現役高校生じゃーい！',
+          style: textTheme.bodyMedium,
+          softWrap: true,
+          maxLines: 2,
+        ),
+      ],
+    );
+  }
+}
