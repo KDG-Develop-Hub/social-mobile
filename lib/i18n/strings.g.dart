@@ -6,7 +6,7 @@
 /// Locales: 2
 /// Strings: 32 (16 per locale)
 ///
-/// Built on 2024-07-14 at 08:14 UTC
+/// Built on 2024-07-16 at 09:03 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -155,7 +155,7 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 		'en': 'English',
 		'ja': 'Japanese',
 	};
-	late final _StringsProfilePageEn profilePage = _StringsProfilePageEn._(_root);
+	late final _StringsProfileScreenEn profileScreen = _StringsProfileScreenEn._(_root);
 }
 
 // Path: appBar
@@ -195,15 +195,15 @@ class _StringsSocialMobilePageEn {
 	String get changeLanguage => 'Change language';
 }
 
-// Path: profilePage
-class _StringsProfilePageEn {
-	_StringsProfilePageEn._(this._root);
+// Path: profileScreen
+class _StringsProfileScreenEn {
+	_StringsProfileScreenEn._(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	late final _StringsProfilePageTabsEn tabs = _StringsProfilePageTabsEn._(_root);
-	late final _StringsProfilePageProfileHeaderEn profileHeader = _StringsProfilePageProfileHeaderEn._(_root);
+	late final _StringsProfileScreenTabsEn tabs = _StringsProfileScreenTabsEn._(_root);
+	late final _StringsProfileScreenProfileHeaderEn profileHeader = _StringsProfileScreenProfileHeaderEn._(_root);
 }
 
 // Path: appBar.home
@@ -226,9 +226,9 @@ class _StringsAppBarSettingsEn {
 	String get title => 'settings';
 }
 
-// Path: profilePage.tabs
-class _StringsProfilePageTabsEn {
-	_StringsProfilePageTabsEn._(this._root);
+// Path: profileScreen.tabs
+class _StringsProfileScreenTabsEn {
+	_StringsProfileScreenTabsEn._(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -238,9 +238,9 @@ class _StringsProfilePageTabsEn {
 	String get media => 'media';
 }
 
-// Path: profilePage.profileHeader
-class _StringsProfilePageProfileHeaderEn {
-	_StringsProfilePageProfileHeaderEn._(this._root);
+// Path: profileScreen.profileHeader
+class _StringsProfileScreenProfileHeaderEn {
+	_StringsProfileScreenProfileHeaderEn._(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -279,7 +279,7 @@ class _StringsJa implements Translations {
 		'en': '英語',
 		'ja': '日本語',
 	};
-	@override late final _StringsProfilePageJa profilePage = _StringsProfilePageJa._(_root);
+	@override late final _StringsProfileScreenJa profileScreen = _StringsProfileScreenJa._(_root);
 }
 
 // Path: appBar
@@ -319,15 +319,15 @@ class _StringsSocialMobilePageJa implements _StringsSocialMobilePageEn {
 	@override String get changeLanguage => '言語を変えるどん';
 }
 
-// Path: profilePage
-class _StringsProfilePageJa implements _StringsProfilePageEn {
-	_StringsProfilePageJa._(this._root);
+// Path: profileScreen
+class _StringsProfileScreenJa implements _StringsProfileScreenEn {
+	_StringsProfileScreenJa._(this._root);
 
 	@override final _StringsJa _root; // ignore: unused_field
 
 	// Translations
-	@override late final _StringsProfilePageTabsJa tabs = _StringsProfilePageTabsJa._(_root);
-	@override late final _StringsProfilePageProfileHeaderJa profileHeader = _StringsProfilePageProfileHeaderJa._(_root);
+	@override late final _StringsProfileScreenTabsJa tabs = _StringsProfileScreenTabsJa._(_root);
+	@override late final _StringsProfileScreenProfileHeaderJa profileHeader = _StringsProfileScreenProfileHeaderJa._(_root);
 }
 
 // Path: appBar.home
@@ -350,9 +350,9 @@ class _StringsAppBarSettingsJa implements _StringsAppBarSettingsEn {
 	@override String get title => '設定';
 }
 
-// Path: profilePage.tabs
-class _StringsProfilePageTabsJa implements _StringsProfilePageTabsEn {
-	_StringsProfilePageTabsJa._(this._root);
+// Path: profileScreen.tabs
+class _StringsProfileScreenTabsJa implements _StringsProfileScreenTabsEn {
+	_StringsProfileScreenTabsJa._(this._root);
 
 	@override final _StringsJa _root; // ignore: unused_field
 
@@ -362,9 +362,9 @@ class _StringsProfilePageTabsJa implements _StringsProfilePageTabsEn {
 	@override String get media => 'メディア';
 }
 
-// Path: profilePage.profileHeader
-class _StringsProfilePageProfileHeaderJa implements _StringsProfilePageProfileHeaderEn {
-	_StringsProfilePageProfileHeaderJa._(this._root);
+// Path: profileScreen.profileHeader
+class _StringsProfileScreenProfileHeaderJa implements _StringsProfileScreenProfileHeaderEn {
+	_StringsProfileScreenProfileHeaderJa._(this._root);
 
 	@override final _StringsJa _root; // ignore: unused_field
 
@@ -390,10 +390,10 @@ extension on Translations {
 			case 'socialMobilePage.changeLanguage': return 'Change language';
 			case 'locales.en': return 'English';
 			case 'locales.ja': return 'Japanese';
-			case 'profilePage.tabs.tweet': return 'tweet';
-			case 'profilePage.tabs.comment': return 'comment';
-			case 'profilePage.tabs.media': return 'media';
-			case 'profilePage.profileHeader.buttonText': return 'Edit your profile';
+			case 'profileScreen.tabs.tweet': return 'tweet';
+			case 'profileScreen.tabs.comment': return 'comment';
+			case 'profileScreen.tabs.media': return 'media';
+			case 'profileScreen.profileHeader.buttonText': return 'Edit your profile';
 			default: return null;
 		}
 	}
@@ -414,10 +414,10 @@ extension on _StringsJa {
 			case 'socialMobilePage.changeLanguage': return '言語を変えるどん';
 			case 'locales.en': return '英語';
 			case 'locales.ja': return '日本語';
-			case 'profilePage.tabs.tweet': return 'つぶやき';
-			case 'profilePage.tabs.comment': return 'コメント';
-			case 'profilePage.tabs.media': return 'メディア';
-			case 'profilePage.profileHeader.buttonText': return 'プロフィールをいじる';
+			case 'profileScreen.tabs.tweet': return 'つぶやき';
+			case 'profileScreen.tabs.comment': return 'コメント';
+			case 'profileScreen.tabs.media': return 'メディア';
+			case 'profileScreen.profileHeader.buttonText': return 'プロフィールをいじる';
 			default: return null;
 		}
 	}

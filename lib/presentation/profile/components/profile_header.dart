@@ -7,7 +7,7 @@ class ProfileHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final translations = Translations.of(context);
-    final profilePageI18n = translations.profilePage;
+    final profileScreenI18n = translations.profileScreen;
     final textTheme = Theme.of(context).textTheme;
     final colorScheme = Theme.of(context).colorScheme;
 
@@ -58,7 +58,7 @@ class ProfileHeader extends StatelessWidget {
             elevation: 0,
           ),
           onPressed: () {},
-          child: Text(profilePageI18n.profileHeader.buttonText),
+          child: Text(profileScreenI18n.profileHeader.buttonText),
         ),
         const SizedBox(height: 16),
         Text(

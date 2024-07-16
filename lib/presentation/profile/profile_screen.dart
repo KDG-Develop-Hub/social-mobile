@@ -10,7 +10,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final translations = Translations.of(context);
-    final profilePageI18n = translations.profilePage;
+    final profileScreenI18n = translations.profileScreen;
     final colorScheme = Theme.of(context).colorScheme;
 
     return DefaultTabController(
@@ -24,9 +24,9 @@ class ProfileScreen extends StatelessWidget {
             indicatorColor: colorScheme.primary,
             indicatorPadding: const EdgeInsets.symmetric(horizontal: 8),
             tabs: [
-              ProfileTab(tabName: profilePageI18n.tabs.tweet),
-              ProfileTab(tabName: profilePageI18n.tabs.comment),
-              ProfileTab(tabName: profilePageI18n.tabs.media),
+              ProfileTab(tabName: profileScreenI18n.tabs.tweet),
+              ProfileTab(tabName: profileScreenI18n.tabs.comment),
+              ProfileTab(tabName: profileScreenI18n.tabs.media),
             ],
           ),
         ),
