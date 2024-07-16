@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:social_mobile/i18n/strings.g.dart';
-import 'package:social_mobile/presentation/profile/widgets/profile_header.dart';
-import 'package:social_mobile/presentation/profile/widgets/profile_tab.dart';
-import 'package:social_mobile/presentation/profile/widgets/profile_tabs_contents.dart';
+import 'package:social_mobile/presentation/profile/components/profile_header.dart';
+import 'package:social_mobile/presentation/profile/components/profile_tab.dart';
+import 'package:social_mobile/presentation/profile/components/profile_tabs_contents.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -11,6 +11,7 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final translations = Translations.of(context);
     final profilePageI18n = translations.profilePage;
+    final colorScheme = Theme.of(context).colorScheme;
 
     return DefaultTabController(
       length: 3,
@@ -20,7 +21,7 @@ class ProfileScreen extends StatelessWidget {
           toolbarHeight: 252,
           bottom: TabBar(
             padding: const EdgeInsets.only(top: 16, right: 20, left: 20),
-            indicatorColor: Theme.of(context).colorScheme.primary,
+            indicatorColor: colorScheme.primary,
             indicatorPadding: const EdgeInsets.symmetric(horizontal: 8),
             tabs: [
               ProfileTab(tabName: profilePageI18n.tabs.tweet),

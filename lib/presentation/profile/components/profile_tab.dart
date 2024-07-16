@@ -11,6 +11,7 @@ class ProfileTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
     return Tab(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -19,7 +20,7 @@ class ProfileTab extends StatelessWidget {
           const SizedBox(width: 4),
           Text(
             tabName,
-            style: Theme.of(context).textTheme.labelLarge,
+            style: textTheme.labelLarge,
           ),
         ],
       ),

@@ -8,6 +8,8 @@ class ProfileHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     final translations = Translations.of(context);
     final profilePageI18n = translations.profilePage;
+    final textTheme = Theme.of(context).textTheme;
+    final colorScheme = Theme.of(context).colorScheme;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -34,11 +36,11 @@ class ProfileHeader extends StatelessWidget {
               children: [
                 Text(
                   '大村健心',
-                  style: Theme.of(context).textTheme.headlineMedium,
+                  style: textTheme.headlineMedium,
                 ),
                 Text(
                   'imeankenshin',
-                  style: Theme.of(context).textTheme.bodyLarge,
+                  style: textTheme.bodyLarge,
                 ),
               ],
             ),
@@ -47,10 +49,10 @@ class ProfileHeader extends StatelessWidget {
         const SizedBox(height: 16),
         ElevatedButton(
           style: ElevatedButton.styleFrom(
-            foregroundColor: Theme.of(context).colorScheme.primary,
-            textStyle: Theme.of(context).textTheme.labelLarge,
+            foregroundColor: colorScheme.primary,
+            textStyle: textTheme.labelLarge,
             side: BorderSide(
-              color: Theme.of(context).colorScheme.outline,
+              color: colorScheme.outline,
             ),
             padding: const EdgeInsets.symmetric(horizontal: 16),
             elevation: 0,
@@ -61,7 +63,7 @@ class ProfileHeader extends StatelessWidget {
         const SizedBox(height: 16),
         Text(
           '小さな頭に大きな夢を持っています。エンジニアを目指す現役高校生じゃーい！',
-          style: Theme.of(context).textTheme.bodyMedium,
+          style: textTheme.bodyMedium,
           softWrap: true,
           maxLines: 2,
         ),
