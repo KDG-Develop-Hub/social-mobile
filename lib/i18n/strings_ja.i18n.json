@@ -23,7 +23,7 @@
         "en": "英語",
         "ja": "日本語"
     },
-    "profilePage": {
+    "profileScreen": {
         "tabs": {
             "tweet": "つぶやき",
             "comment": "コメント",
