@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 18 (9 per locale)
+/// Strings: 30 (15 per locale)
 ///
-/// Built on 2024-07-14 at 09:18 UTC
+/// Built on 2024-07-18 at 08:08 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -150,6 +150,7 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	// Translations
 	late final _StringsAppBarEn appBar = _StringsAppBarEn._(_root);
 	late final _StringsNavigationBarEn navigationBar = _StringsNavigationBarEn._(_root);
+	late final _StringsUpdateScreenEn updateScreen = _StringsUpdateScreenEn._(_root);
 	Map<String, String> get locales => {
 		'en': 'English',
 		'ja': 'Japanese',
@@ -181,6 +182,16 @@ class _StringsNavigationBarEn {
 	String get settings => 'settings';
 }
 
+// Path: updateScreen
+class _StringsUpdateScreenEn {
+	_StringsUpdateScreenEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	late final _StringsUpdateScreenPostEn post = _StringsUpdateScreenPostEn._(_root);
+}
+
 // Path: appBar.home
 class _StringsAppBarHomeEn {
 	_StringsAppBarHomeEn._(this._root);
@@ -199,6 +210,31 @@ class _StringsAppBarSettingsEn {
 
 	// Translations
 	String get title => 'settings';
+}
+
+// Path: updateScreen.post
+class _StringsUpdateScreenPostEn {
+	_StringsUpdateScreenPostEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	late final _StringsUpdateScreenPostPopUpMenuEn popUpMenu = _StringsUpdateScreenPostPopUpMenuEn._(_root);
+}
+
+// Path: updateScreen.post.popUpMenu
+class _StringsUpdateScreenPostPopUpMenuEn {
+	_StringsUpdateScreenPostPopUpMenuEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get reaction => 'add reaction';
+	String get comment => 'comment';
+	String get bookMark => 'book mark';
+	String get share => 'share';
+	String get delete => 'delete';
+	String get report => 'report';
 }
 
 // Path: <root>
@@ -227,6 +263,7 @@ class _StringsJa implements Translations {
 	// Translations
 	@override late final _StringsAppBarJa appBar = _StringsAppBarJa._(_root);
 	@override late final _StringsNavigationBarJa navigationBar = _StringsNavigationBarJa._(_root);
+	@override late final _StringsUpdateScreenJa updateScreen = _StringsUpdateScreenJa._(_root);
 	@override Map<String, String> get locales => {
 		'en': '英語',
 		'ja': '日本語',
@@ -258,6 +295,16 @@ class _StringsNavigationBarJa implements _StringsNavigationBarEn {
 	@override String get settings => 'せってー';
 }
 
+// Path: updateScreen
+class _StringsUpdateScreenJa implements _StringsUpdateScreenEn {
+	_StringsUpdateScreenJa._(this._root);
+
+	@override final _StringsJa _root; // ignore: unused_field
+
+	// Translations
+	@override late final _StringsUpdateScreenPostJa post = _StringsUpdateScreenPostJa._(_root);
+}
+
 // Path: appBar.home
 class _StringsAppBarHomeJa implements _StringsAppBarHomeEn {
 	_StringsAppBarHomeJa._(this._root);
@@ -278,6 +325,31 @@ class _StringsAppBarSettingsJa implements _StringsAppBarSettingsEn {
 	@override String get title => '設定';
 }
 
+// Path: updateScreen.post
+class _StringsUpdateScreenPostJa implements _StringsUpdateScreenPostEn {
+	_StringsUpdateScreenPostJa._(this._root);
+
+	@override final _StringsJa _root; // ignore: unused_field
+
+	// Translations
+	@override late final _StringsUpdateScreenPostPopUpMenuJa popUpMenu = _StringsUpdateScreenPostPopUpMenuJa._(_root);
+}
+
+// Path: updateScreen.post.popUpMenu
+class _StringsUpdateScreenPostPopUpMenuJa implements _StringsUpdateScreenPostPopUpMenuEn {
+	_StringsUpdateScreenPostPopUpMenuJa._(this._root);
+
+	@override final _StringsJa _root; // ignore: unused_field
+
+	// Translations
+	@override String get reaction => '絵文字を追加';
+	@override String get comment => 'コメント';
+	@override String get bookMark => 'ブックマーク';
+	@override String get share => '共有する';
+	@override String get delete => '削除する';
+	@override String get report => '報告する';
+}
+
 /// Flat map(s) containing all translations.
 /// Only for edge cases! For simple maps, use the map function of this library.
 
@@ -291,6 +363,12 @@ extension on Translations {
 			case 'navigationBar.profile': return 'profile';
 			case 'navigationBar.friends': return 'friends';
 			case 'navigationBar.settings': return 'settings';
+			case 'updateScreen.post.popUpMenu.reaction': return 'add reaction';
+			case 'updateScreen.post.popUpMenu.comment': return 'comment';
+			case 'updateScreen.post.popUpMenu.bookMark': return 'book mark';
+			case 'updateScreen.post.popUpMenu.share': return 'share';
+			case 'updateScreen.post.popUpMenu.delete': return 'delete';
+			case 'updateScreen.post.popUpMenu.report': return 'report';
 			case 'locales.en': return 'English';
 			case 'locales.ja': return 'Japanese';
 			default: return null;
@@ -308,6 +386,12 @@ extension on _StringsJa {
 			case 'navigationBar.profile': return '君とは';
 			case 'navigationBar.friends': return '知り合い';
 			case 'navigationBar.settings': return 'せってー';
+			case 'updateScreen.post.popUpMenu.reaction': return '絵文字を追加';
+			case 'updateScreen.post.popUpMenu.comment': return 'コメント';
+			case 'updateScreen.post.popUpMenu.bookMark': return 'ブックマーク';
+			case 'updateScreen.post.popUpMenu.share': return '共有する';
+			case 'updateScreen.post.popUpMenu.delete': return '削除する';
+			case 'updateScreen.post.popUpMenu.report': return '報告する';
 			case 'locales.en': return '英語';
 			case 'locales.ja': return '日本語';
 			default: return null;

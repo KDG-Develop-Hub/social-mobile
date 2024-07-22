@@ -14,6 +14,18 @@
         "friends": "friends",
         "settings": "settings"
     },
+    "updateScreen": {
+        "post": {
+            "popUpMenu": {
+                "reaction": "add reaction",
+                "comment": "comment",
+                "bookMark": "book mark",
+                "share": "share",
+                "delete": "delete",
+                "report": "report"
+            }
+        }
+    },
     "locales(map)": {
         "en": "English",
         "ja": "Japanese"
