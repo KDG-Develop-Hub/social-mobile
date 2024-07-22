@@ -1,9 +1,14 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:gap/gap.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:social_mobile/domain/post/post.dart';
+import 'package:social_mobile/presentation/components/post_card_menu.dart';
+import 'package:social_mobile/presentation/components/post_icon_button.dart';
+import 'package:social_mobile/utils/gen/assets.gen.dart';
 
-class PostCard extends StatelessWidget {
+class PostCard extends HookConsumerWidget {
   const PostCard({
     super.key,
     required this.post,
@@ -13,8 +18,9 @@ class PostCard extends StatelessWidget {
   final void Function() onPostTap;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final textStyle = Theme.of(context).textTheme;
+    final isBookMarked = useState(false);
 
     return GestureDetector(
       onTap: onPostTap,
@@ -53,17 +59,7 @@ class PostCard extends StatelessWidget {
                           style: textStyle.labelMedium,
                         ),
                         const Spacer(),
-                        SizedBox(
-                          width: 18,
-                          height: 18,
-                          child: IconButton(
-                            icon: const Icon(Icons.more_vert),
-                            iconSize: 18,
-                            constraints: const BoxConstraints(),
-                            padding: EdgeInsets.zero,
-                            onPressed: () {},
-                          ),
-                        ),
+                        const PostCardMenu(),
                       ],
                     ),
                     Text(
@@ -71,6 +67,28 @@ class PostCard extends StatelessWidget {
                       style: textStyle.bodyMedium,
                       overflow: TextOverflow.ellipsis,
                       maxLines: 5,
+                    ),
+                    const Gap(6),
+                    Wrap(
+                      spacing: 10,
+                      children: [
+                        PostIconButton(
+                          icon: Assets.icons.comment,
+                          onPressed: () {},
+                        ),
+                        PostIconButton(
+                          icon: Assets.icons.reaction,
+                          onPressed: () {},
+                        ),
+                        PostIconButton(
+                          icon: isBookMarked.value
+                              ? Assets.icons.bookmarked
+                              : Assets.icons.bookmark,
+                          onPressed: () {
+                            isBookMarked.value = !isBookMarked.value;
+                          },
+                        ),
+                      ],
                     ),
                   ],
                 ),
