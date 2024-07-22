@@ -29,5 +29,15 @@
     "locales(map)": {
         "en": "English",
         "ja": "Japanese"
+    },
+    "profileScreen": {
+        "tabs": {
+            "tweet": "tweet",
+            "comment": "comment",
+            "media": "media"
+        },
+        "profileHeader": {
+            "buttonText": "Edit your profile"
+        }
     }
 }

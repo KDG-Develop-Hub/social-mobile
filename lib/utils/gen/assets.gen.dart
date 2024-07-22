@@ -25,6 +25,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/friends_icon.svg
   String get friendsIcon => 'assets/icons/friends_icon.svg';
 
+  /// File path: assets/icons/message_circle_reply.svg
+  String get messageCircleReply => 'assets/icons/message_circle_reply.svg';
+
   /// File path: assets/icons/profile_icon.svg
   String get profileIcon => 'assets/icons/profile_icon.svg';
 
@@ -53,6 +56,7 @@ class $AssetsIconsGen {
         comment,
         flag,
         friendsIcon,
+        messageCircleReply,
         profileIcon,
         reaction,
         searchIcon,
