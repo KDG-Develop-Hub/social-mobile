@@ -19,7 +19,17 @@ class MockPostRepositoryImpl implements PostRepository {
 
   @override
   Future<List<Post>> fetchPosts() async {
-    final posts = List.generate(10, (index) => post);
+    final posts = List.generate(
+      10,
+      (index) => Post(
+        id: index.toString(),
+        userId: index.toString(),
+        userName: 'Omura Kenshin',
+        userImageUrl: 'https://picsum.photos/200',
+        content: generateRandomString(),
+        createdAt: DateTime.now(),
+      ),
+    );
     await Future<void>.delayed(const Duration(seconds: 3));
     return posts;
   }
