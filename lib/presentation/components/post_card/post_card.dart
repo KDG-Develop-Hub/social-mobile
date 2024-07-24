@@ -4,8 +4,8 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:social_mobile/domain/post/post.dart';
-import 'package:social_mobile/presentation/components/post_card_menu.dart';
-import 'package:social_mobile/presentation/components/post_icon_button.dart';
+import 'package:social_mobile/presentation/components/post_card/post_icon_button.dart';
+import 'package:social_mobile/presentation/components/post_card/post_menu_bottom_sheet.dart';
 import 'package:social_mobile/utils/gen/assets.gen.dart';
 
 class PostCard extends HookConsumerWidget {
@@ -21,6 +21,14 @@ class PostCard extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final textStyle = Theme.of(context).textTheme;
     final isBookMarked = useState(false);
+
+    Future<void> showPostMenuBottomSheet() async {
+      await showModalBottomSheet<void>(
+        context: context,
+        useRootNavigator: true,
+        builder: (_) => const PostMenuBottomSheet(),
+      );
+    }
 
     return GestureDetector(
       onTap: onPostTap,
@@ -59,7 +67,19 @@ class PostCard extends HookConsumerWidget {
                           style: textStyle.labelMedium,
                         ),
                         const Spacer(),
-                        const PostCardMenu(),
+                        SizedBox(
+                          width: 18,
+                          height: 18,
+                          child: IconButton(
+                            icon: const Icon(Icons.more_vert),
+                            iconSize: 18,
+                            constraints: const BoxConstraints(),
+                            padding: EdgeInsets.zero,
+                            onPressed: () async {
+                              await showPostMenuBottomSheet();
+                            },
+                          ),
+                        ),
                       ],
                     ),
                     Text(
