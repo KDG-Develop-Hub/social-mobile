@@ -7,6 +7,7 @@ import 'package:social_mobile/domain/post/post.dart';
 import 'package:social_mobile/presentation/components/post_card/post_icon_button.dart';
 import 'package:social_mobile/presentation/components/post_card/post_menu_bottom_sheet.dart';
 import 'package:social_mobile/utils/gen/assets.gen.dart';
+import 'package:social_mobile/utils/helpers/date_time_format.dart';
 
 class PostCard extends HookConsumerWidget {
   const PostCard({
@@ -63,7 +64,7 @@ class PostCard extends HookConsumerWidget {
                         ),
                         const Gap(8),
                         Text(
-                          '今日の12時34分',
+                          formatDistanceFromNow(post.createdAt),
                           style: textStyle.labelMedium,
                         ),
                         const Spacer(),
