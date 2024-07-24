@@ -17,8 +17,13 @@ class PostIconButton extends StatelessWidget {
       height: 20,
       child: IconButton(
         padding: EdgeInsets.zero,
+        iconSize: 20,
         onPressed: onPressed,
-        icon: SvgPicture.asset(icon),
+        icon: SvgPicture.asset(
+          icon,
+          width: 20,
+          height: 20,
+        ),
       ),
     );
   }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:social_mobile/i18n/strings.g.dart';
 import 'package:social_mobile/presentation/components/loading.dart';
-import 'package:social_mobile/presentation/components/post_card.dart';
+import 'package:social_mobile/presentation/components/post_card/post_card.dart';
 import 'package:social_mobile/presentation/update/provider/update_notifier.dart';
 
 class UpdateScreen extends ConsumerWidget {
