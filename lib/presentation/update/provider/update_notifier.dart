@@ -20,4 +20,9 @@ class UpdateNotifier extends _$UpdateNotifier {
     }
     return posts;
   }
+
+  Future<void> refresh() async {
+    final posts = await build();
+    state = AsyncData(posts);
+  }
 }
