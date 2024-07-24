@@ -23,11 +23,15 @@ class UpdateScreen extends ConsumerWidget {
         centerTitle: false,
       ),
       body: switch (state) {
-        AsyncData(:final value) => ListView.builder(
-            itemCount: value.length,
-            itemBuilder: (_, index) => PostCard(
-              post: value[index],
-              onPostTap: () {},
+        AsyncData(:final value) => RefreshIndicator(
+            onRefresh: () async =>
+                ref.read(updateNotifierProvider.notifier).refresh(),
+            child: ListView.builder(
+              itemCount: value.length,
+              itemBuilder: (_, index) => PostCard(
+                post: value[index],
+                onPostTap: () {},
+              ),
             ),
           ),
         AsyncLoading() => const Loading(),
