@@ -23,6 +23,7 @@ class ProfileScreen extends StatelessWidget {
             padding: const EdgeInsets.only(top: 16, right: 20, left: 20),
             indicatorColor: colorScheme.primary,
             indicatorPadding: const EdgeInsets.symmetric(horizontal: 8),
+            labelPadding: const EdgeInsets.symmetric(horizontal: 4),
             tabs: [
               ProfileTab(tabName: profileScreenI18n.tabs.tweet),
               ProfileTab(tabName: profileScreenI18n.tabs.comment),

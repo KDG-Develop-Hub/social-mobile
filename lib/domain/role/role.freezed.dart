@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'user_entity.dart';
+part of 'role.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,29 +14,32 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-/// @nodoc
-mixin _$UserEntity {
-  String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $UserEntityCopyWith<UserEntity> get copyWith =>
-      throw _privateConstructorUsedError;
+Role _$RoleFromJson(Map<String, dynamic> json) {
+  return _Role.fromJson(json);
 }
 
 /// @nodoc
-abstract class $UserEntityCopyWith<$Res> {
-  factory $UserEntityCopyWith(
-          UserEntity value, $Res Function(UserEntity) then) =
-      _$UserEntityCopyWithImpl<$Res, UserEntity>;
+mixin _$Role {
+  String get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $RoleCopyWith<Role> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $RoleCopyWith<$Res> {
+  factory $RoleCopyWith(Role value, $Res Function(Role) then) =
+      _$RoleCopyWithImpl<$Res, Role>;
   @useResult
   $Res call({String id, String name});
 }
 
 /// @nodoc
-class _$UserEntityCopyWithImpl<$Res, $Val extends UserEntity>
-    implements $UserEntityCopyWith<$Res> {
-  _$UserEntityCopyWithImpl(this._value, this._then);
+class _$RoleCopyWithImpl<$Res, $Val extends Role>
+    implements $RoleCopyWith<$Res> {
+  _$RoleCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -63,22 +66,20 @@ class _$UserEntityCopyWithImpl<$Res, $Val extends UserEntity>
 }
 
 /// @nodoc
-abstract class _$$UserEntityImplCopyWith<$Res>
-    implements $UserEntityCopyWith<$Res> {
-  factory _$$UserEntityImplCopyWith(
-          _$UserEntityImpl value, $Res Function(_$UserEntityImpl) then) =
-      __$$UserEntityImplCopyWithImpl<$Res>;
+abstract class _$$RoleImplCopyWith<$Res> implements $RoleCopyWith<$Res> {
+  factory _$$RoleImplCopyWith(
+          _$RoleImpl value, $Res Function(_$RoleImpl) then) =
+      __$$RoleImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String id, String name});
 }
 
 /// @nodoc
-class __$$UserEntityImplCopyWithImpl<$Res>
-    extends _$UserEntityCopyWithImpl<$Res, _$UserEntityImpl>
-    implements _$$UserEntityImplCopyWith<$Res> {
-  __$$UserEntityImplCopyWithImpl(
-      _$UserEntityImpl _value, $Res Function(_$UserEntityImpl) _then)
+class __$$RoleImplCopyWithImpl<$Res>
+    extends _$RoleCopyWithImpl<$Res, _$RoleImpl>
+    implements _$$RoleImplCopyWith<$Res> {
+  __$$RoleImplCopyWithImpl(_$RoleImpl _value, $Res Function(_$RoleImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -87,7 +88,7 @@ class __$$UserEntityImplCopyWithImpl<$Res>
     Object? id = null,
     Object? name = null,
   }) {
-    return _then(_$UserEntityImpl(
+    return _then(_$RoleImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -101,9 +102,12 @@ class __$$UserEntityImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
+@JsonSerializable()
+class _$RoleImpl implements _Role {
+  const _$RoleImpl({required this.id, required this.name});
 
-class _$UserEntityImpl implements _UserEntity {
-  const _$UserEntityImpl({required this.id, required this.name});
+  factory _$RoleImpl.fromJson(Map<String, dynamic> json) =>
+      _$$RoleImplFromJson(json);
 
   @override
   final String id;
@@ -112,32 +116,41 @@ class _$UserEntityImpl implements _UserEntity {
 
   @override
   String toString() {
-    return 'UserEntity(id: $id, name: $name)';
+    return 'Role(id: $id, name: $name)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UserEntityImpl &&
+            other is _$RoleImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, name);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UserEntityImplCopyWith<_$UserEntityImpl> get copyWith =>
-      __$$UserEntityImplCopyWithImpl<_$UserEntityImpl>(this, _$identity);
+  _$$RoleImplCopyWith<_$RoleImpl> get copyWith =>
+      __$$RoleImplCopyWithImpl<_$RoleImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$RoleImplToJson(
+      this,
+    );
+  }
 }
 
-abstract class _UserEntity implements UserEntity {
-  const factory _UserEntity(
-      {required final String id,
-      required final String name}) = _$UserEntityImpl;
+abstract class _Role implements Role {
+  const factory _Role({required final String id, required final String name}) =
+      _$RoleImpl;
+
+  factory _Role.fromJson(Map<String, dynamic> json) = _$RoleImpl.fromJson;
 
   @override
   String get id;
@@ -145,6 +158,6 @@ abstract class _UserEntity implements UserEntity {
   String get name;
   @override
   @JsonKey(ignore: true)
-  _$$UserEntityImplCopyWith<_$UserEntityImpl> get copyWith =>
+  _$$RoleImplCopyWith<_$RoleImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

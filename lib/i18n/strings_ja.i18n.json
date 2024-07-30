@@ -14,10 +14,17 @@
         "friends": "知り合い",
         "settings": "せってー"
     },
-    "socialMobilePage": {
-        "pushExplanation": "ちみはこれくらい押したどん:",
-        "languageExplanation": "ちみの今の言語は日本語だどん",
-        "changeLanguage": "言語を変えるどん"
+    "updateScreen": {
+        "post": {
+            "popUpMenu": {
+                "reaction": "絵文字を追加",
+                "comment": "コメント",
+                "bookMark": "ブックマーク",
+                "share": "共有する",
+                "delete": "削除する",
+                "report": "報告する"
+            }
+        }
     },
     "locales(map)": {
         "en": "英語",
