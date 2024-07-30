@@ -30,7 +30,7 @@ class PostMenuButton extends StatelessWidget {
           height: 19,
         ),
         style: TextButton.styleFrom(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 8),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8),
           ),
