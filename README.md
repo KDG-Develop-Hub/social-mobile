@@ -22,16 +22,15 @@ ClickUpに招待されていない場合、小林春か大村健心か塩野結�
 
 5. 環境変数ファイルを正しい位置に配置する
 
-> [!WARNING]
-> 配置するファイルを間違えないで
+下記コマンドを実行
+4行全てをコピーして一度に実行してください。
+```
 
-`dart_defines/dev/`配下にある`google-services.json`を`android/app/src/dev/`配下に移動する
-`dart_defines/dev/`配下にある`GoogleService-Info.plist`を`ios/dev/`配下に移動する
-
-`dart_defines/prod/`配下にある`google-services.json`を`android/app/src/prod/`配下に移動する
-`dart_defines/prod/`配下にある`GoogleService-Info.plist`を`ios/prod/`配下に移動する
-
-完了したら、dart_definesフォルダからdevフォルダとprodフォルダを削除する
+mv dart_defines/dev/google-services.json android/app/src/dev/ && \
+mv dart_defines/dev/GoogleService-Info.plist ios/dev/ && \
+mv dart_defines/prod/google-services.json android/app/src/prod/ && \
+mv dart_defines/prod/GoogleService-Info.plist ios/prod/
+```
 
 6. iosのスクリプトに実行権限を与える
 
