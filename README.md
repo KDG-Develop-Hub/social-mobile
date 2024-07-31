@@ -17,19 +17,22 @@ flutter pub get
 
 4. 環境変数のダウンロード
 
-ClickUpの[オンボーディングドキュメント](https://app.clickup.com/9003252999/v/dc/8ca5f87-618/8ca5f87-318)からdart_defines.zipをダウンロードし、解凍したフォルダをsocial_mobileプロジェクトのルートに設置
+ClickUpの[オンボーディングドキュメント](https://app.clickup.com/9003252999/v/dc/8ca5f87-618/8ca5f87-318)からdart_defines.zipをダウンロードし、**解凍したフォルダをsocial_mobileプロジェクトのルートに設置**
 ClickUpに招待されていない場合、小林春か大村健心か塩野結に連絡
 
 5. 環境変数ファイルを正しい位置に配置する
 
 下記コマンドを実行
-4行全てをコピーして一度に実行してください。
+6行全てをコピーして一度に実行してください。
 ```
 
 mv dart_defines/dev/google-services.json android/app/src/dev/ && \
 mv dart_defines/dev/GoogleService-Info.plist ios/dev/ && \
 mv dart_defines/prod/google-services.json android/app/src/prod/ && \
-mv dart_defines/prod/GoogleService-Info.plist ios/prod/
+mv dart_defines/prod/GoogleService-Info.plist ios/prod/ && \
+rm -r dart_defines/dev && \
+rm -r dart_defines/prod
+
 ```
 
 6. iosのスクリプトに実行権限を与える
