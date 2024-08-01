@@ -27,7 +27,7 @@ class PostCard extends HookConsumerWidget {
       await showModalBottomSheet<void>(
         context: context,
         useRootNavigator: true,
-        builder: (_) => const PostMenuBottomSheet(),
+        builder: (_) => PostMenuBottomSheet(post: post),
       );
     }
 
