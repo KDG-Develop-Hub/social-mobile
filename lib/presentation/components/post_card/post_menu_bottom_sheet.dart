@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
-import 'package:share_plus/share_plus.dart';
 import 'package:social_mobile/domain/post/post.dart';
 import 'package:social_mobile/i18n/strings.g.dart';
 import 'package:social_mobile/presentation/components/post_card/post_menu_button.dart';
 import 'package:social_mobile/utils/gen/assets.gen.dart';
+import 'package:social_mobile/utils/helpers/share_post.dart';
 
 enum PostMenuOption {
   edit,
@@ -68,10 +68,7 @@ class PostMenuBottomSheet extends StatelessWidget {
               PostMenuButton(
                 onPressed: () async {
                   context.pop();
-                  await Share.share(
-                    '${post.userName} posted "${post.content}".',
-                    subject: 'You can share the post!',
-                  );
+                  await sharePost(post);
                 },
                 icon: Assets.icons.share,
                 label: translations.share,
