@@ -68,7 +68,7 @@ class PostMenuBottomSheet extends StatelessWidget {
               PostMenuButton(
                 onPressed: () {
                   context.pop();
-                  sharePost(post);
+                  ShareService.sharePost(post);
                 },
                 icon: Assets.icons.share,
                 label: translations.share,
