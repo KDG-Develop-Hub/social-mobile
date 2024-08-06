@@ -66,9 +66,9 @@ class PostMenuBottomSheet extends StatelessWidget {
                 label: translations.bookMark,
               ),
               PostMenuButton(
-                onPressed: () async {
+                onPressed: () {
                   context.pop();
-                  await sharePost(post);
+                  sharePost(post);
                 },
                 icon: Assets.icons.share,
                 label: translations.share,
