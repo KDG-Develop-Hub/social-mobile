@@ -5,7 +5,7 @@ import 'package:social_mobile/domain/post/post.dart';
 import 'package:social_mobile/i18n/strings.g.dart';
 import 'package:social_mobile/presentation/components/post_card/post_menu_button.dart';
 import 'package:social_mobile/utils/gen/assets.gen.dart';
-import 'package:social_mobile/utils/helpers/share_post.dart';
+import 'package:social_mobile/utils/helpers/share_service.dart';
 
 enum PostMenuOption {
   edit,
