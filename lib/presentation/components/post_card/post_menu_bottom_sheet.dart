@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
+import 'package:social_mobile/domain/post/post.dart';
 import 'package:social_mobile/i18n/strings.g.dart';
 import 'package:social_mobile/presentation/components/post_card/post_menu_button.dart';
 import 'package:social_mobile/utils/gen/assets.gen.dart';
+import 'package:social_mobile/utils/helpers/share_service.dart';
 
 enum PostMenuOption {
   edit,
@@ -14,7 +17,12 @@ enum PostMenuOption {
 }
 
 class PostMenuBottomSheet extends StatelessWidget {
-  const PostMenuBottomSheet({super.key});
+  const PostMenuBottomSheet({
+    super.key,
+    required this.post,
+  });
+
+  final Post post;
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +66,10 @@ class PostMenuBottomSheet extends StatelessWidget {
                 label: translations.bookMark,
               ),
               PostMenuButton(
-                onPressed: () {},
+                onPressed: () {
+                  context.pop();
+                  ShareService.sharePost(post);
+                },
                 icon: Assets.icons.share,
                 label: translations.share,
               ),
