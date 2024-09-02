@@ -15,6 +15,9 @@ _$PostImpl _$$PostImplFromJson(Map<String, dynamic> json) => _$PostImpl(
       imageUrls: (json['imageUrls'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
+      reactions: (json['reactions'] as List<dynamic>?)
+          ?.map((e) => Reaction.fromJson(e as Map<String, dynamic>))
+          .toList(),
       replyIds: (json['replyIds'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
@@ -32,6 +35,7 @@ Map<String, dynamic> _$$PostImplToJson(_$PostImpl instance) =>
       'userImageUrl': instance.userImageUrl,
       'content': instance.content,
       'imageUrls': instance.imageUrls,
+      'reactions': instance.reactions,
       'replyIds': instance.replyIds,
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),
       'updatedAt': _$JsonConverterToJson<String, DateTime>(
