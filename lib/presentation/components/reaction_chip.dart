@@ -32,6 +32,10 @@ class ReactionChip extends ConsumerWidget {
       ),
       labelPadding: const EdgeInsets.only(left: 6, right: 8),
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+      color: MaterialStateProperty.all(
+        selected ? colorTheme.secondaryContainer : colorTheme.surfaceVariant,
+      ),
+      side: BorderSide.none,
       selected: selected,
       onSelected: (value) {
         onEmojiTap(onSelected: value);
