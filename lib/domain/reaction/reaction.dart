@@ -10,7 +10,8 @@ abstract class Reaction with _$Reaction {
     required String postId,
     required List<String> userIds,
     required String emoji,
-}) = _Reaction;
+  }) = _Reaction;
 
-factory Reaction.fromJson(Map<String, dynamic> json) =>_$ReactionFromJson(json);
+  factory Reaction.fromJson(Map<String, dynamic> json) =>
+      _$ReactionFromJson(json);
 }
