@@ -31,6 +31,12 @@ class UpdateScreen extends ConsumerWidget {
               itemBuilder: (_, index) => PostCard(
                 post: value[index],
                 onPostTap: () {},
+                onReactionTap: (reaction, {required hasReact}) async {
+                  await ref.read(updateNotifierProvider.notifier).editReaction(
+                        hasReact: hasReact,
+                        reaction: reaction,
+                      );
+                },
               ),
             ),
           ),
