@@ -1,9 +1,9 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-part 'update_notifier.g.dart';
+part 'home_notifier.g.dart';
 
 @riverpod
-class UpdateNotifier extends _$UpdateNotifier {
+class HomeNotifier extends _$HomeNotifier {
   @override
   int build() {
     return 0;
