@@ -14,10 +14,17 @@
         "friends": "friends",
         "settings": "settings"
     },
-    "socialMobilePage": {
-        "pushExplanation": "You have pushed the button this many times:",
-        "languageExplanation": "Your language is English now",
-        "changeLanguage": "Change language"
+    "updateScreen": {
+        "post": {
+            "popUpMenu": {
+                "reaction": "add reaction",
+                "comment": "comment",
+                "bookMark": "book mark",
+                "share": "share",
+                "delete": "delete",
+                "report": "report"
+            }
+        }
     },
     "locales(map)": {
         "en": "English",

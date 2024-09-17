@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 32 (16 per locale)
+/// Strings: 38 (19 per locale)
 ///
-/// Built on 2024-09-13 at 07:05 UTC
+/// Built on 2024-09-17 at 08:32 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -150,7 +150,7 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	// Translations
 	late final _StringsAppBarEn appBar = _StringsAppBarEn._(_root);
 	late final _StringsNavigationBarEn navigationBar = _StringsNavigationBarEn._(_root);
-	late final _StringsSocialMobilePageEn socialMobilePage = _StringsSocialMobilePageEn._(_root);
+	late final _StringsUpdateScreenEn updateScreen = _StringsUpdateScreenEn._(_root);
 	Map<String, String> get locales => {
 		'en': 'English',
 		'ja': 'Japanese',
@@ -183,16 +183,14 @@ class _StringsNavigationBarEn {
 	String get settings => 'settings';
 }
 
-// Path: socialMobilePage
-class _StringsSocialMobilePageEn {
-	_StringsSocialMobilePageEn._(this._root);
+// Path: updateScreen
+class _StringsUpdateScreenEn {
+	_StringsUpdateScreenEn._(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	String get pushExplanation => 'You have pushed the button this many times:';
-	String get languageExplanation => 'Your language is English now';
-	String get changeLanguage => 'Change language';
+	late final _StringsUpdateScreenPostEn post = _StringsUpdateScreenPostEn._(_root);
 }
 
 // Path: profileScreen
@@ -226,6 +224,16 @@ class _StringsAppBarSettingsEn {
 	String get title => 'settings';
 }
 
+// Path: updateScreen.post
+class _StringsUpdateScreenPostEn {
+	_StringsUpdateScreenPostEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	late final _StringsUpdateScreenPostPopUpMenuEn popUpMenu = _StringsUpdateScreenPostPopUpMenuEn._(_root);
+}
+
 // Path: profileScreen.tabs
 class _StringsProfileScreenTabsEn {
 	_StringsProfileScreenTabsEn._(this._root);
@@ -246,6 +254,21 @@ class _StringsProfileScreenProfileHeaderEn {
 
 	// Translations
 	String get buttonText => 'Edit your profile';
+}
+
+// Path: updateScreen.post.popUpMenu
+class _StringsUpdateScreenPostPopUpMenuEn {
+	_StringsUpdateScreenPostPopUpMenuEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get reaction => 'add reaction';
+	String get comment => 'comment';
+	String get bookMark => 'book mark';
+	String get share => 'share';
+	String get delete => 'delete';
+	String get report => 'report';
 }
 
 // Path: <root>
@@ -274,7 +297,7 @@ class _StringsJa implements Translations {
 	// Translations
 	@override late final _StringsAppBarJa appBar = _StringsAppBarJa._(_root);
 	@override late final _StringsNavigationBarJa navigationBar = _StringsNavigationBarJa._(_root);
-	@override late final _StringsSocialMobilePageJa socialMobilePage = _StringsSocialMobilePageJa._(_root);
+	@override late final _StringsUpdateScreenJa updateScreen = _StringsUpdateScreenJa._(_root);
 	@override Map<String, String> get locales => {
 		'en': '英語',
 		'ja': '日本語',
@@ -307,16 +330,14 @@ class _StringsNavigationBarJa implements _StringsNavigationBarEn {
 	@override String get settings => 'せってー';
 }
 
-// Path: socialMobilePage
-class _StringsSocialMobilePageJa implements _StringsSocialMobilePageEn {
-	_StringsSocialMobilePageJa._(this._root);
+// Path: updateScreen
+class _StringsUpdateScreenJa implements _StringsUpdateScreenEn {
+	_StringsUpdateScreenJa._(this._root);
 
 	@override final _StringsJa _root; // ignore: unused_field
 
 	// Translations
-	@override String get pushExplanation => 'ちみはこれくらい押したどん:';
-	@override String get languageExplanation => 'ちみの今の言語は日本語だどん';
-	@override String get changeLanguage => '言語を変えるどん';
+	@override late final _StringsUpdateScreenPostJa post = _StringsUpdateScreenPostJa._(_root);
 }
 
 // Path: profileScreen
@@ -350,6 +371,16 @@ class _StringsAppBarSettingsJa implements _StringsAppBarSettingsEn {
 	@override String get title => '設定';
 }
 
+// Path: updateScreen.post
+class _StringsUpdateScreenPostJa implements _StringsUpdateScreenPostEn {
+	_StringsUpdateScreenPostJa._(this._root);
+
+	@override final _StringsJa _root; // ignore: unused_field
+
+	// Translations
+	@override late final _StringsUpdateScreenPostPopUpMenuJa popUpMenu = _StringsUpdateScreenPostPopUpMenuJa._(_root);
+}
+
 // Path: profileScreen.tabs
 class _StringsProfileScreenTabsJa implements _StringsProfileScreenTabsEn {
 	_StringsProfileScreenTabsJa._(this._root);
@@ -372,6 +403,21 @@ class _StringsProfileScreenProfileHeaderJa implements _StringsProfileScreenProfi
 	@override String get buttonText => 'プロフィールをいじる';
 }
 
+// Path: updateScreen.post.popUpMenu
+class _StringsUpdateScreenPostPopUpMenuJa implements _StringsUpdateScreenPostPopUpMenuEn {
+	_StringsUpdateScreenPostPopUpMenuJa._(this._root);
+
+	@override final _StringsJa _root; // ignore: unused_field
+
+	// Translations
+	@override String get reaction => '絵文字を追加';
+	@override String get comment => 'コメント';
+	@override String get bookMark => 'ブックマーク';
+	@override String get share => '共有する';
+	@override String get delete => '削除する';
+	@override String get report => '報告する';
+}
+
 /// Flat map(s) containing all translations.
 /// Only for edge cases! For simple maps, use the map function of this library.
 
@@ -385,9 +431,12 @@ extension on Translations {
 			case 'navigationBar.profile': return 'profile';
 			case 'navigationBar.friends': return 'friends';
 			case 'navigationBar.settings': return 'settings';
-			case 'socialMobilePage.pushExplanation': return 'You have pushed the button this many times:';
-			case 'socialMobilePage.languageExplanation': return 'Your language is English now';
-			case 'socialMobilePage.changeLanguage': return 'Change language';
+			case 'updateScreen.post.popUpMenu.reaction': return 'add reaction';
+			case 'updateScreen.post.popUpMenu.comment': return 'comment';
+			case 'updateScreen.post.popUpMenu.bookMark': return 'book mark';
+			case 'updateScreen.post.popUpMenu.share': return 'share';
+			case 'updateScreen.post.popUpMenu.delete': return 'delete';
+			case 'updateScreen.post.popUpMenu.report': return 'report';
 			case 'locales.en': return 'English';
 			case 'locales.ja': return 'Japanese';
 			case 'profileScreen.tabs.tweet': return 'tweet';
@@ -409,9 +458,12 @@ extension on _StringsJa {
 			case 'navigationBar.profile': return 'あなた';
 			case 'navigationBar.friends': return '知り合い';
 			case 'navigationBar.settings': return 'せってー';
-			case 'socialMobilePage.pushExplanation': return 'ちみはこれくらい押したどん:';
-			case 'socialMobilePage.languageExplanation': return 'ちみの今の言語は日本語だどん';
-			case 'socialMobilePage.changeLanguage': return '言語を変えるどん';
+			case 'updateScreen.post.popUpMenu.reaction': return '絵文字を追加';
+			case 'updateScreen.post.popUpMenu.comment': return 'コメント';
+			case 'updateScreen.post.popUpMenu.bookMark': return 'ブックマーク';
+			case 'updateScreen.post.popUpMenu.share': return '共有する';
+			case 'updateScreen.post.popUpMenu.delete': return '削除する';
+			case 'updateScreen.post.popUpMenu.report': return '報告する';
 			case 'locales.en': return '英語';
 			case 'locales.ja': return '日本語';
 			case 'profileScreen.tabs.tweet': return 'つぶやき';
