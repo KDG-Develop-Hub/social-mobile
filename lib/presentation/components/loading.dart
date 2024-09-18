@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:social_mobile/presentation/provider/shared_preferences_config.dart';
 import 'package:social_mobile/utils/state/overlay_loading_provider.dart';
 
 /// 二度押しを防止したいときなどのオーバーレイローディング
