@@ -4,10 +4,10 @@ import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:social_mobile/presentation/components/bottom_navigation.dart';
 import 'package:social_mobile/presentation/friends/friends_screen.dart';
+import 'package:social_mobile/presentation/home/home_screen.dart';
 import 'package:social_mobile/presentation/profile/profile_screen.dart';
 import 'package:social_mobile/presentation/search/search_screen.dart';
 import 'package:social_mobile/presentation/settings/settings_screen.dart';
-import 'package:social_mobile/presentation/home/home_screen.dart';
 import 'package:social_mobile/utils/routes/routes.dart';
 
 part 'app_router.g.dart';
