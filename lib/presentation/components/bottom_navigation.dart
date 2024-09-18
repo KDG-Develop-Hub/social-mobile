@@ -27,8 +27,8 @@ class BottomNavigation extends ConsumerWidget {
         },
         destinations: [
           NavigationDestination(
-            icon: SvgPicture.asset(Assets.icons.updateIcon),
-            label: i18nTabItem.update,
+            icon: SvgPicture.asset(Assets.icons.homeIcon),
+            label: i18nTabItem.home,
           ),
           NavigationDestination(
             icon: SvgPicture.asset(Assets.icons.searchIcon),

@@ -4,16 +4,16 @@ import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:social_mobile/presentation/components/bottom_navigation.dart';
 import 'package:social_mobile/presentation/friends/friends_screen.dart';
+import 'package:social_mobile/presentation/home/home_screen.dart';
 import 'package:social_mobile/presentation/profile/profile_screen.dart';
 import 'package:social_mobile/presentation/search/search_screen.dart';
 import 'package:social_mobile/presentation/settings/settings_screen.dart';
-import 'package:social_mobile/presentation/update/update_screen.dart';
 import 'package:social_mobile/utils/routes/routes.dart';
 
 part 'app_router.g.dart';
 
 final rootNavigatorKey = GlobalKey<NavigatorState>();
-final updateNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'update');
+final homeNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'home');
 final searchNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'search');
 final profileNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'profile');
 final friendsNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'friends');
@@ -22,7 +22,7 @@ final settingsNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'settings');
 @Riverpod(keepAlive: true)
 GoRouter goRouter(GoRouterRef ref) {
   return GoRouter(
-    initialLocation: AppRoutes.update,
+    initialLocation: AppRoutes.home,
     navigatorKey: rootNavigatorKey,
     routes: $appRoutes,
     debugLogDiagnostics: kDebugMode,
@@ -34,10 +34,10 @@ GoRouter goRouter(GoRouterRef ref) {
 
 @TypedStatefulShellRoute<AppShellRouteData>(
   branches: <TypedStatefulShellBranch<StatefulShellBranchData>>[
-    TypedStatefulShellBranch<UpdateBranch>(
+    TypedStatefulShellBranch<HomeBranch>(
       routes: [
-        TypedGoRoute<UpdateScreenRouteData>(
-          path: AppRoutes.update,
+        TypedGoRoute<HomeScreenRouteData>(
+          path: AppRoutes.home,
         ),
       ],
     ),
@@ -86,10 +86,10 @@ class AppShellRouteData extends StatefulShellRouteData {
   }
 }
 
-class UpdateBranch extends StatefulShellBranchData {
-  const UpdateBranch();
+class HomeBranch extends StatefulShellBranchData {
+  const HomeBranch();
 
-  static final GlobalKey<NavigatorState> $navigatorKey = updateNavigatorKey;
+  static final GlobalKey<NavigatorState> $navigatorKey = homeNavigatorKey;
 }
 
 class SearchBranch extends StatefulShellBranchData {
@@ -117,15 +117,15 @@ class SettingsBranch extends StatefulShellBranchData {
 }
 
 // TOPレベルのパスには、@TypedGoRouteをつける
-@TypedGoRoute<UpdateScreenRouteData>(
-  path: AppRoutes.update,
+@TypedGoRoute<HomeScreenRouteData>(
+  path: AppRoutes.home,
 )
-class UpdateScreenRouteData extends GoRouteData {
-  const UpdateScreenRouteData();
+class HomeScreenRouteData extends GoRouteData {
+  const HomeScreenRouteData();
 
   @override
   Widget build(BuildContext context, GoRouterState state) {
-    return const UpdateScreen();
+    return const HomeScreen();
   }
 }
 

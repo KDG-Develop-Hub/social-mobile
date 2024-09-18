@@ -3,21 +3,21 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:social_mobile/i18n/strings.g.dart';
 import 'package:social_mobile/presentation/components/loading.dart';
 import 'package:social_mobile/presentation/components/post_card/post_card.dart';
-import 'package:social_mobile/presentation/update/provider/update_notifier.dart';
+import 'package:social_mobile/presentation/home/provider/home_notifier.dart';
 
-class UpdateScreen extends ConsumerWidget {
-  const UpdateScreen({super.key});
+class HomeScreen extends ConsumerWidget {
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final state = ref.watch(updateNotifierProvider);
+    final state = ref.watch(homeNotifierProvider);
     final translations = Translations.of(context);
     final textStyle = Theme.of(context).textTheme;
 
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          translations.navigationBar.update,
+          translations.navigationBar.home,
           style: textStyle.headlineMedium,
         ),
         centerTitle: false,
@@ -25,7 +25,7 @@ class UpdateScreen extends ConsumerWidget {
       body: switch (state) {
         AsyncData(:final value) => RefreshIndicator(
             onRefresh: () async =>
-                ref.read(updateNotifierProvider.notifier).refresh(),
+                ref.read(homeNotifierProvider.notifier).refresh(),
             child: ListView.builder(
               itemCount: value.length,
               itemBuilder: (_, index) => PostCard(

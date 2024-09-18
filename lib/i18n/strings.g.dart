@@ -6,7 +6,7 @@
 /// Locales: 2
 /// Strings: 38 (19 per locale)
 ///
-/// Built on 2024-07-22 at 11:56 UTC
+/// Built on 2024-09-17 at 08:32 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -176,7 +176,7 @@ class _StringsNavigationBarEn {
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	String get update => 'update';
+	String get home => 'home';
 	String get search => 'search';
 	String get profile => 'profile';
 	String get friends => 'friends';
@@ -323,9 +323,9 @@ class _StringsNavigationBarJa implements _StringsNavigationBarEn {
 	@override final _StringsJa _root; // ignore: unused_field
 
 	// Translations
-	@override String get update => 'アプデ';
-	@override String get search => 'みつける';
-	@override String get profile => '君とは';
+	@override String get home => 'ほーむ';
+	@override String get search => '見つける';
+	@override String get profile => 'あなた';
 	@override String get friends => '知り合い';
 	@override String get settings => 'せってー';
 }
@@ -426,7 +426,7 @@ extension on Translations {
 		switch (path) {
 			case 'appBar.home.title': return 'home';
 			case 'appBar.settings.title': return 'settings';
-			case 'navigationBar.update': return 'update';
+			case 'navigationBar.home': return 'home';
 			case 'navigationBar.search': return 'search';
 			case 'navigationBar.profile': return 'profile';
 			case 'navigationBar.friends': return 'friends';
@@ -453,9 +453,9 @@ extension on _StringsJa {
 		switch (path) {
 			case 'appBar.home.title': return 'ホーム';
 			case 'appBar.settings.title': return '設定';
-			case 'navigationBar.update': return 'アプデ';
-			case 'navigationBar.search': return 'みつける';
-			case 'navigationBar.profile': return '君とは';
+			case 'navigationBar.home': return 'ほーむ';
+			case 'navigationBar.search': return '見つける';
+			case 'navigationBar.profile': return 'あなた';
 			case 'navigationBar.friends': return '知り合い';
 			case 'navigationBar.settings': return 'せってー';
 			case 'updateScreen.post.popUpMenu.reaction': return '絵文字を追加';
