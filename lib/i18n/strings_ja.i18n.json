@@ -1,0 +1,43 @@
+{
+    "appBar": {
+        "home": {
+            "title": "ホーム"
+        },
+        "settings": {
+            "title": "設定"
+        }
+    },
+    "navigationBar": {
+        "home": "ほーむ",
+        "search": "見つける",
+        "profile": "あなた",
+        "friends": "知り合い",
+        "settings": "せってー"
+    },
+    "updateScreen": {
+        "post": {
+            "popUpMenu": {
+                "reaction": "絵文字を追加",
+                "comment": "コメント",
+                "bookMark": "ブックマーク",
+                "share": "共有する",
+                "delete": "削除する",
+                "report": "報告する"
+            }
+        }
+    },
+    "locales(map)": {
+        "en": "英語",
+        "ja": "日本語"
+    },
+    "profileScreen": {
+        "tabs": {
+            "tweet": "つぶやき",
+            "comment": "コメント",
+            "media": "メディア"
+        },
+        "profileHeader": {
+            "buttonText": "プロフィールをいじる"
+        }
+    }
+}

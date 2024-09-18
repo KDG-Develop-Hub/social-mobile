@@ -1,0 +1,178 @@
+# Getting Started
+
+1. リポジトリをクローンする
+```
+git clone https://github.com/KDG-Develop-Hub/social-mobile.git
+```
+
+2. 今回fvmでバージョン管理をし、3.19.1に設定しているので、適用させる
+```terminal
+fvm use 3.19.1
+```
+
+3. 依存関係の取得
+```terminal
+flutter pub get
+```
+
+4. 環境変数のダウンロード
+
+ClickUpの[オンボーディングドキュメント](https://app.clickup.com/9003252999/v/dc/8ca5f87-618/8ca5f87-318)からdart_defines.zipをダウンロードし、**解凍したフォルダをsocial_mobileプロジェクトのルートに設置**
+ClickUpに招待されていない場合、小林春か大村健心か塩野結に連絡
+
+5. 環境変数ファイルを正しい位置に配置する
+
+下記コマンドを実行
+6行全てをコピーして一度に実行してください。
+```
+
+mv dart_defines/dev/google-services.json android/app/src/dev/ && \
+mv dart_defines/dev/GoogleService-Info.plist ios/dev/ && \
+mv dart_defines/prod/google-services.json android/app/src/prod/ && \
+mv dart_defines/prod/GoogleService-Info.plist ios/prod/ && \
+rm -r dart_defines/dev && \
+rm -r dart_defines/prod
+
+```
+
+6. iosのスクリプトに実行権限を与える
+
+```chmod 755 ios/scripts/extract_dart_defines.sh```
+
+7. vscodeのRun and DebugからFlavorを選択して実行する
+
+基本は`Debug dev`で実行
+
+<img width="272" alt="スクリーンショット 2024-05-07 3 26 26" src="https://github.com/KDG-Develop-Hub/social-mobile/assets/103411556/bf36b679-dfb7-43ce-8642-765aa7e6573f">
+
+### done🎉
+
+<br>
+<br>
+<br>
+
+# 多言語対応の方法
+1. `lib/i18n/strings.i18n.json`ファイルと`lib/i18n/strings_ja.i18n.json`ファイルにそれぞれの言語をjson形式で書く。
+2. ``` make runner ```コマンドでdartコードにコンバートする
+3. ```Translation.of(context). ・・・```で呼び出せる
+
+### jsonの定義
+命名はページ・コンポーネントであれば、小文字のキャメルケースで書く。
+文字列自体の場合は、文字列の内容に則ったものにする。
+以下の際にインデント分けして書く
+- ページごと
+- グローバルコンポーネントごと
+- ページ内でのコンポーネントごと
+
+# フォルダ構成の説明
+[レイヤードアーキテクチャ](https://zenn.dev/flutteruniv/books/flutter-architecture/viewer/5_layered-architecture)と[MVVMアーキテクチャ](https://zenn.dev/flutteruniv/books/flutter-architecture/viewer/3_mvvm)を融合させたようなフォルダ構成です。
+
+レイヤードアーキテクチャなら通常Applicationフォルダがありますが、そこを消し、presentationの画面ごとに一つViewModelを作成するように変えています。
+
+なぜ変えたかというと、単純にViewひとファイルに対して一つのViewModelがあると処理フローがイメージしやすいと思ったからです。
+
+オフラインでめちゃくちゃ詳しく説明するので心配しないでください
+```
+lib
+├── domain
+│   │
+│   │ // infrastructureとpresentationから依存される。逆にどの層にも依存してはいけない
+│   │ // Modelやインターフェースを定義する。
+│   │ // ここでスーパークラスを定義することで、presentationはmock・remoteどちらのrepositoryも利用可能に
+│   │
+│   ├── user
+│   │   ├── user_entiry.dart
+│   │   └── user_repository.dart
+│   │
+│   └── post
+│       ├── post_entity.dart
+│       └── post_repository.dart
+│
+├── infrastructure
+│   │
+│   │ // APIと通信を行うremoteフォルダとダミーデータを置くmocksフォルダがある
+│   │ // APIの開発が終わっていなくてもUIの実装(Flutterのタスク)に専念できるような設計
+│   │
+│   ├── mocks
+│   │   ├── mock_post_repository.dart
+│   │   └── mock_user_repository.dart
+│   │
+│   └── remote
+│       ├── post_repository.dart
+│       └── user_repository.dart
+│
+├── presentation
+│   │
+│   │　// UI(各画面や共通Widget)を記述したファイルとrepositoryとViewのブリッジになるViewModelを配置する
+│   │
+│   ├── components
+│   │   │
+│   │   │ // グローバルコンポーネントを配置
+│   │   │
+│   │   └── loading.dart
+│   │
+│   ├── home
+│   │   │
+│   │   │ // 画面ごとにフォルダ分けをし、ViewとViewModelを作成する。
+│   │   │ // この画面でしか使わない共通化したWidgetもおいて良い
+│   │   │
+│   │   ├── home_screen.dart
+│   │   └── view_model
+│   │       └── home_view_model.dart
+│   └── post
+│       ├── posts_screen.dart
+│       └── vew_model
+│           └── post_view_model.dart
+├── utils
+│   ├── theme
+│   │   │
+│   │   ├── extension
+│   │   │ // 元から存在するFlutterのThemeDataクラスの拡張を作成し、定数をまとめる(なぜ: 今後大規模なUI修正がしやすかったり、違った色の使用ミスを抑制する)
+│   │   │
+│   │   │
+│   │   └── theme.dart // カスタムテーマを返す関数を定義する
+│   │
+│   ├── extensions
+│   │   │
+│   │   │ // Extension修飾子を使用して既存のFlutterクラスに機能追加する
+│   │   │
+│   │   └── context.dart
+│   │
+│   ├── gen
+│   │   │
+│   │   │ // 画像ファイルを扱いやすい形式に変えたファイルを配置する(基本触らない)
+│   │   │
+│   │   └── assets.gen.dart
+│   │
+│   ├── hooks
+│   │   │
+│   │   │ // 自作のhooksを置くフォルダ
+│   │   │
+│   │   └── use_toggle.dart
+│   │
+│   ├── routes
+│   │   │
+│   │   │ // 画面遷移を制御するコードを置くフォルダ
+│   │   │
+│   │   └── routes.dart
+│   │
+│   └── state
+│       │
+│       │ // グローバルなステートを置くフォルダ
+│       │
+│       └── overlay_loading.dart
+│
+└── main.dart
+```
+
+
+# PR
+
+基本的にテンプレートに則って書き進める(テンプレートは自動生成されるから、PRを作成するのみで良い)
+
+[Labels](https://github.com/KDG-Develop-Hub/social-mobile/labels)全体をよく確認する
+- タスクを開始したらPRをすぐに作成する
+- 作業中の場合は、Draftに設定する・レビューされても良い状態になったらOpenに変更する
+- Reviewers(コードの確認者)は基本的に@Haru-Kobayashi073を指定する。
+- Assignees(タスクの担当者)は自分を指定する
+- Labelsで該当するものを指定する

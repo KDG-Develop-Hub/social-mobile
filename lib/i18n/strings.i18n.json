@@ -1,0 +1,43 @@
+{
+    "appBar": {
+        "home": {
+            "title": "home"
+        },
+        "settings": {
+            "title": "settings"
+        }
+    },
+    "navigationBar": {
+        "home": "home",
+        "search": "search",
+        "profile": "profile",
+        "friends": "friends",
+        "settings": "settings"
+    },
+    "updateScreen": {
+        "post": {
+            "popUpMenu": {
+                "reaction": "add reaction",
+                "comment": "comment",
+                "bookMark": "book mark",
+                "share": "share",
+                "delete": "delete",
+                "report": "report"
+            }
+        }
+    },
+    "locales(map)": {
+        "en": "English",
+        "ja": "Japanese"
+    },
+    "profileScreen": {
+        "tabs": {
+            "tweet": "tweet",
+            "comment": "comment",
+            "media": "media"
+        },
+        "profileHeader": {
+            "buttonText": "Edit your profile"
+        }
+    }
+}
