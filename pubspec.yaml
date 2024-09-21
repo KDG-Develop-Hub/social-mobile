@@ -58,12 +58,15 @@ flutter_gen:
 
 flutter_native_splash:
   color: '#F8FAF0'
-  image: 'assets/splash/kdg_splash.png'
+  image: 'assets/splash/kdg_splash_android.png'
   color_dark: '#F8FAF0'
-  image_dark: 'assets/splash/kdg_splash.png'
+  image_dark: 'assets/splash/kdg_splash_android.png'
+  android: true
+  # NOTE you can change ios splash screen manually at ios/Runner/Assets.xcassets/LaunchImage.imageset
+  ios: false
   fullscreen: true
   android_12:
     icon_background_color: '#F8FAF0'
-    image: 'assets/splash/kdg_splash.png'
+    image: 'assets/splash/kdg_splash_android.png'
     icon_background_color_dark: '#F8FAF0'
-    image_dark: 'assets/splash/kdg_splash.png'
+    image_dark: 'assets/splash/kdg_splash_android.png'
