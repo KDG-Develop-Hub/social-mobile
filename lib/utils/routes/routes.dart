@@ -1,5 +1,5 @@
 class AppRoutes {
-  static const update = '/update';
+  static const home = '/home';
   static const search = '/search';
   static const profile = '/profile';
   static const friends = '/friends';

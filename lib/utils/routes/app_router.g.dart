@@ -8,7 +8,7 @@ part of 'app_router.dart';
 
 List<RouteBase> get $appRoutes => [
       $appShellRouteData,
-      $updateScreenRouteData,
+      $homeScreenRouteData,
       $searchScreenRouteData,
       $profileScreenRouteData,
       $friendsScreenRouteData,
@@ -19,11 +19,11 @@ RouteBase get $appShellRouteData => StatefulShellRouteData.$route(
       factory: $AppShellRouteDataExtension._fromState,
       branches: [
         StatefulShellBranchData.$branch(
-          navigatorKey: UpdateBranch.$navigatorKey,
+          navigatorKey: HomeBranch.$navigatorKey,
           routes: [
             GoRouteData.$route(
-              path: '/update',
-              factory: $UpdateScreenRouteDataExtension._fromState,
+              path: '/home',
+              factory: $HomeScreenRouteDataExtension._fromState,
             ),
           ],
         ),
@@ -71,12 +71,12 @@ extension $AppShellRouteDataExtension on AppShellRouteData {
       const AppShellRouteData();
 }
 
-extension $UpdateScreenRouteDataExtension on UpdateScreenRouteData {
-  static UpdateScreenRouteData _fromState(GoRouterState state) =>
-      const UpdateScreenRouteData();
+extension $HomeScreenRouteDataExtension on HomeScreenRouteData {
+  static HomeScreenRouteData _fromState(GoRouterState state) =>
+      const HomeScreenRouteData();
 
   String get location => GoRouteData.$location(
-        '/update',
+        '/home',
       );
 
   void go(BuildContext context) => context.go(location);
@@ -161,9 +161,9 @@ extension $SettingsScreenRouteDataExtension on SettingsScreenRouteData {
   void replace(BuildContext context) => context.replace(location);
 }
 
-RouteBase get $updateScreenRouteData => GoRouteData.$route(
-      path: '/update',
-      factory: $UpdateScreenRouteDataExtension._fromState,
+RouteBase get $homeScreenRouteData => GoRouteData.$route(
+      path: '/home',
+      factory: $HomeScreenRouteDataExtension._fromState,
     );
 
 RouteBase get $searchScreenRouteData => GoRouteData.$route(
@@ -190,7 +190,7 @@ RouteBase get $settingsScreenRouteData => GoRouteData.$route(
 // RiverpodGenerator
 // **************************************************************************
 
-String _$goRouterHash() => r'aebf5957564f5d58fad8ee19a05669c2441bfbbd';
+String _$goRouterHash() => r'1a6ef5bd17d9438d8561ee8a5363a4ca6f1a5a96';
 
 /// See also [goRouter].
 @ProviderFor(goRouter)

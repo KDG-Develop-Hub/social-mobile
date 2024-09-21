@@ -25,6 +25,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/friends_icon.svg
   String get friendsIcon => 'assets/icons/friends_icon.svg';
 
+  /// File path: assets/icons/home_icon.svg
+  String get homeIcon => 'assets/icons/home_icon.svg';
+
   /// File path: assets/icons/message_circle_reply.svg
   String get messageCircleReply => 'assets/icons/message_circle_reply.svg';
 
@@ -46,9 +49,6 @@ class $AssetsIconsGen {
   /// File path: assets/icons/trash.svg
   String get trash => 'assets/icons/trash.svg';
 
-  /// File path: assets/icons/update_icon.svg
-  String get updateIcon => 'assets/icons/update_icon.svg';
-
   /// List of all assets
   List<String> get values => [
         bookmark,
@@ -56,14 +56,14 @@ class $AssetsIconsGen {
         comment,
         flag,
         friendsIcon,
+        homeIcon,
         messageCircleReply,
         profileIcon,
         reaction,
         searchIcon,
         settingsIcon,
         share,
-        trash,
-        updateIcon
+        trash
       ];
 }
 
