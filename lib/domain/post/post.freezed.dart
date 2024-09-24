@@ -26,6 +26,7 @@ mixin _$Post {
   String get userImageUrl => throw _privateConstructorUsedError;
   String get content => throw _privateConstructorUsedError;
   List<String>? get imageUrls => throw _privateConstructorUsedError;
+  List<Reaction>? get reactions => throw _privateConstructorUsedError;
   List<String>? get replyIds => throw _privateConstructorUsedError;
   @DateTimeConverter()
   DateTime get createdAt => throw _privateConstructorUsedError;
@@ -49,6 +50,7 @@ abstract class $PostCopyWith<$Res> {
       String userImageUrl,
       String content,
       List<String>? imageUrls,
+      List<Reaction>? reactions,
       List<String>? replyIds,
       @DateTimeConverter() DateTime createdAt,
       @DateTimeConverter() DateTime? updatedAt});
@@ -73,6 +75,7 @@ class _$PostCopyWithImpl<$Res, $Val extends Post>
     Object? userImageUrl = null,
     Object? content = null,
     Object? imageUrls = freezed,
+    Object? reactions = freezed,
     Object? replyIds = freezed,
     Object? createdAt = null,
     Object? updatedAt = freezed,
@@ -102,6 +105,10 @@ class _$PostCopyWithImpl<$Res, $Val extends Post>
           ? _value.imageUrls
           : imageUrls // ignore: cast_nullable_to_non_nullable
               as List<String>?,
+      reactions: freezed == reactions
+          ? _value.reactions
+          : reactions // ignore: cast_nullable_to_non_nullable
+              as List<Reaction>?,
       replyIds: freezed == replyIds
           ? _value.replyIds
           : replyIds // ignore: cast_nullable_to_non_nullable
@@ -132,6 +139,7 @@ abstract class _$$PostImplCopyWith<$Res> implements $PostCopyWith<$Res> {
       String userImageUrl,
       String content,
       List<String>? imageUrls,
+      List<Reaction>? reactions,
       List<String>? replyIds,
       @DateTimeConverter() DateTime createdAt,
       @DateTimeConverter() DateTime? updatedAt});
@@ -153,6 +161,7 @@ class __$$PostImplCopyWithImpl<$Res>
     Object? userImageUrl = null,
     Object? content = null,
     Object? imageUrls = freezed,
+    Object? reactions = freezed,
     Object? replyIds = freezed,
     Object? createdAt = null,
     Object? updatedAt = freezed,
@@ -182,6 +191,10 @@ class __$$PostImplCopyWithImpl<$Res>
           ? _value._imageUrls
           : imageUrls // ignore: cast_nullable_to_non_nullable
               as List<String>?,
+      reactions: freezed == reactions
+          ? _value._reactions
+          : reactions // ignore: cast_nullable_to_non_nullable
+              as List<Reaction>?,
       replyIds: freezed == replyIds
           ? _value._replyIds
           : replyIds // ignore: cast_nullable_to_non_nullable
@@ -208,10 +221,12 @@ class _$PostImpl implements _Post {
       required this.userImageUrl,
       required this.content,
       final List<String>? imageUrls,
+      final List<Reaction>? reactions,
       final List<String>? replyIds,
       @DateTimeConverter() required this.createdAt,
       @DateTimeConverter() this.updatedAt})
       : _imageUrls = imageUrls,
+        _reactions = reactions,
         _replyIds = replyIds;
 
   factory _$PostImpl.fromJson(Map<String, dynamic> json) =>
@@ -237,6 +252,16 @@ class _$PostImpl implements _Post {
     return EqualUnmodifiableListView(value);
   }
 
+  final List<Reaction>? _reactions;
+  @override
+  List<Reaction>? get reactions {
+    final value = _reactions;
+    if (value == null) return null;
+    if (_reactions is EqualUnmodifiableListView) return _reactions;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   final List<String>? _replyIds;
   @override
   List<String>? get replyIds {
@@ -256,7 +281,7 @@ class _$PostImpl implements _Post {
 
   @override
   String toString() {
-    return 'Post(id: $id, userId: $userId, userName: $userName, userImageUrl: $userImageUrl, content: $content, imageUrls: $imageUrls, replyIds: $replyIds, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'Post(id: $id, userId: $userId, userName: $userName, userImageUrl: $userImageUrl, content: $content, imageUrls: $imageUrls, reactions: $reactions, replyIds: $replyIds, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
@@ -273,6 +298,8 @@ class _$PostImpl implements _Post {
             (identical(other.content, content) || other.content == content) &&
             const DeepCollectionEquality()
                 .equals(other._imageUrls, _imageUrls) &&
+            const DeepCollectionEquality()
+                .equals(other._reactions, _reactions) &&
             const DeepCollectionEquality().equals(other._replyIds, _replyIds) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -290,6 +317,7 @@ class _$PostImpl implements _Post {
       userImageUrl,
       content,
       const DeepCollectionEquality().hash(_imageUrls),
+      const DeepCollectionEquality().hash(_reactions),
       const DeepCollectionEquality().hash(_replyIds),
       createdAt,
       updatedAt);
@@ -316,6 +344,7 @@ abstract class _Post implements Post {
       required final String userImageUrl,
       required final String content,
       final List<String>? imageUrls,
+      final List<Reaction>? reactions,
       final List<String>? replyIds,
       @DateTimeConverter() required final DateTime createdAt,
       @DateTimeConverter() final DateTime? updatedAt}) = _$PostImpl;
@@ -334,6 +363,8 @@ abstract class _Post implements Post {
   String get content;
   @override
   List<String>? get imageUrls;
+  @override
+  List<Reaction>? get reactions;
   @override
   List<String>? get replyIds;
   @override

@@ -31,6 +31,12 @@ class HomeScreen extends ConsumerWidget {
               itemBuilder: (_, index) => PostCard(
                 post: value[index],
                 onPostTap: () {},
+                onReactionTap: (reaction, {required hasReact}) async {
+                  await ref.read(homeNotifierProvider.notifier).editReaction(
+                        hasReact: hasReact,
+                        reaction: reaction,
+                      );
+                },
               ),
             ),
           ),

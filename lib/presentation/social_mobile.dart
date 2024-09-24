@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:keyboard_emoji_picker/keyboard_emoji_picker.dart';
 import 'package:social_mobile/i18n/strings.g.dart';
 import 'package:social_mobile/presentation/provider/locale_service.dart';
 import 'package:social_mobile/utils/routes/app_router.dart';
@@ -35,18 +36,20 @@ class SocialMobile extends HookConsumerWidget {
       const [],
     );
 
-    return MaterialApp.router(
-      theme: brightness == Brightness.light ? theme.light() : theme.dark(),
-      locale: currentLocale.flutterLocale,
-      supportedLocales: AppLocaleUtils.supportedLocales,
-      localizationsDelegates: const [
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      routerDelegate: goRouter.routerDelegate,
-      routeInformationProvider: goRouter.routeInformationProvider,
-      routeInformationParser: goRouter.routeInformationParser,
+    return KeyboardEmojiPickerWrapper(
+      child: MaterialApp.router(
+        theme: brightness == Brightness.light ? theme.light() : theme.dark(),
+        locale: currentLocale.flutterLocale,
+        supportedLocales: AppLocaleUtils.supportedLocales,
+        localizationsDelegates: const [
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        routerDelegate: goRouter.routerDelegate,
+        routeInformationProvider: goRouter.routeInformationProvider,
+        routeInformationParser: goRouter.routeInformationParser,
+      ),
     );
   }
 }

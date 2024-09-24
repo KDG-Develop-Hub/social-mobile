@@ -20,9 +20,11 @@ class PostMenuBottomSheet extends StatelessWidget {
   const PostMenuBottomSheet({
     super.key,
     required this.post,
+    required this.onReactionTap,
   });
 
   final Post post;
+  final Future<void> Function() onReactionTap;
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +58,9 @@ class PostMenuBottomSheet extends StatelessWidget {
                 label: translations.comment,
               ),
               PostMenuButton(
-                onPressed: () {},
+                onPressed: () async {
+                  await onReactionTap();
+                },
                 icon: Assets.icons.reaction,
                 label: translations.reaction,
               ),

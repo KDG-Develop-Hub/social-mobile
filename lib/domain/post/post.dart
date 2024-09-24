@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:social_mobile/domain/reaction/reaction.dart';
 import 'package:social_mobile/utils/helpers/date_time_converter.dart';
 
 part 'post.freezed.dart';
@@ -13,6 +14,7 @@ abstract class Post with _$Post {
     required String userImageUrl,
     required String content,
     List<String>? imageUrls,
+    List<Reaction>? reactions,
     List<String>? replyIds,
     @DateTimeConverter() required DateTime createdAt,
     @DateTimeConverter() DateTime? updatedAt,
