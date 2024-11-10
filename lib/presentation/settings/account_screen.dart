@@ -37,6 +37,7 @@ class _AccountSettingsScreenState extends State<AccountSettingsScreen> {
             child: Form(
               key: _formKey,
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start, // 左寄せにする
                 children: [
                   Text(
                     'アカウント',

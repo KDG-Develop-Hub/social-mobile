@@ -1,47 +1,76 @@
 import 'package:flutter/material.dart';
 
-class LanguageSettingsScreen extends StatelessWidget {
+class LanguageSettingsScreen extends StatefulWidget {
   const LanguageSettingsScreen({super.key});
+
+  @override
+  State<LanguageSettingsScreen> createState() => _LanguageSettingsScreenState();
+}
+
+class _LanguageSettingsScreenState extends State<LanguageSettingsScreen> {
+  Language _selectedLanguage = Language.japanese;
+
+  final List<LanguageOption> languageOptions = [
+    const LanguageOption(displayName: '日本語', language: Language.japanese),
+    const LanguageOption(displayName: 'English', language: Language.english),
+  ];
+
+  Widget _buildLanguageListTile(LanguageOption option) {
+    return Column(
+      children: [
+        ListTile(
+          title: Text(option.displayName),
+          trailing: _selectedLanguage == option.language
+              ? const Icon(Icons.check)
+              : null,
+          onTap: () {
+            setState(() {
+              _selectedLanguage = option.language;
+            });
+            // TODO: 言語変更の処理を実装
+          },
+        ),
+        const Divider(),
+      ],
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('言語設定'),
         elevation: 0,
       ),
       body: ListView(
         children: [
-          ListTile(
-            title: const Text('日本語'),
-            trailing: const Icon(Icons.check),
-            onTap: () {
-              // 日本語を選択した時の処理
-            },
+          Padding(
+            padding: const EdgeInsets.only(left: 16),
+            child: Text(
+              '言語設定',
+              style: Theme.of(context).textTheme.headlineLarge,
+            ),
           ),
-          const Divider(),
-          ListTile(
-            title: const Text('English'),
-            onTap: () {
-              // 英語を選択した時の処理
-            },
-          ),
-          const Divider(),
-          ListTile(
-            title: const Text('한국어'),
-            onTap: () {
-              // 韓国語を選択した時の処理
-            },
-          ),
-          const Divider(),
-          ListTile(
-            title: const Text('简体中文'),
-            onTap: () {
-              // 中国語（簡体字）を選択した時の処理
-            },
-          ),
+          const SizedBox(height: 20),
+          ...languageOptions.map(_buildLanguageListTile),
         ],
       ),
     );
   }
+}
+
+enum Language {
+  english('en'),
+  japanese('ja');
+
+  final String code;
+  const Language(this.code);
+}
+
+class LanguageOption {
+  const LanguageOption({
+    required this.displayName,
+    required this.language,
+  });
+  final String displayName;
+  final Language language;
 }
