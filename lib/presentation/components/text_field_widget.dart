@@ -5,16 +5,22 @@ class TextFieldWidget extends HookWidget {
   const TextFieldWidget({
     super.key,
     required this.labelText,
-    required this.helperText,
-    required this.maxLength,
+    this.helperText,
+    this.maxLength,
+    this.maxLines,
+    this.prefixIcon,
     this.validator,
+    this.onChanged,
     this.onFieldSubmitted,
     required this.controller,
   });
   final String labelText;
-  final String helperText;
-  final int maxLength;
+  final String? helperText;
+  final int? maxLength;
+  final int? maxLines;
+  final Widget? prefixIcon;
   final String? Function(String?)? validator;
+  final void Function(String)? onChanged;
   final void Function(String)? onFieldSubmitted;
   final TextEditingController controller;
 
@@ -25,31 +31,39 @@ class TextFieldWidget extends HookWidget {
     final textTheme = Theme.of(context).textTheme;
 
     return Padding(
-      padding: const EdgeInsets.all(8),
+      padding: const EdgeInsets.symmetric(
+        vertical: 12,
+        horizontal: 0,
+      ),
       child: TextFormField(
         validator: validator,
         controller: controller,
         onChanged: (value) {
           inputTextLength.value = value.length;
+          onChanged?.call(value);
         },
         onFieldSubmitted: onFieldSubmitted,
         style: textTheme.bodyLarge?.copyWith(
           color: colorTheme.onSurface,
         ),
         maxLength: maxLength,
+        maxLines: maxLines,
         cursorColor: colorTheme.onSurface,
         cursorErrorColor: colorTheme.error,
         decoration: InputDecoration(
+          prefixIcon: prefixIcon,
           labelText: labelText,
           labelStyle: textTheme.bodyLarge?.copyWith(
             color: colorTheme.onSurfaceVariant,
           ),
-          counter: Text(
-            '${inputTextLength.value}/$maxLength',
-            style: textTheme.bodyLarge?.copyWith(
-              color: colorTheme.onSurfaceVariant,
-            ),
-          ),
+          counter: maxLength != null
+              ? Text(
+                  '${inputTextLength.value}/$maxLength',
+                  style: textTheme.bodySmall?.copyWith(
+                    color: colorTheme.onSurfaceVariant,
+                  ),
+                )
+              : null,
           helperText: helperText,
           helperStyle: textTheme.bodyLarge?.copyWith(
             color: colorTheme.onSurfaceVariant,
@@ -57,7 +71,8 @@ class TextFieldWidget extends HookWidget {
           errorStyle: textTheme.bodyLarge?.copyWith(
             color: colorTheme.error,
           ),
-          contentPadding: const EdgeInsets.all(16),
+          contentPadding:
+              const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: colorTheme.outline),
           ),

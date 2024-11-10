@@ -7,6 +7,10 @@ import 'package:social_mobile/presentation/friends/friends_screen.dart';
 import 'package:social_mobile/presentation/home/home_screen.dart';
 import 'package:social_mobile/presentation/profile/profile_screen.dart';
 import 'package:social_mobile/presentation/search/search_screen.dart';
+import 'package:social_mobile/presentation/settings/account_screen.dart';
+import 'package:social_mobile/presentation/settings/appearance_screen.dart';
+import 'package:social_mobile/presentation/settings/language_screen.dart';
+import 'package:social_mobile/presentation/settings/profile_screen.dart';
 import 'package:social_mobile/presentation/settings/settings_screen.dart';
 import 'package:social_mobile/utils/routes/routes.dart';
 
@@ -66,6 +70,20 @@ GoRouter goRouter(GoRouterRef ref) {
       routes: [
         TypedGoRoute<SettingsScreenRouteData>(
           path: AppRoutes.settings,
+          routes: [
+            TypedGoRoute<SettingsProfileRouteData>(
+              path: AppRoutes.settingsProfilePath,
+            ),
+            TypedGoRoute<SettingsAccountRouteData>(
+              path: AppRoutes.settingsAccountPath,
+            ),
+            TypedGoRoute<SettingsAppearanceRouteData>(
+              path: AppRoutes.settingsAppearancePath,
+            ),
+            TypedGoRoute<SettingsLanguageRouteData>(
+              path: AppRoutes.settingsLanguagePath,
+            ),
+          ],
         ),
       ],
     ),
@@ -174,5 +192,41 @@ class SettingsScreenRouteData extends GoRouteData {
   @override
   Widget build(BuildContext context, GoRouterState state) {
     return const SettingsScreen();
+  }
+}
+
+class SettingsProfileRouteData extends GoRouteData {
+  const SettingsProfileRouteData();
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) {
+    return const ProfileSettingsScreen();
+  }
+}
+
+class SettingsAccountRouteData extends GoRouteData {
+  const SettingsAccountRouteData();
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) {
+    return const AccountSettingsScreen();
+  }
+}
+
+class SettingsAppearanceRouteData extends GoRouteData {
+  const SettingsAppearanceRouteData();
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) {
+    return const AppearanceSettingsScreen();
+  }
+}
+
+class SettingsLanguageRouteData extends GoRouteData {
+  const SettingsLanguageRouteData();
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) {
+    return const LanguageSettingsScreen();
   }
 }
