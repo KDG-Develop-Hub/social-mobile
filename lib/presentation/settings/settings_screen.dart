@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:social_mobile/presentation/components/text_field_widget.dart';
 import 'package:social_mobile/utils/routes/routes.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -80,39 +81,129 @@ class SettingsScreen extends StatelessWidget {
   }
 }
 
-class AccountSettingsScreen extends StatelessWidget {
-  const AccountSettingsScreen({super.key});
+class ProfileSettingsScreen extends StatefulWidget {
+  const ProfileSettingsScreen({super.key});
+
+  @override
+  State<ProfileSettingsScreen> createState() => _ProfileSettingsScreenState();
+}
+
+class _ProfileSettingsScreenState extends State<ProfileSettingsScreen> {
+  final _formKey = GlobalKey<FormState>();
+  final _nameController = TextEditingController();
+  final _displayNameController = TextEditingController();
+  final _bioController = TextEditingController();
+  final _locationController = TextEditingController();
+  final _websiteController = TextEditingController();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _nameController.text = '山田太郎';
+    _displayNameController.text = '山田太郎';
+    _bioController.text = 'こんにちは。山田太郎です。';
+    _locationController.text = '東京都';
+  }
+
+  @override
+  void dispose() {
+    _nameController.dispose();
+    _displayNameController.dispose();
+    _bioController.dispose();
+    _locationController.dispose();
+    _websiteController.dispose();
+
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('アカウント設定'),
-      ),
-      body: ListView(
-        children: [
-          ListTile(
-            leading: const Icon(Icons.email),
-            title: const Text('メールアドレス変更'),
-            onTap: () {
-              // メールアドレス変更画面への遷移
+        title: const Text('プロフィール設定'),
+        elevation: 0,
+        actions: [
+          TextButton(
+            onPressed: () {
+              if (_formKey.currentState!.validate()) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('プロフィールを更新しました')),
+                );
+              }
             },
-          ),
-          ListTile(
-            leading: const Icon(Icons.lock),
-            title: const Text('パスワード変更'),
-            onTap: () {
-              // パスワード変更画面への遷移
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.delete),
-            title: const Text('アカウント削除'),
-            onTap: () {
-              // アカウント削除の確認ダイアログを表示
-            },
+            child: const Text('保存'),
           ),
         ],
+      ),
+      body: SingleChildScrollView(
+        child: Form(
+          key: _formKey,
+          child: Column(
+            children: [
+              const SizedBox(height: 20),
+              // プロフィール画像 (既存のまま)
+              Center(
+                child: Stack(
+                  children: [
+                    CircleAvatar(
+                      radius: 50,
+                      backgroundColor: Colors.grey[200],
+                      child: const Icon(Icons.person, size: 50),
+                    ),
+                    Positioned(
+                      right: 0,
+                      bottom: 0,
+                      child: CircleAvatar(
+                        backgroundColor: Theme.of(context).primaryColor,
+                        radius: 18,
+                        child: IconButton(
+                          icon: const Icon(Icons.camera_alt, size: 18),
+                          color: Colors.white,
+                          onPressed: () {
+                            // TODO: 画像選択の処理
+                          },
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              TextFieldWidget(
+                labelText: '表示名',
+                helperText: '表示名を入力してください',
+                maxLength: 32,
+                controller: _displayNameController,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return '表示名を入力してください';
+                  }
+                  return null;
+                },
+              ),
+              TextFieldWidget(
+                labelText: '自己紹介',
+                helperText: '自己紹介を入力してください',
+                maxLength: 200,
+                controller: _bioController,
+              ),
+              TextFieldWidget(
+                labelText: '場所',
+                helperText: '場所を入力してください',
+                maxLength: 50,
+                controller: _locationController,
+                prefixIcon: const Icon(Icons.location_on),
+              ),
+              TextFieldWidget(
+                labelText: 'Webサイト',
+                helperText: 'https://example.com',
+                maxLength: 100,
+                controller: _websiteController,
+                prefixIcon: const Icon(Icons.link),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
@@ -271,14 +362,14 @@ class _AppearanceSettingsScreenState extends State<AppearanceSettingsScreen> {
   }
 }
 
-class ProfileSettingsScreen extends StatefulWidget {
-  const ProfileSettingsScreen({super.key});
+class AccountSettingsScreen extends StatefulWidget {
+  const AccountSettingsScreen({super.key});
 
   @override
-  State<ProfileSettingsScreen> createState() => _ProfileSettingsScreenState();
+  State<AccountSettingsScreen> createState() => _AccountSettingsScreenState();
 }
 
-class _ProfileSettingsScreenState extends State<ProfileSettingsScreen> {
+class _AccountSettingsScreenState extends State<AccountSettingsScreen> {
   final _formKey = GlobalKey<FormState>();
   final _displayNameController = TextEditingController();
   final _bioController = TextEditingController();
@@ -320,7 +411,6 @@ class _ProfileSettingsScreenState extends State<ProfileSettingsScreen> {
           child: Column(
             children: [
               const SizedBox(height: 20),
-              // プロフィール画像
               Center(
                 child: Stack(
                   children: [
@@ -347,67 +437,83 @@ class _ProfileSettingsScreenState extends State<ProfileSettingsScreen> {
                   ],
                 ),
               ),
-              const SizedBox(height: 30),
-              // 表示名
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: TextFormField(
-                  controller: _displayNameController,
-                  decoration: const InputDecoration(
-                    labelText: '表示名',
-                    hintText: '表示名を入力してください',
-                  ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return '表示名を入力してください';
-                    }
-                    return null;
-                  },
-                ),
+              TextFieldWidget(
+                labelText: '名前',
+                maxLength: 32,
+                controller: _displayNameController,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return '表示名を入力してください';
+                  }
+                  return null;
+                },
               ),
-              const SizedBox(height: 16),
-              // 自己紹介
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: TextFormField(
-                  controller: _bioController,
-                  decoration: const InputDecoration(
-                    labelText: '自己紹介',
-                    hintText: '自己紹介を入力してください',
-                  ),
-                  maxLines: 3,
-                ),
+              TextFieldWidget(
+                labelText: 'メールアドレス',
+                maxLength: 32,
+                controller: _displayNameController,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return '表示名を入力してください';
+                  }
+                  return null;
+                },
               ),
-              const SizedBox(height: 16),
-              // 場所
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: TextFormField(
-                  controller: _locationController,
-                  decoration: const InputDecoration(
-                    labelText: '場所',
-                    hintText: '場所を入力してください',
-                    prefixIcon: Icon(Icons.location_on),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 16),
-              // Webサイト
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: TextFormField(
-                  controller: _websiteController,
-                  decoration: const InputDecoration(
-                    labelText: 'Webサイト',
-                    hintText: 'https://example.com',
-                    prefixIcon: Icon(Icons.link),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 30),
+              AccountDeactivationSection(),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class AccountDeactivationSection extends StatelessWidget {
+  const AccountDeactivationSection({super.key});
+
+  Future<void> _showDeactivationDialog(BuildContext context) async {
+    return showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('アカウントを無効化しますか？'),
+          content: const Text(
+            'アカウントを無効化すると、すべてのデータにアクセスできなくなります。\nこの操作は取り消すことができません。',
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: const Text('キャンセル'),
+            ),
+            TextButton(
+              onPressed: () {
+                // TODO: アカウント無効化のロジックを実装
+                context.pop();
+                // ログアウト処理などを実行
+              },
+              style: TextButton.styleFrom(
+                foregroundColor: Colors.red,
+              ),
+              child: const Text('無効化する'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      margin: const EdgeInsets.all(16.0),
+      child: ListTile(
+        leading: const Icon(
+          Icons.warning_rounded,
+          color: Colors.red,
+        ),
+        title: const Text('アカウントの無効化'),
+        subtitle: const Text('アカウントを無効化し、すべてのデータを削除します'),
+        onTap: () => _showDeactivationDialog(context),
       ),
     );
   }

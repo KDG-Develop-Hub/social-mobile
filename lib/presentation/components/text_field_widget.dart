@@ -5,15 +5,17 @@ class TextFieldWidget extends HookWidget {
   const TextFieldWidget({
     super.key,
     required this.labelText,
-    required this.helperText,
+    this.helperText,
     required this.maxLength,
+    this.prefixIcon,
     this.validator,
     this.onFieldSubmitted,
     required this.controller,
   });
   final String labelText;
-  final String helperText;
+  final String? helperText;
   final int maxLength;
+  final Widget? prefixIcon;
   final String? Function(String?)? validator;
   final void Function(String)? onFieldSubmitted;
   final TextEditingController controller;
@@ -25,7 +27,10 @@ class TextFieldWidget extends HookWidget {
     final textTheme = Theme.of(context).textTheme;
 
     return Padding(
-      padding: const EdgeInsets.all(8),
+      padding: const EdgeInsets.symmetric(
+        vertical: 8,
+        horizontal: 16,
+      ),
       child: TextFormField(
         validator: validator,
         controller: controller,
@@ -40,6 +45,7 @@ class TextFieldWidget extends HookWidget {
         cursorColor: colorTheme.onSurface,
         cursorErrorColor: colorTheme.error,
         decoration: InputDecoration(
+          prefixIcon: prefixIcon,
           labelText: labelText,
           labelStyle: textTheme.bodyLarge?.copyWith(
             color: colorTheme.onSurfaceVariant,
