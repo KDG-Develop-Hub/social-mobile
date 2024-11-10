@@ -92,13 +92,6 @@ class AccountSettingsScreen extends StatelessWidget {
       body: ListView(
         children: [
           ListTile(
-            leading: const Icon(Icons.person),
-            title: const Text('プロフィール編集'),
-            onTap: () {
-              // プロフィール編集画面への遷移
-            },
-          ),
-          ListTile(
             leading: const Icon(Icons.email),
             title: const Text('メールアドレス変更'),
             onTap: () {

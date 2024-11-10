@@ -60,6 +60,24 @@ RouteBase get $appShellRouteData => StatefulShellRouteData.$route(
             GoRouteData.$route(
               path: '/settings',
               factory: $SettingsScreenRouteDataExtension._fromState,
+              routes: [
+                GoRouteData.$route(
+                  path: 'profile',
+                  factory: $SettingsProfileRouteDataExtension._fromState,
+                ),
+                GoRouteData.$route(
+                  path: 'account',
+                  factory: $SettingsAccountRouteDataExtension._fromState,
+                ),
+                GoRouteData.$route(
+                  path: 'appearance',
+                  factory: $SettingsAppearanceRouteDataExtension._fromState,
+                ),
+                GoRouteData.$route(
+                  path: 'language',
+                  factory: $SettingsLanguageRouteDataExtension._fromState,
+                ),
+              ],
             ),
           ],
         ),
@@ -149,6 +167,78 @@ extension $SettingsScreenRouteDataExtension on SettingsScreenRouteData {
 
   String get location => GoRouteData.$location(
         '/settings',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+extension $SettingsProfileRouteDataExtension on SettingsProfileRouteData {
+  static SettingsProfileRouteData _fromState(GoRouterState state) =>
+      const SettingsProfileRouteData();
+
+  String get location => GoRouteData.$location(
+        '/settings/profile',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+extension $SettingsAccountRouteDataExtension on SettingsAccountRouteData {
+  static SettingsAccountRouteData _fromState(GoRouterState state) =>
+      const SettingsAccountRouteData();
+
+  String get location => GoRouteData.$location(
+        '/settings/account',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+extension $SettingsAppearanceRouteDataExtension on SettingsAppearanceRouteData {
+  static SettingsAppearanceRouteData _fromState(GoRouterState state) =>
+      const SettingsAppearanceRouteData();
+
+  String get location => GoRouteData.$location(
+        '/settings/appearance',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+extension $SettingsLanguageRouteDataExtension on SettingsLanguageRouteData {
+  static SettingsLanguageRouteData _fromState(GoRouterState state) =>
+      const SettingsLanguageRouteData();
+
+  String get location => GoRouteData.$location(
+        '/settings/language',
       );
 
   void go(BuildContext context) => context.go(location);
