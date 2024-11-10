@@ -29,55 +29,47 @@ class _AccountSettingsScreenState extends State<AccountSettingsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('プロフィール設定'),
         elevation: 0,
-        actions: [
-          TextButton(
-            onPressed: () {
-              if (_formKey.currentState!.validate()) {
-                // TODO: プロフィール更新の処理
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('プロフィールを更新しました')),
-                );
-              }
-            },
-            child: const Text('保存'),
-          ),
-        ],
       ),
-      body: SingleChildScrollView(
-        child: Form(
-          key: _formKey,
-          child: Column(
-            children: [
-              const SizedBox(height: 20),
-              TextFieldWidget(
-                labelText: '名前',
-                maxLength: 32,
-                controller: _displayNameController,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return '表示名を入力してください';
-                  }
-                  return null;
-                },
+      body: Padding(
+          padding: const EdgeInsets.all(16),
+          child: SingleChildScrollView(
+            child: Form(
+              key: _formKey,
+              child: Column(
+                children: [
+                  Text(
+                    'アカウント',
+                    style: Theme.of(context).textTheme.headlineLarge,
+                  ),
+                  const SizedBox(height: 20),
+                  TextFieldWidget(
+                    labelText: '名前',
+                    maxLength: 32,
+                    controller: _displayNameController,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return '表示名を入力してください';
+                      }
+                      return null;
+                    },
+                  ),
+                  TextFieldWidget(
+                    labelText: 'メールアドレス',
+                    maxLength: 32,
+                    controller: _displayNameController,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return '表示名を入力してください';
+                      }
+                      return null;
+                    },
+                  ),
+                  const AccountDeactivationSection(),
+                ],
               ),
-              TextFieldWidget(
-                labelText: 'メールアドレス',
-                maxLength: 32,
-                controller: _displayNameController,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return '表示名を入力してください';
-                  }
-                  return null;
-                },
-              ),
-              AccountDeactivationSection(),
-            ],
-          ),
-        ),
-      ),
+            ),
+          )),
     );
   }
 }
@@ -119,7 +111,6 @@ class AccountDeactivationSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: const EdgeInsets.all(16.0),
       child: ListTile(
         leading: const Icon(
           Icons.warning_rounded,
