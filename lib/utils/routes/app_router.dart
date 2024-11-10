@@ -7,6 +7,10 @@ import 'package:social_mobile/presentation/friends/friends_screen.dart';
 import 'package:social_mobile/presentation/home/home_screen.dart';
 import 'package:social_mobile/presentation/profile/profile_screen.dart';
 import 'package:social_mobile/presentation/search/search_screen.dart';
+import 'package:social_mobile/presentation/settings/account_screen.dart';
+import 'package:social_mobile/presentation/settings/appearance_screen.dart';
+import 'package:social_mobile/presentation/settings/language_screen.dart';
+import 'package:social_mobile/presentation/settings/profile_screen.dart';
 import 'package:social_mobile/presentation/settings/settings_screen.dart';
 import 'package:social_mobile/utils/routes/routes.dart';
 

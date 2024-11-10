@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:social_mobile/presentation/components/text_field_widget.dart';
 
 class AccountSettingsScreen extends StatefulWidget {
@@ -50,32 +51,6 @@ class _AccountSettingsScreenState extends State<AccountSettingsScreen> {
           child: Column(
             children: [
               const SizedBox(height: 20),
-              Center(
-                child: Stack(
-                  children: [
-                    CircleAvatar(
-                      radius: 50,
-                      backgroundColor: Colors.grey[200],
-                      child: const Icon(Icons.person, size: 50),
-                    ),
-                    Positioned(
-                      right: 0,
-                      bottom: 0,
-                      child: CircleAvatar(
-                        backgroundColor: Theme.of(context).primaryColor,
-                        radius: 18,
-                        child: IconButton(
-                          icon: const Icon(Icons.camera_alt, size: 18),
-                          color: Colors.white,
-                          onPressed: () {
-                            // TODO: 画像選択の処理
-                          },
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
               TextFieldWidget(
                 labelText: '名前',
                 maxLength: 32,
