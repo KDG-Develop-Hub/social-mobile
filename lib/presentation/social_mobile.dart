@@ -38,7 +38,8 @@ class SocialMobile extends HookConsumerWidget {
 
     return KeyboardEmojiPickerWrapper(
       child: MaterialApp.router(
-        theme: brightness == Brightness.light ? theme.light() : theme.dark(),
+        // theme: brightness == Brightness.light ? theme.light() : theme.dark(),
+        theme: theme.light(),
         locale: currentLocale.flutterLocale,
         supportedLocales: AppLocaleUtils.supportedLocales,
         localizationsDelegates: const [

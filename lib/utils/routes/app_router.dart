@@ -69,6 +69,19 @@ GoRouter goRouter(GoRouterRef ref) {
         ),
       ],
     ),
+
+    // TypedStatefulShellBranch<SettingsBranch>(
+    //   routes: [
+    //     TypedGoRoute<SettingsAccountRouteData>(
+    //         path: AppRoutes.settingsAccountPath),
+    //     TypedGoRoute<SettingsLanguageRouteData>(
+    //         path: AppRoutes.settingsLanguagePath),
+    //     TypedGoRoute<SettingsAppearanceRouteData>(
+    //         path: AppRoutes.settingsAppearancePath),
+    //     TypedGoRoute<SettingsProfileRouteData>(
+    //         path: AppRoutes.settingsProfilePath),
+    //   ],
+    // ),
   ],
 )
 class AppShellRouteData extends StatefulShellRouteData {
@@ -167,6 +180,20 @@ class FriendsScreenRouteData extends GoRouteData {
 
 @TypedGoRoute<SettingsScreenRouteData>(
   path: AppRoutes.settings,
+  // routes: [
+  //   TypedGoRoute<SettingsAccountRouteData>(
+  //     path: AppRoutes.settingsAccountPath,
+  //   ),
+  //   // TypedGoRoute<SettingsLanguageRouteData>(
+  //   //   path: AppRoutes.settingsLanguagePath,
+  //   // ),
+  //   // TypedGoRoute<SettingsAppearanceRouteData>(
+  //   //   path: AppRoutes.settingsAppearancePath,
+  //   // ),
+  //   // TypedGoRoute<SettingsProfileRouteData>(
+  //   //   path: AppRoutes.settingsProfilePath,
+  //   // ),
+  // ],
 )
 class SettingsScreenRouteData extends GoRouteData {
   const SettingsScreenRouteData();
@@ -176,3 +203,39 @@ class SettingsScreenRouteData extends GoRouteData {
     return const SettingsScreen();
   }
 }
+
+// class SettingsAccountRouteData extends GoRouteData {
+//   const SettingsAccountRouteData();
+//
+//   @override
+//   Widget build(BuildContext context, GoRouterState state) {
+//     return const AccountSettingsScreen();
+//   }
+// }
+//
+// class SettingsLanguageRouteData extends GoRouteData {
+//   const SettingsLanguageRouteData();
+//
+//   @override
+//   Widget build(BuildContext context, GoRouterState state) {
+//     return const LanguageSettingsScreen();
+//   }
+// }
+//
+// class SettingsAppearanceRouteData extends GoRouteData {
+//   const SettingsAppearanceRouteData();
+//
+//   @override
+//   Widget build(BuildContext context, GoRouterState state) {
+//     return const AppearanceSettingsScreen();
+//   }
+// }
+//
+// class SettingsProfileRouteData extends GoRouteData {
+//   const SettingsProfileRouteData();
+//
+//   @override
+//   Widget build(BuildContext context, GoRouterState state) {
+//     return const ProfileSettingsScreen();
+//   }
+// }
