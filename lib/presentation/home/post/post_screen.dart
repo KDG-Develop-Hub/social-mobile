@@ -1,14 +1,35 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:social_mobile/utils/gen/assets.gen.dart';
 
-class PostScreen extends StatelessWidget {
+class PostScreen extends StatefulWidget {
   const PostScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  PostScreenState createState() => PostScreenState();
+}
 
+class PostScreenState extends State<PostScreen> {
+
+  final ImagePicker _picker = ImagePicker();
+  List<XFile> selectedImages = [];
+
+  Future<void> _pickImage() async {
+    final images = await _picker.pickMultiImage();
+    if (images.length > 4) {
+      selectedImages = images.take(4).toList();
+    } else {
+      selectedImages = images;
+    }
+    setState(() {});
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -54,30 +75,53 @@ class PostScreen extends StatelessWidget {
                 color: Colors.black,
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.fromLTRB(16, 16, 16, 0),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
               child: TextField(
                 maxLines: 3,
-                decoration: InputDecoration(
+                maxLength: 256,
+                onChanged: (text) {
+                  setState(() {
+                  });
+                },
+                decoration: const InputDecoration(
+                  alignLabelWithHint: true,
                   labelText: '内容', 
                   hintText: '今日の天気はそこまでよくないな。カフェ行こうと思ったけど遠慮しとこうかな？',
                   border: OutlineInputBorder(),
                 ),
               ),
             ),
-            const Row(
-              children: [
-                Spacer(),
-                Padding(
-                  padding: EdgeInsets.fromLTRB(32, 8, 32, 8),
-                  child: Text('0/256'),
+            const SizedBox(height: 16),
+            if (selectedImages.isNotEmpty)
+              Padding(
+                padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
+                child: SizedBox(
+                  height: 100,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: selectedImages.length,
+                    itemBuilder: (context, index) {
+                      final imagePath = selectedImages[index].path;
+                      return Padding(
+                        padding: const EdgeInsets.all(4),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(16),
+                          child: AspectRatio(
+                            aspectRatio: 1/1,
+                            child: imagePath.isNotEmpty
+                            ? Image.file(
+                                File(imagePath),
+                                fit: BoxFit.cover,
+                              )
+                            : const SizedBox.shrink(),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
                 ),
-              ],
-            ),
-            ElevatedButton(
-              onPressed: () {},
-              child: const Text('画像を選択'),
-            ),
+              ),
             Padding(
               padding: const EdgeInsets.all(16),
               child: Row(
@@ -89,8 +133,7 @@ class PostScreen extends StatelessWidget {
                       icon: SvgPicture.asset(Assets.icons.imagePlus),
                       padding: EdgeInsets.zero,
                       constraints: const BoxConstraints(),
-                      onPressed: () {
-                      },
+                      onPressed: _pickImage,
                     ),
                   ),
                   SizedBox(
@@ -121,6 +164,7 @@ class PostScreen extends StatelessWidget {
                   ),
                   ElevatedButton(
                     onPressed: () {
+                      context.pop();
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFF466730),
