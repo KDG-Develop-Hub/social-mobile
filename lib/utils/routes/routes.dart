@@ -4,4 +4,5 @@ class AppRoutes {
   static const profile = '/profile';
   static const friends = '/friends';
   static const settings = '/settings';
+  static const post = 'post';
 }

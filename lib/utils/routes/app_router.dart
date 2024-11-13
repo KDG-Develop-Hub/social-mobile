@@ -5,6 +5,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:social_mobile/presentation/components/bottom_navigation.dart';
 import 'package:social_mobile/presentation/friends/friends_screen.dart';
 import 'package:social_mobile/presentation/home/home_screen.dart';
+import 'package:social_mobile/presentation/home/post/post_screen.dart';
 import 'package:social_mobile/presentation/profile/profile_screen.dart';
 import 'package:social_mobile/presentation/search/search_screen.dart';
 import 'package:social_mobile/presentation/settings/settings_screen.dart';
@@ -18,6 +19,7 @@ final searchNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'search');
 final profileNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'profile');
 final friendsNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'friends');
 final settingsNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'settings');
+final postNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'post');
 
 @Riverpod(keepAlive: true)
 GoRouter goRouter(GoRouterRef ref) {
@@ -119,7 +121,11 @@ class SettingsBranch extends StatefulShellBranchData {
 // TOPレベルのパスには、@TypedGoRouteをつける
 @TypedGoRoute<HomeScreenRouteData>(
   path: AppRoutes.home,
+  routes: [
+    TypedGoRoute<PostScreenRouteData>(path: AppRoutes.post),
+  ],
 )
+
 class HomeScreenRouteData extends GoRouteData {
   const HomeScreenRouteData();
 
@@ -128,6 +134,16 @@ class HomeScreenRouteData extends GoRouteData {
     return const HomeScreen();
   }
 }
+
+class PostScreenRouteData extends GoRouteData {
+  const PostScreenRouteData();
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) {
+    return const PostScreen();
+  }
+}
+
 
 @TypedGoRoute<SearchScreenRouteData>(
   path: AppRoutes.search,

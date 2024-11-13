@@ -164,7 +164,31 @@ extension $SettingsScreenRouteDataExtension on SettingsScreenRouteData {
 RouteBase get $homeScreenRouteData => GoRouteData.$route(
       path: '/home',
       factory: $HomeScreenRouteDataExtension._fromState,
+      routes: [
+        GoRouteData.$route(
+          path: 'post',
+          factory: $PostScreenRouteDataExtension._fromState,
+        ),
+      ],
     );
+
+extension $PostScreenRouteDataExtension on PostScreenRouteData {
+  static PostScreenRouteData _fromState(GoRouterState state) =>
+      const PostScreenRouteData();
+
+  String get location => GoRouteData.$location(
+        '/home/post',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
 
 RouteBase get $searchScreenRouteData => GoRouteData.$route(
       path: '/search',
