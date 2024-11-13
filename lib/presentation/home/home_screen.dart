@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:social_mobile/i18n/strings.g.dart';
 import 'package:social_mobile/presentation/components/loading.dart';
 import 'package:social_mobile/presentation/components/post_card/post_card.dart';
 import 'package:social_mobile/presentation/home/provider/home_notifier.dart';
+import 'package:social_mobile/utils/gen/assets.gen.dart';
+import 'package:social_mobile/utils/routes/app_router.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
@@ -49,6 +52,15 @@ class HomeScreen extends ConsumerWidget {
           ),
         _ => const Loading(),
       },
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          await const PostScreenRouteData().push<void>(context);
+        },
+        backgroundColor: const Color(0xFF386666),
+        child: SvgPicture.asset(
+          Assets.icons.feather,
+        ),
+      ),
     );
   }
 }
