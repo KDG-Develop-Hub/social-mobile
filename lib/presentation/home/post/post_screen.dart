@@ -14,7 +14,6 @@ class PostScreen extends StatefulWidget {
 }
 
 class PostScreenState extends State<PostScreen> {
-
   final ImagePicker _picker = ImagePicker();
   List<XFile> selectedImages = [];
 
@@ -83,12 +82,11 @@ class PostScreenState extends State<PostScreen> {
                   maxLines: 3,
                   maxLength: 256,
                   onChanged: (text) {
-                    setState(() {
-                    });
+                    setState(() {});
                   },
                   decoration: const InputDecoration(
                     alignLabelWithHint: true,
-                    labelText: '内容', 
+                    labelText: '内容',
                     hintText: '今日の天気はそこまでよくないな。カフェ行こうと思ったけど遠慮しとこうかな？',
                     border: OutlineInputBorder(),
                   ),
@@ -110,13 +108,13 @@ class PostScreenState extends State<PostScreen> {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(16),
                             child: AspectRatio(
-                              aspectRatio: 1/1,
+                              aspectRatio: 1 / 1,
                               child: imagePath.isNotEmpty
-                              ? Image.file(
-                                  File(imagePath),
-                                  fit: BoxFit.cover,
-                                )
-                              : const SizedBox.shrink(),
+                                  ? Image.file(
+                                      File(imagePath),
+                                      fit: BoxFit.cover,
+                                    )
+                                  : const SizedBox.shrink(),
                             ),
                           ),
                         );
@@ -145,8 +143,7 @@ class PostScreenState extends State<PostScreen> {
                         icon: const Icon(Icons.ballot),
                         padding: EdgeInsets.zero,
                         constraints: const BoxConstraints(),
-                        onPressed: () {
-                        },
+                        onPressed: () {},
                       ),
                     ),
                   ],
@@ -159,8 +156,7 @@ class PostScreenState extends State<PostScreen> {
                   children: [
                     const Spacer(),
                     TextButton(
-                      onPressed: () {
-                      },
+                      onPressed: () {},
                       child: const Text('やっぱやめる'),
                     ),
                     ElevatedButton(

@@ -125,7 +125,6 @@ class SettingsBranch extends StatefulShellBranchData {
     TypedGoRoute<PostScreenRouteData>(path: AppRoutes.post),
   ],
 )
-
 class HomeScreenRouteData extends GoRouteData {
   const HomeScreenRouteData();
 
@@ -143,7 +142,6 @@ class PostScreenRouteData extends GoRouteData {
     return const PostScreen();
   }
 }
-
 
 @TypedGoRoute<SearchScreenRouteData>(
   path: AppRoutes.search,
