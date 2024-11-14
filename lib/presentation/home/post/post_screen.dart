@@ -42,144 +42,146 @@ class PostScreenState extends State<PostScreen> {
           ),
         ),
       ),
-      body: Center(
-        child: Column(
-          children: [
-            SvgPicture.asset(
-              Assets.icons.feather,
-              colorFilter: const ColorFilter.mode(
-                Colors.black,
-                BlendMode.srcIn,
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SvgPicture.asset(
+                Assets.icons.feather,
+                colorFilter: const ColorFilter.mode(
+                  Colors.black,
+                  BlendMode.srcIn,
+                ),
               ),
-            ),
-            const SizedBox(height: 16),
-            const Text(
-              '今回は何を綴るのかな？',
-              style: TextStyle(
-                fontSize: 24,
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.all(16),
-              child: Text(
-                '自分の考えや出来事を気楽に書こう！コミュニティーガイドラインの確認も忘れないでねッ！',
+              const SizedBox(height: 16),
+              const Text(
+                '今回は何を綴るのかな？',
                 style: TextStyle(
-                  fontSize: 14,
+                  fontSize: 24,
                 ),
               ),
-            ),
-            const Padding(
-              padding: EdgeInsets.all(16),
-              child: Divider(
-                thickness: 1,
-                color: Colors.black,
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
-              child: TextField(
-                maxLines: 3,
-                maxLength: 256,
-                onChanged: (text) {
-                  setState(() {
-                  });
-                },
-                decoration: const InputDecoration(
-                  alignLabelWithHint: true,
-                  labelText: '内容', 
-                  hintText: '今日の天気はそこまでよくないな。カフェ行こうと思ったけど遠慮しとこうかな？',
-                  border: OutlineInputBorder(),
+              const Padding(
+                padding: EdgeInsets.all(16),
+                child: Text(
+                  '自分の考えや出来事を気楽に書こう！コミュニティーガイドラインの確認も忘れないでねッ！',
+                  style: TextStyle(
+                    fontSize: 14,
+                  ),
                 ),
               ),
-            ),
-            const SizedBox(height: 16),
-            if (selectedImages.isNotEmpty)
+              const Padding(
+                padding: EdgeInsets.all(16),
+                child: Divider(
+                  thickness: 1,
+                  color: Colors.black,
+                ),
+              ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
-                child: SizedBox(
-                  height: 100,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: selectedImages.length,
-                    itemBuilder: (context, index) {
-                      final imagePath = selectedImages[index].path;
-                      return Padding(
-                        padding: const EdgeInsets.all(4),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(16),
-                          child: AspectRatio(
-                            aspectRatio: 1/1,
-                            child: imagePath.isNotEmpty
-                            ? Image.file(
-                                File(imagePath),
-                                fit: BoxFit.cover,
-                              )
-                            : const SizedBox.shrink(),
-                          ),
-                        ),
-                      );
-                    },
+                padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
+                child: TextField(
+                  maxLines: 3,
+                  maxLength: 256,
+                  onChanged: (text) {
+                    setState(() {
+                    });
+                  },
+                  decoration: const InputDecoration(
+                    alignLabelWithHint: true,
+                    labelText: '内容', 
+                    hintText: '今日の天気はそこまでよくないな。カフェ行こうと思ったけど遠慮しとこうかな？',
+                    border: OutlineInputBorder(),
                   ),
                 ),
               ),
-            Padding(
-              padding: const EdgeInsets.all(16),
-              child: Row(
-                children: [
-                  SizedBox(
-                    width: 40,
-                    height: 40,
-                    child: IconButton(
-                      icon: SvgPicture.asset(Assets.icons.imagePlus),
-                      padding: EdgeInsets.zero,
-                      constraints: const BoxConstraints(),
-                      onPressed: _pickImage,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 40,
-                    height: 40,
-                    child: IconButton(
-                      icon: const Icon(Icons.ballot),
-                      padding: EdgeInsets.zero,
-                      constraints: const BoxConstraints(),
-                      onPressed: () {
+              const SizedBox(height: 16),
+              if (selectedImages.isNotEmpty)
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
+                  child: SizedBox(
+                    height: 100,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: selectedImages.length,
+                      itemBuilder: (context, index) {
+                        final imagePath = selectedImages[index].path;
+                        return Padding(
+                          padding: const EdgeInsets.all(4),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(16),
+                            child: AspectRatio(
+                              aspectRatio: 1/1,
+                              child: imagePath.isNotEmpty
+                              ? Image.file(
+                                  File(imagePath),
+                                  fit: BoxFit.cover,
+                                )
+                              : const SizedBox.shrink(),
+                            ),
+                          ),
+                        );
                       },
                     ),
                   ),
-                ],
-              ),
-            ),
-            const Spacer(),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(16, 0, 16, 56),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  const Spacer(),
-                  TextButton(
-                    onPressed: () {
-                    },
-                    child: const Text('やっぱやめる'),
-                  ),
-                  ElevatedButton(
-                    onPressed: () {
-                      context.pop();
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFF466730),
-                    ),
-                    child: const Text(
-                      '広めちゃうん',
-                      style: TextStyle(
-                        color: Colors.white,
+                ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(16, 16, 16, 296),
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: 40,
+                      height: 40,
+                      child: IconButton(
+                        icon: SvgPicture.asset(Assets.icons.imagePlus),
+                        padding: EdgeInsets.zero,
+                        constraints: const BoxConstraints(),
+                        onPressed: _pickImage,
                       ),
                     ),
-                  ),
-                ],
+                    SizedBox(
+                      width: 40,
+                      height: 40,
+                      child: IconButton(
+                        icon: const Icon(Icons.ballot),
+                        padding: EdgeInsets.zero,
+                        constraints: const BoxConstraints(),
+                        onPressed: () {
+                        },
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+              Padding(
+                padding: const EdgeInsets.fromLTRB(16, 0, 16, 56),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    const Spacer(),
+                    TextButton(
+                      onPressed: () {
+                      },
+                      child: const Text('やっぱやめる'),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        context.pop();
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xFF466730),
+                      ),
+                      child: const Text(
+                        '広めちゃうん',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
