@@ -22,9 +22,13 @@ User _$UserFromJson(Map<String, dynamic> json) {
 mixin _$User {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
+  String get displayName => throw _privateConstructorUsedError;
   String get imageUrl => throw _privateConstructorUsedError;
   String get bio => throw _privateConstructorUsedError;
-  List<Role> get roles => throw _privateConstructorUsedError;
+  String get emailAddress => throw _privateConstructorUsedError;
+  Map<SocialLinkType, Uri> get socialLinks =>
+      throw _privateConstructorUsedError;
+  List<String>? get bookmarkPostIds => throw _privateConstructorUsedError;
   @DateTimeConverter()
   DateTime get createdAt => throw _privateConstructorUsedError;
   @DateTimeConverter()
@@ -43,9 +47,12 @@ abstract class $UserCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
+      String displayName,
       String imageUrl,
       String bio,
-      List<Role> roles,
+      String emailAddress,
+      Map<SocialLinkType, Uri> socialLinks,
+      List<String>? bookmarkPostIds,
       @DateTimeConverter() DateTime createdAt,
       @DateTimeConverter() DateTime? updatedAt});
 }
@@ -65,9 +72,12 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
   $Res call({
     Object? id = null,
     Object? name = null,
+    Object? displayName = null,
     Object? imageUrl = null,
     Object? bio = null,
-    Object? roles = null,
+    Object? emailAddress = null,
+    Object? socialLinks = null,
+    Object? bookmarkPostIds = freezed,
     Object? createdAt = null,
     Object? updatedAt = freezed,
   }) {
@@ -80,6 +90,10 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      displayName: null == displayName
+          ? _value.displayName
+          : displayName // ignore: cast_nullable_to_non_nullable
+              as String,
       imageUrl: null == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
@@ -88,10 +102,18 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.bio
           : bio // ignore: cast_nullable_to_non_nullable
               as String,
-      roles: null == roles
-          ? _value.roles
-          : roles // ignore: cast_nullable_to_non_nullable
-              as List<Role>,
+      emailAddress: null == emailAddress
+          ? _value.emailAddress
+          : emailAddress // ignore: cast_nullable_to_non_nullable
+              as String,
+      socialLinks: null == socialLinks
+          ? _value.socialLinks
+          : socialLinks // ignore: cast_nullable_to_non_nullable
+              as Map<SocialLinkType, Uri>,
+      bookmarkPostIds: freezed == bookmarkPostIds
+          ? _value.bookmarkPostIds
+          : bookmarkPostIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -114,9 +136,12 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
+      String displayName,
       String imageUrl,
       String bio,
-      List<Role> roles,
+      String emailAddress,
+      Map<SocialLinkType, Uri> socialLinks,
+      List<String>? bookmarkPostIds,
       @DateTimeConverter() DateTime createdAt,
       @DateTimeConverter() DateTime? updatedAt});
 }
@@ -133,9 +158,12 @@ class __$$UserImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? name = null,
+    Object? displayName = null,
     Object? imageUrl = null,
     Object? bio = null,
-    Object? roles = null,
+    Object? emailAddress = null,
+    Object? socialLinks = null,
+    Object? bookmarkPostIds = freezed,
     Object? createdAt = null,
     Object? updatedAt = freezed,
   }) {
@@ -148,6 +176,10 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      displayName: null == displayName
+          ? _value.displayName
+          : displayName // ignore: cast_nullable_to_non_nullable
+              as String,
       imageUrl: null == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
@@ -156,10 +188,18 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.bio
           : bio // ignore: cast_nullable_to_non_nullable
               as String,
-      roles: null == roles
-          ? _value._roles
-          : roles // ignore: cast_nullable_to_non_nullable
-              as List<Role>,
+      emailAddress: null == emailAddress
+          ? _value.emailAddress
+          : emailAddress // ignore: cast_nullable_to_non_nullable
+              as String,
+      socialLinks: null == socialLinks
+          ? _value._socialLinks
+          : socialLinks // ignore: cast_nullable_to_non_nullable
+              as Map<SocialLinkType, Uri>,
+      bookmarkPostIds: freezed == bookmarkPostIds
+          ? _value._bookmarkPostIds
+          : bookmarkPostIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -178,12 +218,16 @@ class _$UserImpl implements _User {
   const _$UserImpl(
       {required this.id,
       required this.name,
+      required this.displayName,
       required this.imageUrl,
       required this.bio,
-      required final List<Role> roles,
+      required this.emailAddress,
+      required final Map<SocialLinkType, Uri> socialLinks,
+      final List<String>? bookmarkPostIds,
       @DateTimeConverter() required this.createdAt,
       @DateTimeConverter() this.updatedAt})
-      : _roles = roles;
+      : _socialLinks = socialLinks,
+        _bookmarkPostIds = bookmarkPostIds;
 
   factory _$UserImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserImplFromJson(json);
@@ -193,15 +237,29 @@ class _$UserImpl implements _User {
   @override
   final String name;
   @override
+  final String displayName;
+  @override
   final String imageUrl;
   @override
   final String bio;
-  final List<Role> _roles;
   @override
-  List<Role> get roles {
-    if (_roles is EqualUnmodifiableListView) return _roles;
+  final String emailAddress;
+  final Map<SocialLinkType, Uri> _socialLinks;
+  @override
+  Map<SocialLinkType, Uri> get socialLinks {
+    if (_socialLinks is EqualUnmodifiableMapView) return _socialLinks;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_roles);
+    return EqualUnmodifiableMapView(_socialLinks);
+  }
+
+  final List<String>? _bookmarkPostIds;
+  @override
+  List<String>? get bookmarkPostIds {
+    final value = _bookmarkPostIds;
+    if (value == null) return null;
+    if (_bookmarkPostIds is EqualUnmodifiableListView) return _bookmarkPostIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
   }
 
   @override
@@ -213,7 +271,7 @@ class _$UserImpl implements _User {
 
   @override
   String toString() {
-    return 'User(id: $id, name: $name, imageUrl: $imageUrl, bio: $bio, roles: $roles, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'User(id: $id, name: $name, displayName: $displayName, imageUrl: $imageUrl, bio: $bio, emailAddress: $emailAddress, socialLinks: $socialLinks, bookmarkPostIds: $bookmarkPostIds, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
@@ -223,10 +281,17 @@ class _$UserImpl implements _User {
             other is _$UserImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
+            (identical(other.displayName, displayName) ||
+                other.displayName == displayName) &&
             (identical(other.imageUrl, imageUrl) ||
                 other.imageUrl == imageUrl) &&
             (identical(other.bio, bio) || other.bio == bio) &&
-            const DeepCollectionEquality().equals(other._roles, _roles) &&
+            (identical(other.emailAddress, emailAddress) ||
+                other.emailAddress == emailAddress) &&
+            const DeepCollectionEquality()
+                .equals(other._socialLinks, _socialLinks) &&
+            const DeepCollectionEquality()
+                .equals(other._bookmarkPostIds, _bookmarkPostIds) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
             (identical(other.updatedAt, updatedAt) ||
@@ -235,8 +300,18 @@ class _$UserImpl implements _User {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, imageUrl, bio,
-      const DeepCollectionEquality().hash(_roles), createdAt, updatedAt);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      displayName,
+      imageUrl,
+      bio,
+      emailAddress,
+      const DeepCollectionEquality().hash(_socialLinks),
+      const DeepCollectionEquality().hash(_bookmarkPostIds),
+      createdAt,
+      updatedAt);
 
   @JsonKey(ignore: true)
   @override
@@ -256,9 +331,12 @@ abstract class _User implements User {
   const factory _User(
       {required final String id,
       required final String name,
+      required final String displayName,
       required final String imageUrl,
       required final String bio,
-      required final List<Role> roles,
+      required final String emailAddress,
+      required final Map<SocialLinkType, Uri> socialLinks,
+      final List<String>? bookmarkPostIds,
       @DateTimeConverter() required final DateTime createdAt,
       @DateTimeConverter() final DateTime? updatedAt}) = _$UserImpl;
 
@@ -269,11 +347,17 @@ abstract class _User implements User {
   @override
   String get name;
   @override
+  String get displayName;
+  @override
   String get imageUrl;
   @override
   String get bio;
   @override
-  List<Role> get roles;
+  String get emailAddress;
+  @override
+  Map<SocialLinkType, Uri> get socialLinks;
+  @override
+  List<String>? get bookmarkPostIds;
   @override
   @DateTimeConverter()
   DateTime get createdAt;

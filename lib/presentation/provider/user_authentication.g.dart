@@ -7,7 +7,7 @@ part of 'user_authentication.dart';
 // **************************************************************************
 
 String _$userAuthenticationHash() =>
-    r'b8f8de55bf37fde954a30894bd8deb38984d9a6e';
+    r'4aecab7fe2ce133ef4c0099fdfa570e6d7276e7f';
 
 /// See also [userAuthentication].
 @ProviderFor(userAuthentication)
