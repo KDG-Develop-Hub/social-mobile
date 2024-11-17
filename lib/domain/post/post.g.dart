@@ -12,13 +12,13 @@ _$PostImpl _$$PostImplFromJson(Map<String, dynamic> json) => _$PostImpl(
       userName: json['userName'] as String,
       userImageUrl: json['userImageUrl'] as String,
       content: json['content'] as String,
-      imageUrls: (json['imageUrls'] as List<dynamic>?)
-          ?.map((e) => e as String)
+      bookmarkedUserIds: (json['bookmarkedUserIds'] as List<dynamic>)
+          .map((e) => e as String)
           .toList(),
       reactions: (json['reactions'] as List<dynamic>?)
           ?.map((e) => Reaction.fromJson(e as Map<String, dynamic>))
           .toList(),
-      replyIds: (json['replyIds'] as List<dynamic>?)
+      imageUrls: (json['imageUrls'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
       createdAt:
@@ -34,9 +34,9 @@ Map<String, dynamic> _$$PostImplToJson(_$PostImpl instance) =>
       'userName': instance.userName,
       'userImageUrl': instance.userImageUrl,
       'content': instance.content,
-      'imageUrls': instance.imageUrls,
+      'bookmarkedUserIds': instance.bookmarkedUserIds,
       'reactions': instance.reactions,
-      'replyIds': instance.replyIds,
+      'imageUrls': instance.imageUrls,
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),
       'updatedAt': _$JsonConverterToJson<String, DateTime>(
           instance.updatedAt, const DateTimeConverter().toJson),

@@ -21,6 +21,7 @@ class MockPostRepositoryImpl implements PostRepository {
         userImageUrl: 'https://picsum.photos/200',
         content: generateRandomString(),
         createdAt: DateTime.now(),
+        bookmarkedUserIds: [],
         reactions: List.generate(
           1,
           (index) => Reaction(
