@@ -1,5 +1,7 @@
 import 'dart:math';
 
+import 'package:uuid/uuid.dart';
+
 String generateRandomString() {
   const charset =
       '0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz';
@@ -11,3 +13,10 @@ String generateRandomString() {
   ).join();
   return randomStr;
 }
+
+String returnUuidV4() {
+  const uuid = Uuid();
+  return uuid.v4();
+}
+
+String returnJpgFileName() => '${returnUuidV4()}.jpg';
