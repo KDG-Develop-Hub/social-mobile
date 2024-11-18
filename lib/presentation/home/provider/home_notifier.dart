@@ -3,22 +3,22 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:social_mobile/domain/post/post.dart';
 import 'package:social_mobile/domain/reaction/reaction.dart';
 import 'package:social_mobile/domain/user/user.dart';
-import 'package:social_mobile/infrastructure/post/mocks/mock_post_repository_impl.dart';
+import 'package:social_mobile/infrastructure/post/mocks/mock_post_data_source.dart';
 import 'package:social_mobile/presentation/provider/user_authentication.dart';
 
 part 'home_notifier.g.dart';
 
 @riverpod
 class HomeNotifier extends _$HomeNotifier {
-  MockPostRepositoryImpl get mockPostRepositoryImpl =>
-      ref.read(mockPostRepositoryImplProvider);
+  MockPostDataSource get mockPostDataSource =>
+      ref.read(mockPostDataSourceProvider.notifier);
   User get userAuthentication => ref.read(userAuthenticationProvider);
 
   @override
   Future<List<Post>> build() async {
     var posts = <Post>[];
     try {
-      posts = await mockPostRepositoryImpl.fetchPosts();
+      posts = await mockPostDataSource.fetchPosts();
     } on Exception catch (e) {
       debugPrint(e.toString());
     }
@@ -41,7 +41,7 @@ class HomeNotifier extends _$HomeNotifier {
               .where((id) => id != userAuthentication.id)
               .toList(),
     );
-    final posts = await mockPostRepositoryImpl.editReaction(
+    final posts = await mockPostDataSource.editReaction(
       hasReact: hasReact,
       reaction: updatedReaction,
     );
