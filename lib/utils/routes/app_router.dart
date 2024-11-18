@@ -5,6 +5,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:social_mobile/presentation/components/bottom_navigation.dart';
 import 'package:social_mobile/presentation/friends/friends_screen.dart';
 import 'package:social_mobile/presentation/home/home_screen.dart';
+import 'package:social_mobile/presentation/home/post/post_screen.dart';
 import 'package:social_mobile/presentation/profile/profile_screen.dart';
 import 'package:social_mobile/presentation/search/search_screen.dart';
 import 'package:social_mobile/presentation/settings/settings_screen.dart';
@@ -119,6 +120,9 @@ class SettingsBranch extends StatefulShellBranchData {
 // TOPレベルのパスには、@TypedGoRouteをつける
 @TypedGoRoute<HomeScreenRouteData>(
   path: AppRoutes.home,
+  routes: [
+    TypedGoRoute<PostScreenRouteData>(path: AppRoutes.post),
+  ],
 )
 class HomeScreenRouteData extends GoRouteData {
   const HomeScreenRouteData();
@@ -126,6 +130,15 @@ class HomeScreenRouteData extends GoRouteData {
   @override
   Widget build(BuildContext context, GoRouterState state) {
     return const HomeScreen();
+  }
+}
+
+class PostScreenRouteData extends GoRouteData {
+  const PostScreenRouteData();
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) {
+    return const PostScreen();
   }
 }
 

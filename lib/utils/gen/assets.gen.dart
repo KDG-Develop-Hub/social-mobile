@@ -19,6 +19,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/comment.svg
   String get comment => 'assets/icons/comment.svg';
 
+  /// File path: assets/icons/feather.svg
+  String get feather => 'assets/icons/feather.svg';
+
   /// File path: assets/icons/flag.svg
   String get flag => 'assets/icons/flag.svg';
 
@@ -27,6 +30,9 @@ class $AssetsIconsGen {
 
   /// File path: assets/icons/home_icon.svg
   String get homeIcon => 'assets/icons/home_icon.svg';
+
+  /// File path: assets/icons/image-plus.svg
+  String get imagePlus => 'assets/icons/image-plus.svg';
 
   /// File path: assets/icons/message_circle_reply.svg
   String get messageCircleReply => 'assets/icons/message_circle_reply.svg';
@@ -54,9 +60,11 @@ class $AssetsIconsGen {
         bookmark,
         bookmarked,
         comment,
+        feather,
         flag,
         friendsIcon,
         homeIcon,
+        imagePlus,
         messageCircleReply,
         profileIcon,
         reaction,
