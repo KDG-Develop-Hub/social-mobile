@@ -24,6 +24,7 @@ dependencies:
   go_router: ^14.1.4
   google_fonts: ^6.2.0
   hooks_riverpod: ^2.5.1
+  image_picker: ^1.1.2
   intl: ^0.18.1
   json_annotation: ^4.9.0
   keyboard_emoji_picker: ^1.0.3
