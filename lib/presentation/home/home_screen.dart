@@ -56,7 +56,7 @@ class HomeScreen extends ConsumerWidget {
         onPressed: () async {
           await const PostScreenRouteData().push<void>(context);
         },
-        backgroundColor: const Color(0xFF386666),
+        backgroundColor: Theme.of(context).colorScheme.tertiary,
         child: SvgPicture.asset(
           Assets.icons.feather,
         ),
