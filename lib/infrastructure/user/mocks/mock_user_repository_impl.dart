@@ -1,5 +1,4 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:social_mobile/domain/role/role.dart';
 import 'package:social_mobile/domain/user/user.dart';
 import 'package:social_mobile/domain/user/user_repository.dart';
 import 'package:social_mobile/utils/helpers/random_string.dart';
@@ -15,12 +14,9 @@ class MockUserRepositoryImpl implements UserRepository {
     imageUrl: 'https://picsum.photos/200',
     bio: generateRandomString(),
     createdAt: DateTime.now(),
-    roles: const [
-      Role(
-        id: '1',
-        name: 'Admin',
-      ),
-    ],
+    emailAddress: '',
+    displayName: 'Omura Kenshin',
+    socialLinks: {},
   );
 
   @override

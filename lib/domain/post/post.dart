@@ -13,9 +13,9 @@ abstract class Post with _$Post {
     required String userName,
     required String userImageUrl,
     required String content,
-    List<String>? imageUrls,
+    required List<String> bookmarkedUserIds,
     List<Reaction>? reactions,
-    List<String>? replyIds,
+    List<String>? imageUrls,
     @DateTimeConverter() required DateTime createdAt,
     @DateTimeConverter() DateTime? updatedAt,
   }) = _Post;

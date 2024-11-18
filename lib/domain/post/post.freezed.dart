@@ -25,9 +25,9 @@ mixin _$Post {
   String get userName => throw _privateConstructorUsedError;
   String get userImageUrl => throw _privateConstructorUsedError;
   String get content => throw _privateConstructorUsedError;
-  List<String>? get imageUrls => throw _privateConstructorUsedError;
+  List<String> get bookmarkedUserIds => throw _privateConstructorUsedError;
   List<Reaction>? get reactions => throw _privateConstructorUsedError;
-  List<String>? get replyIds => throw _privateConstructorUsedError;
+  List<String>? get imageUrls => throw _privateConstructorUsedError;
   @DateTimeConverter()
   DateTime get createdAt => throw _privateConstructorUsedError;
   @DateTimeConverter()
@@ -49,9 +49,9 @@ abstract class $PostCopyWith<$Res> {
       String userName,
       String userImageUrl,
       String content,
-      List<String>? imageUrls,
+      List<String> bookmarkedUserIds,
       List<Reaction>? reactions,
-      List<String>? replyIds,
+      List<String>? imageUrls,
       @DateTimeConverter() DateTime createdAt,
       @DateTimeConverter() DateTime? updatedAt});
 }
@@ -74,9 +74,9 @@ class _$PostCopyWithImpl<$Res, $Val extends Post>
     Object? userName = null,
     Object? userImageUrl = null,
     Object? content = null,
-    Object? imageUrls = freezed,
+    Object? bookmarkedUserIds = null,
     Object? reactions = freezed,
-    Object? replyIds = freezed,
+    Object? imageUrls = freezed,
     Object? createdAt = null,
     Object? updatedAt = freezed,
   }) {
@@ -101,17 +101,17 @@ class _$PostCopyWithImpl<$Res, $Val extends Post>
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
               as String,
-      imageUrls: freezed == imageUrls
-          ? _value.imageUrls
-          : imageUrls // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+      bookmarkedUserIds: null == bookmarkedUserIds
+          ? _value.bookmarkedUserIds
+          : bookmarkedUserIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       reactions: freezed == reactions
           ? _value.reactions
           : reactions // ignore: cast_nullable_to_non_nullable
               as List<Reaction>?,
-      replyIds: freezed == replyIds
-          ? _value.replyIds
-          : replyIds // ignore: cast_nullable_to_non_nullable
+      imageUrls: freezed == imageUrls
+          ? _value.imageUrls
+          : imageUrls // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       createdAt: null == createdAt
           ? _value.createdAt
@@ -138,9 +138,9 @@ abstract class _$$PostImplCopyWith<$Res> implements $PostCopyWith<$Res> {
       String userName,
       String userImageUrl,
       String content,
-      List<String>? imageUrls,
+      List<String> bookmarkedUserIds,
       List<Reaction>? reactions,
-      List<String>? replyIds,
+      List<String>? imageUrls,
       @DateTimeConverter() DateTime createdAt,
       @DateTimeConverter() DateTime? updatedAt});
 }
@@ -160,9 +160,9 @@ class __$$PostImplCopyWithImpl<$Res>
     Object? userName = null,
     Object? userImageUrl = null,
     Object? content = null,
-    Object? imageUrls = freezed,
+    Object? bookmarkedUserIds = null,
     Object? reactions = freezed,
-    Object? replyIds = freezed,
+    Object? imageUrls = freezed,
     Object? createdAt = null,
     Object? updatedAt = freezed,
   }) {
@@ -187,17 +187,17 @@ class __$$PostImplCopyWithImpl<$Res>
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
               as String,
-      imageUrls: freezed == imageUrls
-          ? _value._imageUrls
-          : imageUrls // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+      bookmarkedUserIds: null == bookmarkedUserIds
+          ? _value._bookmarkedUserIds
+          : bookmarkedUserIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       reactions: freezed == reactions
           ? _value._reactions
           : reactions // ignore: cast_nullable_to_non_nullable
               as List<Reaction>?,
-      replyIds: freezed == replyIds
-          ? _value._replyIds
-          : replyIds // ignore: cast_nullable_to_non_nullable
+      imageUrls: freezed == imageUrls
+          ? _value._imageUrls
+          : imageUrls // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       createdAt: null == createdAt
           ? _value.createdAt
@@ -220,14 +220,14 @@ class _$PostImpl implements _Post {
       required this.userName,
       required this.userImageUrl,
       required this.content,
-      final List<String>? imageUrls,
+      required final List<String> bookmarkedUserIds,
       final List<Reaction>? reactions,
-      final List<String>? replyIds,
+      final List<String>? imageUrls,
       @DateTimeConverter() required this.createdAt,
       @DateTimeConverter() this.updatedAt})
-      : _imageUrls = imageUrls,
+      : _bookmarkedUserIds = bookmarkedUserIds,
         _reactions = reactions,
-        _replyIds = replyIds;
+        _imageUrls = imageUrls;
 
   factory _$PostImpl.fromJson(Map<String, dynamic> json) =>
       _$$PostImplFromJson(json);
@@ -242,14 +242,13 @@ class _$PostImpl implements _Post {
   final String userImageUrl;
   @override
   final String content;
-  final List<String>? _imageUrls;
+  final List<String> _bookmarkedUserIds;
   @override
-  List<String>? get imageUrls {
-    final value = _imageUrls;
-    if (value == null) return null;
-    if (_imageUrls is EqualUnmodifiableListView) return _imageUrls;
+  List<String> get bookmarkedUserIds {
+    if (_bookmarkedUserIds is EqualUnmodifiableListView)
+      return _bookmarkedUserIds;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_bookmarkedUserIds);
   }
 
   final List<Reaction>? _reactions;
@@ -262,12 +261,12 @@ class _$PostImpl implements _Post {
     return EqualUnmodifiableListView(value);
   }
 
-  final List<String>? _replyIds;
+  final List<String>? _imageUrls;
   @override
-  List<String>? get replyIds {
-    final value = _replyIds;
+  List<String>? get imageUrls {
+    final value = _imageUrls;
     if (value == null) return null;
-    if (_replyIds is EqualUnmodifiableListView) return _replyIds;
+    if (_imageUrls is EqualUnmodifiableListView) return _imageUrls;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -281,7 +280,7 @@ class _$PostImpl implements _Post {
 
   @override
   String toString() {
-    return 'Post(id: $id, userId: $userId, userName: $userName, userImageUrl: $userImageUrl, content: $content, imageUrls: $imageUrls, reactions: $reactions, replyIds: $replyIds, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'Post(id: $id, userId: $userId, userName: $userName, userImageUrl: $userImageUrl, content: $content, bookmarkedUserIds: $bookmarkedUserIds, reactions: $reactions, imageUrls: $imageUrls, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
@@ -297,10 +296,11 @@ class _$PostImpl implements _Post {
                 other.userImageUrl == userImageUrl) &&
             (identical(other.content, content) || other.content == content) &&
             const DeepCollectionEquality()
-                .equals(other._imageUrls, _imageUrls) &&
+                .equals(other._bookmarkedUserIds, _bookmarkedUserIds) &&
             const DeepCollectionEquality()
                 .equals(other._reactions, _reactions) &&
-            const DeepCollectionEquality().equals(other._replyIds, _replyIds) &&
+            const DeepCollectionEquality()
+                .equals(other._imageUrls, _imageUrls) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
             (identical(other.updatedAt, updatedAt) ||
@@ -316,9 +316,9 @@ class _$PostImpl implements _Post {
       userName,
       userImageUrl,
       content,
-      const DeepCollectionEquality().hash(_imageUrls),
+      const DeepCollectionEquality().hash(_bookmarkedUserIds),
       const DeepCollectionEquality().hash(_reactions),
-      const DeepCollectionEquality().hash(_replyIds),
+      const DeepCollectionEquality().hash(_imageUrls),
       createdAt,
       updatedAt);
 
@@ -343,9 +343,9 @@ abstract class _Post implements Post {
       required final String userName,
       required final String userImageUrl,
       required final String content,
-      final List<String>? imageUrls,
+      required final List<String> bookmarkedUserIds,
       final List<Reaction>? reactions,
-      final List<String>? replyIds,
+      final List<String>? imageUrls,
       @DateTimeConverter() required final DateTime createdAt,
       @DateTimeConverter() final DateTime? updatedAt}) = _$PostImpl;
 
@@ -362,11 +362,11 @@ abstract class _Post implements Post {
   @override
   String get content;
   @override
-  List<String>? get imageUrls;
+  List<String> get bookmarkedUserIds;
   @override
   List<Reaction>? get reactions;
   @override
-  List<String>? get replyIds;
+  List<String>? get imageUrls;
   @override
   @DateTimeConverter()
   DateTime get createdAt;

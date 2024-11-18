@@ -9,10 +9,16 @@ part of 'user.dart';
 _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
       id: json['id'] as String,
       name: json['name'] as String,
+      displayName: json['displayName'] as String,
       imageUrl: json['imageUrl'] as String,
       bio: json['bio'] as String,
-      roles: (json['roles'] as List<dynamic>)
-          .map((e) => Role.fromJson(e as Map<String, dynamic>))
+      emailAddress: json['emailAddress'] as String,
+      socialLinks: (json['socialLinks'] as Map<String, dynamic>).map(
+        (k, e) => MapEntry(
+            $enumDecode(_$SocialLinkTypeEnumMap, k), Uri.parse(e as String)),
+      ),
+      bookmarkPostIds: (json['bookmarkPostIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
           .toList(),
       createdAt:
           const DateTimeConverter().fromJson(json['createdAt'] as String),
@@ -24,13 +30,24 @@ Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
+      'displayName': instance.displayName,
       'imageUrl': instance.imageUrl,
       'bio': instance.bio,
-      'roles': instance.roles,
+      'emailAddress': instance.emailAddress,
+      'socialLinks': instance.socialLinks
+          .map((k, e) => MapEntry(_$SocialLinkTypeEnumMap[k]!, e.toString())),
+      'bookmarkPostIds': instance.bookmarkPostIds,
       'createdAt': const DateTimeConverter().toJson(instance.createdAt),
       'updatedAt': _$JsonConverterToJson<String, DateTime>(
           instance.updatedAt, const DateTimeConverter().toJson),
     };
+
+const _$SocialLinkTypeEnumMap = {
+  SocialLinkType.twitter: 'twitter',
+  SocialLinkType.instagram: 'instagram',
+  SocialLinkType.github: 'github',
+  SocialLinkType.other: 'other',
+};
 
 Value? _$JsonConverterFromJson<Json, Value>(
   Object? json,
