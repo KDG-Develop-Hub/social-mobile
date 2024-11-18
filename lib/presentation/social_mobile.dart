@@ -4,7 +4,9 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:keyboard_emoji_picker/keyboard_emoji_picker.dart';
 import 'package:social_mobile/i18n/strings.g.dart';
+import 'package:social_mobile/presentation/components/loading.dart';
 import 'package:social_mobile/presentation/provider/locale_service.dart';
+import 'package:social_mobile/utils/helpers/scaffold_messenger.dart';
 import 'package:social_mobile/utils/routes/app_router.dart';
 import 'package:social_mobile/utils/theme/extension/theme_extension.dart';
 import 'package:social_mobile/utils/theme/theme.dart';
@@ -49,6 +51,22 @@ class SocialMobile extends HookConsumerWidget {
         routerDelegate: goRouter.routerDelegate,
         routeInformationProvider: goRouter.routeInformationProvider,
         routeInformationParser: goRouter.routeInformationParser,
+        scaffoldMessengerKey: ref.watch(scaffoldMessengerKeyProvider),
+        builder: (BuildContext context, Widget? child) {
+          return GestureDetector(
+            onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+            child: MediaQuery(
+              data: MediaQuery.of(context)
+                  .copyWith(textScaler: TextScaler.noScaling),
+              child: Stack(
+                children: [
+                  if (child != null) child,
+                  const OverlayLoading(),
+                ],
+              ),
+            ),
+          );
+        },
       ),
     );
   }
