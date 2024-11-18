@@ -19,7 +19,6 @@ final searchNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'search');
 final profileNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'profile');
 final friendsNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'friends');
 final settingsNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'settings');
-final postNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'post');
 
 @Riverpod(keepAlive: true)
 GoRouter goRouter(GoRouterRef ref) {
