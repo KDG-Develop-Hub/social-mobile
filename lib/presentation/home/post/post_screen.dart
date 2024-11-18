@@ -136,16 +136,6 @@ class PostScreenState extends State<PostScreen> {
                         onPressed: _pickImage,
                       ),
                     ),
-                    SizedBox(
-                      width: 40,
-                      height: 40,
-                      child: IconButton(
-                        icon: const Icon(Icons.ballot),
-                        padding: EdgeInsets.zero,
-                        constraints: const BoxConstraints(),
-                        onPressed: () {},
-                      ),
-                    ),
                   ],
                 ),
               ),
