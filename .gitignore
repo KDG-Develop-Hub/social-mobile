@@ -27,12 +27,8 @@ migrate_working_dir/
 **/.firebaserc
 
 **/android/app/google-services.json
-**/android/app/src/dev/google-services.json
-**/android/app/src/prod/google-services.json
 
 **/ios/Runner/GoogleService-Info.plist
-**/ios/dev/GoogleService-Info.plist
-**/ios/prod/GoogleService-Info.plist
 
 ### Firebase Patch ###
 .runtimeconfig.json
