@@ -63,7 +63,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '135179983158',
     projectId: 'kdg-social-dev-28889',
     storageBucket: 'kdg-social-dev-28889.firebasestorage.app',
-    iosClientId: '135179983158-pdongj68n0km9r7p6u09n0r820s9lb47.apps.googleusercontent.com',
+    iosClientId:
+        '135179983158-pdongj68n0km9r7p6u09n0r820s9lb47.apps.googleusercontent.com',
     iosBundleId: 'com.kdg.social.dev',
   );
 }
