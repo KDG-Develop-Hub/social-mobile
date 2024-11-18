@@ -87,7 +87,6 @@ class PostScreenState extends State<PostScreen> {
                   decoration: const InputDecoration(
                     alignLabelWithHint: true,
                     labelText: '内容',
-                    hintText: '今日の天気はそこまでよくないな。カフェ行こうと思ったけど遠慮しとこうかな？',
                     border: OutlineInputBorder(),
                   ),
                 ),
