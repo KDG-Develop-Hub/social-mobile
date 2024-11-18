@@ -79,7 +79,7 @@ class PostScreen extends HookConsumerWidget {
                           maxLines: null,
                           expands: true,
                           maxLength: 256,
-                          // autofocus: true,
+                          autofocus: true,
                           validator: Validator.common,
                           decoration: InputDecoration(
                             alignLabelWithHint: true,
