@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1082656673966",
+    "project_id": "kdg-social-93585",
+    "storage_bucket": "kdg-social-93585.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1082656673966:android:be210595d889f29231dd3f",
+        "android_client_info": {
+          "package_name": "com.kdg.social"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCZY7F0Kc_js4Xj1TrB2DNM6GJHDsY-Vs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

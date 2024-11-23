@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 38 (19 per locale)
+/// Strings: 57 (28 per locale)
 ///
-/// Built on 2024-09-21 at 06:10 UTC
+/// Built on 2024-11-18 at 13:19 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -151,6 +151,8 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	late final _StringsAppBarEn appBar = _StringsAppBarEn._(_root);
 	late final _StringsNavigationBarEn navigationBar = _StringsNavigationBarEn._(_root);
 	late final _StringsUpdateScreenEn updateScreen = _StringsUpdateScreenEn._(_root);
+	late final _StringsPostScreenEn postScreen = _StringsPostScreenEn._(_root);
+	late final _StringsValidationEn validation = _StringsValidationEn._(_root);
 	Map<String, String> get locales => {
 		'en': 'English',
 		'ja': 'Japanese',
@@ -193,6 +195,32 @@ class _StringsUpdateScreenEn {
 	late final _StringsUpdateScreenPostEn post = _StringsUpdateScreenPostEn._(_root);
 }
 
+// Path: postScreen
+class _StringsPostScreenEn {
+	_StringsPostScreenEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get title => 'What are you going to write this time?';
+	String get description => 'Feel free to write your thoughts and events! Don\'t forget to check the community guidelines!';
+	String get textFieldLabel => 'Content';
+	late final _StringsPostScreenButtonsEn buttons = _StringsPostScreenButtonsEn._(_root);
+}
+
+// Path: validation
+class _StringsValidationEn {
+	_StringsValidationEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get emailRequired => 'Please enter your email address';
+	String get emailInvalid => 'The email address format is incorrect';
+	String get informationRequired => 'Please enter the content';
+	String get urlInvalid => 'The URL format is incorrect';
+}
+
 // Path: profileScreen
 class _StringsProfileScreenEn {
 	_StringsProfileScreenEn._(this._root);
@@ -232,6 +260,17 @@ class _StringsUpdateScreenPostEn {
 
 	// Translations
 	late final _StringsUpdateScreenPostPopUpMenuEn popUpMenu = _StringsUpdateScreenPostPopUpMenuEn._(_root);
+}
+
+// Path: postScreen.buttons
+class _StringsPostScreenButtonsEn {
+	_StringsPostScreenButtonsEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get post => 'Share it';
+	String get cancel => 'Cancel';
 }
 
 // Path: profileScreen.tabs
@@ -298,6 +337,8 @@ class _StringsJa implements Translations {
 	@override late final _StringsAppBarJa appBar = _StringsAppBarJa._(_root);
 	@override late final _StringsNavigationBarJa navigationBar = _StringsNavigationBarJa._(_root);
 	@override late final _StringsUpdateScreenJa updateScreen = _StringsUpdateScreenJa._(_root);
+	@override late final _StringsPostScreenJa postScreen = _StringsPostScreenJa._(_root);
+	@override late final _StringsValidationJa validation = _StringsValidationJa._(_root);
 	@override Map<String, String> get locales => {
 		'en': '英語',
 		'ja': '日本語',
@@ -340,6 +381,33 @@ class _StringsUpdateScreenJa implements _StringsUpdateScreenEn {
 	@override late final _StringsUpdateScreenPostJa post = _StringsUpdateScreenPostJa._(_root);
 }
 
+// Path: postScreen
+class _StringsPostScreenJa implements _StringsPostScreenEn {
+	_StringsPostScreenJa._(this._root);
+
+	@override final _StringsJa _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => '今回は何を綴るのかな？';
+	@override String get description => '自分の考えや出来事を気楽に書こう！コミュニティーガイドラインの確認も忘れないでねッ！';
+	@override String get textFieldLabel => '内容';
+	@override late final _StringsPostScreenButtonsJa buttons = _StringsPostScreenButtonsJa._(_root);
+}
+
+// Path: validation
+class _StringsValidationJa implements _StringsValidationEn {
+	_StringsValidationJa._(this._root);
+
+	@override final _StringsJa _root; // ignore: unused_field
+
+	// Translations
+	@override String get emailRequired => 'メールアドレスを入力してください';
+	@override String get emailInvalid => 'メールアドレスの形式が正しくありません';
+	@override String get passwordMatch => 'パスワードが一致しません';
+	@override String get informationRequired => '内容を入力してください';
+	@override String get urlInvalid => 'URLの形式が正しくありません';
+}
+
 // Path: profileScreen
 class _StringsProfileScreenJa implements _StringsProfileScreenEn {
 	_StringsProfileScreenJa._(this._root);
@@ -379,6 +447,17 @@ class _StringsUpdateScreenPostJa implements _StringsUpdateScreenPostEn {
 
 	// Translations
 	@override late final _StringsUpdateScreenPostPopUpMenuJa popUpMenu = _StringsUpdateScreenPostPopUpMenuJa._(_root);
+}
+
+// Path: postScreen.buttons
+class _StringsPostScreenButtonsJa implements _StringsPostScreenButtonsEn {
+	_StringsPostScreenButtonsJa._(this._root);
+
+	@override final _StringsJa _root; // ignore: unused_field
+
+	// Translations
+	@override String get post => '広めちゃうん';
+	@override String get cancel => 'やっぱやめる';
 }
 
 // Path: profileScreen.tabs
@@ -437,6 +516,15 @@ extension on Translations {
 			case 'updateScreen.post.popUpMenu.share': return 'share';
 			case 'updateScreen.post.popUpMenu.delete': return 'delete';
 			case 'updateScreen.post.popUpMenu.report': return 'report';
+			case 'postScreen.title': return 'What are you going to write this time?';
+			case 'postScreen.description': return 'Feel free to write your thoughts and events! Don\'t forget to check the community guidelines!';
+			case 'postScreen.textFieldLabel': return 'Content';
+			case 'postScreen.buttons.post': return 'Share it';
+			case 'postScreen.buttons.cancel': return 'Cancel';
+			case 'validation.emailRequired': return 'Please enter your email address';
+			case 'validation.emailInvalid': return 'The email address format is incorrect';
+			case 'validation.informationRequired': return 'Please enter the content';
+			case 'validation.urlInvalid': return 'The URL format is incorrect';
 			case 'locales.en': return 'English';
 			case 'locales.ja': return 'Japanese';
 			case 'profileScreen.tabs.tweet': return 'tweet';
@@ -464,6 +552,16 @@ extension on _StringsJa {
 			case 'updateScreen.post.popUpMenu.share': return '共有する';
 			case 'updateScreen.post.popUpMenu.delete': return '削除する';
 			case 'updateScreen.post.popUpMenu.report': return '報告する';
+			case 'postScreen.title': return '今回は何を綴るのかな？';
+			case 'postScreen.description': return '自分の考えや出来事を気楽に書こう！コミュニティーガイドラインの確認も忘れないでねッ！';
+			case 'postScreen.textFieldLabel': return '内容';
+			case 'postScreen.buttons.post': return '広めちゃうん';
+			case 'postScreen.buttons.cancel': return 'やっぱやめる';
+			case 'validation.emailRequired': return 'メールアドレスを入力してください';
+			case 'validation.emailInvalid': return 'メールアドレスの形式が正しくありません';
+			case 'validation.passwordMatch': return 'パスワードが一致しません';
+			case 'validation.informationRequired': return '内容を入力してください';
+			case 'validation.urlInvalid': return 'URLの形式が正しくありません';
 			case 'locales.en': return '英語';
 			case 'locales.ja': return '日本語';
 			case 'profileScreen.tabs.tweet': return 'つぶやき';

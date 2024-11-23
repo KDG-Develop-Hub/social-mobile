@@ -26,6 +26,22 @@
             }
         }
     },
+    "postScreen": {
+        "title": "今回は何を綴るのかな？",
+        "description": "自分の考えや出来事を気楽に書こう！コミュニティーガイドラインの確認も忘れないでねッ！",
+        "textFieldLabel": "内容",
+        "buttons": {
+            "post": "広めちゃうん",
+            "cancel": "やっぱやめる"
+        }
+    },
+    "validation": {
+        "emailRequired": "メールアドレスを入力してください",
+        "emailInvalid": "メールアドレスの形式が正しくありません",
+        "passwordMatch": "パスワードが一致しません",
+        "informationRequired": "内容を入力してください",
+        "urlInvalid": "URLの形式が正しくありません"
+    },
     "locales(map)": {
         "en": "英語",
         "ja": "日本語"

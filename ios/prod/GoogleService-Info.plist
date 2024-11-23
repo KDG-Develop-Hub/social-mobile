@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyD_yDsih0CRK6CNXhUa5SGQaEYV2apKZTM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1082656673966</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.kdg.social</string>
+	<key>PROJECT_ID</key>
+	<string>kdg-social-93585</string>
+	<key>STORAGE_BUCKET</key>
+	<string>kdg-social-93585.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1082656673966:ios:e299a98ead6d846731dd3f</string>
+</dict>
+</plist>

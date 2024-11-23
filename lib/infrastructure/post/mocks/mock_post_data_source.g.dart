@@ -1,27 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'overlay_loading_provider.dart';
+part of 'mock_post_data_source.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$overlayLoadingHash() => r'22db185e596fb0ff0779d6b2d398cca5ed6f46db';
+String _$mockPostDataSourceHash() =>
+    r'4fd651e05ea12826b9d06bc7faef7b0f12523c8f';
 
-/// アプリ全体に二度押し防止のローディングを重ねるかどうかを管理するStateProvider
-///
-/// Copied from [overlayLoading].
-@ProviderFor(overlayLoading)
-final overlayLoadingProvider = Provider<bool>.internal(
-  overlayLoading,
-  name: r'overlayLoadingProvider',
+/// See also [MockPostDataSource].
+@ProviderFor(MockPostDataSource)
+final mockPostDataSourceProvider =
+    AutoDisposeNotifierProvider<MockPostDataSource, void>.internal(
+  MockPostDataSource.new,
+  name: r'mockPostDataSourceProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$overlayLoadingHash,
+      : _$mockPostDataSourceHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef OverlayLoadingRef = ProviderRef<bool>;
+typedef _$MockPostDataSource = AutoDisposeNotifier<void>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
