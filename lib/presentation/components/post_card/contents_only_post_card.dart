@@ -4,8 +4,8 @@ import 'package:gap/gap.dart';
 import 'package:social_mobile/domain/post/post.dart';
 import 'package:social_mobile/utils/helpers/date_time_format.dart';
 
-class SimplePostCard extends StatelessWidget {
-  const SimplePostCard({super.key, required this.post});
+class ContentsOnlyPostCard extends StatelessWidget {
+  const ContentsOnlyPostCard({super.key, required this.post});
 
   final Post post;
 
