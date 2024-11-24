@@ -1,22 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:social_mobile/domain/post/post.dart';
 import 'package:social_mobile/i18n/strings.g.dart';
-import 'package:social_mobile/presentation/components/post_card/bottom_sheets/custom_bottom_sheet.dart';
 import 'package:social_mobile/presentation/components/post_card/bottom_sheets/post_delete_bottom_sheet.dart';
 import 'package:social_mobile/presentation/components/post_card/bottom_sheets/post_report_bottom_sheet.dart';
 import 'package:social_mobile/presentation/components/post_card/post_menu_button.dart';
 import 'package:social_mobile/utils/gen/assets.gen.dart';
 import 'package:social_mobile/utils/helpers/share_service.dart';
-
-enum PostMenuOption {
-  edit,
-  delete,
-  reaction,
-  comment,
-  report,
-  share,
-}
 
 class PostMenuBottomSheet extends StatelessWidget {
   const PostMenuBottomSheet({
@@ -30,7 +21,8 @@ class PostMenuBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final translations = Translations.of(context).updateScreen.post.popUpMenu;
+    final colorTheme = Theme.of(context).colorScheme;
+    final translations = Translations.of(context).homeScreen.post.popUpMenu;
 
     Future<void> showPostDeleteBottomSheet() async {
       await showModalBottomSheet<void>(
@@ -70,49 +62,69 @@ class PostMenuBottomSheet extends StatelessWidget {
       );
     }
 
-    return CustomBottomSheet(
-      content: Column(
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: colorTheme.surface,
+        borderRadius: BorderRadius.circular(28),
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
-          PostMenuButton(
-            onPressed: () {},
-            icon: Assets.icons.comment,
-            label: translations.comment,
+          Container(
+            width: 32,
+            height: 2,
+            decoration: BoxDecoration(
+              color: colorTheme.onSurfaceVariant,
+              borderRadius: BorderRadius.circular(8),
+            ),
           ),
-          PostMenuButton(
-            onPressed: () async {
-              await onReactionTap();
-            },
-            icon: Assets.icons.reaction,
-            label: translations.reaction,
-          ),
-          PostMenuButton(
-            onPressed: () {},
-            icon: Assets.icons.bookmark,
-            label: translations.bookMark,
-          ),
-          PostMenuButton(
-            onPressed: () {
-              context.pop();
-              ShareService.sharePost(post);
-            },
-            icon: Assets.icons.share,
-            label: translations.share,
-          ),
-          PostMenuButton(
-            onPressed: () async {
-              await showPostDeleteBottomSheet();
-            },
-            icon: Assets.icons.trash,
-            label: translations.delete,
-            isRedText: true,
-          ),
-          PostMenuButton(
-            onPressed: () async {
-              await showPostReportBottomSheet();
-            },
-            icon: Assets.icons.flag,
-            label: translations.report,
-            isRedText: true,
+          const Gap(14),
+          Column(
+            children: [
+              PostMenuButton(
+                onPressed: () {},
+                icon: Assets.icons.comment,
+                label: translations.comment,
+              ),
+              PostMenuButton(
+                onPressed: () async {
+                  await onReactionTap();
+                },
+                icon: Assets.icons.reaction,
+                label: translations.reaction,
+              ),
+              PostMenuButton(
+                onPressed: () {},
+                icon: Assets.icons.bookmark,
+                label: translations.bookMark,
+              ),
+              PostMenuButton(
+                onPressed: () {
+                  context.pop();
+                  ShareService.sharePost(post);
+                },
+                icon: Assets.icons.share,
+                label: translations.share,
+              ),
+              PostMenuButton(
+                onPressed: () async {
+                  await showPostDeleteBottomSheet();
+                },
+                icon: Assets.icons.trash,
+                label: translations.delete,
+                isRedText: true,
+              ),
+              PostMenuButton(
+                onPressed: () async {
+                  await showPostReportBottomSheet();
+                },
+                icon: Assets.icons.flag,
+                label: translations.report,
+                isRedText: true,
+              ),
+            ],
           ),
         ],
       ),
