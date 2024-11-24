@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 56 (28 per locale)
+/// Strings: 75 (37 per locale)
 ///
-/// Built on 2024-11-23 at 12:03 UTC
+/// Built on 2024-11-24 at 06:33 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -150,6 +150,7 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	// Translations
 	late final _StringsAppBarEn appBar = _StringsAppBarEn._(_root);
 	late final _StringsNavigationBarEn navigationBar = _StringsNavigationBarEn._(_root);
+	late final _StringsBottomSheetEn bottomSheet = _StringsBottomSheetEn._(_root);
 	late final _StringsHomeScreenEn homeScreen = _StringsHomeScreenEn._(_root);
 	late final _StringsPostScreenEn postScreen = _StringsPostScreenEn._(_root);
 	late final _StringsValidationEn validation = _StringsValidationEn._(_root);
@@ -185,6 +186,18 @@ class _StringsNavigationBarEn {
 	String get settings => 'settings';
 }
 
+// Path: bottomSheet
+class _StringsBottomSheetEn {
+	_StringsBottomSheetEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get cancelButton => 'cancel';
+	late final _StringsBottomSheetPostDeleteEn postDelete = _StringsBottomSheetPostDeleteEn._(_root);
+	late final _StringsBottomSheetPostReportEn postReport = _StringsBottomSheetPostReportEn._(_root);
+}
+
 // Path: homeScreen
 class _StringsHomeScreenEn {
 	_StringsHomeScreenEn._(this._root);
@@ -193,7 +206,6 @@ class _StringsHomeScreenEn {
 
 	// Translations
 	late final _StringsHomeScreenPostEn post = _StringsHomeScreenPostEn._(_root);
-	late final _StringsHomeScreenBottomSheetEn bottomSheet = _StringsHomeScreenBottomSheetEn._(_root);
 }
 
 // Path: postScreen
@@ -253,6 +265,28 @@ class _StringsAppBarSettingsEn {
 	String get title => 'settings';
 }
 
+// Path: bottomSheet.postDelete
+class _StringsBottomSheetPostDeleteEn {
+	_StringsBottomSheetPostDeleteEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get title => 'Do you want to delete this post?';
+	String get explanation => 'Deleted posts will be permanently removed after 30 days.';
+}
+
+// Path: bottomSheet.postReport
+class _StringsBottomSheetPostReportEn {
+	_StringsBottomSheetPostReportEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get title => 'Please tell us the reason for reporting.';
+	late final _StringsBottomSheetPostReportReportReasonsEn reportReasons = _StringsBottomSheetPostReportReportReasonsEn._(_root);
+}
+
 // Path: homeScreen.post
 class _StringsHomeScreenPostEn {
 	_StringsHomeScreenPostEn._(this._root);
@@ -261,18 +295,6 @@ class _StringsHomeScreenPostEn {
 
 	// Translations
 	late final _StringsHomeScreenPostPopUpMenuEn popUpMenu = _StringsHomeScreenPostPopUpMenuEn._(_root);
-}
-
-// Path: homeScreen.bottomSheet
-class _StringsHomeScreenBottomSheetEn {
-	_StringsHomeScreenBottomSheetEn._(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-	String get cancelButton => 'cancel';
-	late final _StringsHomeScreenBottomSheetPostDeleteEn postDelete = _StringsHomeScreenBottomSheetPostDeleteEn._(_root);
-	late final _StringsHomeScreenBottomSheetPostReportEn postReport = _StringsHomeScreenBottomSheetPostReportEn._(_root);
 }
 
 // Path: postScreen.buttons
@@ -308,6 +330,20 @@ class _StringsProfileScreenProfileHeaderEn {
 	String get buttonText => 'Edit your profile';
 }
 
+// Path: bottomSheet.postReport.reportReasons
+class _StringsBottomSheetPostReportReportReasonsEn {
+	_StringsBottomSheetPostReportReportReasonsEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get spam => 'Spam';
+	String get slander => 'Slander';
+	String get offensiveAndLewdContent => 'Offensive or lewd content';
+	String get misleadingInformation => 'Misleading information';
+	String get exposureOfPrivateInformation => 'Exposure of private information';
+}
+
 // Path: homeScreen.post.popUpMenu
 class _StringsHomeScreenPostPopUpMenuEn {
 	_StringsHomeScreenPostPopUpMenuEn._(this._root);
@@ -321,42 +357,6 @@ class _StringsHomeScreenPostPopUpMenuEn {
 	String get share => 'share';
 	String get delete => 'delete';
 	String get report => 'report';
-}
-
-// Path: homeScreen.bottomSheet.postDelete
-class _StringsHomeScreenBottomSheetPostDeleteEn {
-	_StringsHomeScreenBottomSheetPostDeleteEn._(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-	String get title => 'Do you want to delete this post?';
-	String get explanation => 'Deleted posts will be permanently removed after 30 days.';
-}
-
-// Path: homeScreen.bottomSheet.postReport
-class _StringsHomeScreenBottomSheetPostReportEn {
-	_StringsHomeScreenBottomSheetPostReportEn._(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-	String get title => 'Please tell us the reason for reporting.';
-	late final _StringsHomeScreenBottomSheetPostReportReportReasonsEn reportReasons = _StringsHomeScreenBottomSheetPostReportReportReasonsEn._(_root);
-}
-
-// Path: homeScreen.bottomSheet.postReport.reportReasons
-class _StringsHomeScreenBottomSheetPostReportReportReasonsEn {
-	_StringsHomeScreenBottomSheetPostReportReportReasonsEn._(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-	String get spam => 'Spam';
-	String get slander => 'Slander';
-	String get offensiveAndLewdContent => 'Offensive or lewd content';
-	String get misleadingInformation => 'Misleading information';
-	String get exposureOfPrivateInformation => 'Exposure of private information';
 }
 
 // Path: <root>
@@ -385,6 +385,7 @@ class _StringsJa implements Translations {
 	// Translations
 	@override late final _StringsAppBarJa appBar = _StringsAppBarJa._(_root);
 	@override late final _StringsNavigationBarJa navigationBar = _StringsNavigationBarJa._(_root);
+	@override late final _StringsBottomSheetJa bottomSheet = _StringsBottomSheetJa._(_root);
 	@override late final _StringsHomeScreenJa homeScreen = _StringsHomeScreenJa._(_root);
 	@override late final _StringsPostScreenJa postScreen = _StringsPostScreenJa._(_root);
 	@override late final _StringsValidationJa validation = _StringsValidationJa._(_root);
@@ -420,6 +421,18 @@ class _StringsNavigationBarJa implements _StringsNavigationBarEn {
 	@override String get settings => 'せってー';
 }
 
+// Path: bottomSheet
+class _StringsBottomSheetJa implements _StringsBottomSheetEn {
+	_StringsBottomSheetJa._(this._root);
+
+	@override final _StringsJa _root; // ignore: unused_field
+
+	// Translations
+	@override String get cancelButton => 'やっぱやめる';
+	@override late final _StringsBottomSheetPostDeleteJa postDelete = _StringsBottomSheetPostDeleteJa._(_root);
+	@override late final _StringsBottomSheetPostReportJa postReport = _StringsBottomSheetPostReportJa._(_root);
+}
+
 // Path: homeScreen
 class _StringsHomeScreenJa implements _StringsHomeScreenEn {
 	_StringsHomeScreenJa._(this._root);
@@ -428,7 +441,6 @@ class _StringsHomeScreenJa implements _StringsHomeScreenEn {
 
 	// Translations
 	@override late final _StringsHomeScreenPostJa post = _StringsHomeScreenPostJa._(_root);
-	@override late final _StringsHomeScreenBottomSheetJa bottomSheet = _StringsHomeScreenBottomSheetJa._(_root);
 }
 
 // Path: postScreen
@@ -489,6 +501,28 @@ class _StringsAppBarSettingsJa implements _StringsAppBarSettingsEn {
 	@override String get title => '設定';
 }
 
+// Path: bottomSheet.postDelete
+class _StringsBottomSheetPostDeleteJa implements _StringsBottomSheetPostDeleteEn {
+	_StringsBottomSheetPostDeleteJa._(this._root);
+
+	@override final _StringsJa _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'このつぶやきを削除しますか？';
+	@override String get explanation => '削除されたつぶやきは、30日後に完全に削除されます。';
+}
+
+// Path: bottomSheet.postReport
+class _StringsBottomSheetPostReportJa implements _StringsBottomSheetPostReportEn {
+	_StringsBottomSheetPostReportJa._(this._root);
+
+	@override final _StringsJa _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => '通報する理由を教えてください。';
+	@override late final _StringsBottomSheetPostReportReportReasonsJa reportReasons = _StringsBottomSheetPostReportReportReasonsJa._(_root);
+}
+
 // Path: homeScreen.post
 class _StringsHomeScreenPostJa implements _StringsHomeScreenPostEn {
 	_StringsHomeScreenPostJa._(this._root);
@@ -497,18 +531,6 @@ class _StringsHomeScreenPostJa implements _StringsHomeScreenPostEn {
 
 	// Translations
 	@override late final _StringsHomeScreenPostPopUpMenuJa popUpMenu = _StringsHomeScreenPostPopUpMenuJa._(_root);
-}
-
-// Path: homeScreen.bottomSheet
-class _StringsHomeScreenBottomSheetJa implements _StringsHomeScreenBottomSheetEn {
-	_StringsHomeScreenBottomSheetJa._(this._root);
-
-	@override final _StringsJa _root; // ignore: unused_field
-
-	// Translations
-	@override String get cancelButton => 'やっぱやめる';
-	@override late final _StringsHomeScreenBottomSheetPostDeleteJa postDelete = _StringsHomeScreenBottomSheetPostDeleteJa._(_root);
-	@override late final _StringsHomeScreenBottomSheetPostReportJa postReport = _StringsHomeScreenBottomSheetPostReportJa._(_root);
 }
 
 // Path: postScreen.buttons
@@ -544,6 +566,20 @@ class _StringsProfileScreenProfileHeaderJa implements _StringsProfileScreenProfi
 	@override String get buttonText => 'プロフィールをいじる';
 }
 
+// Path: bottomSheet.postReport.reportReasons
+class _StringsBottomSheetPostReportReportReasonsJa implements _StringsBottomSheetPostReportReportReasonsEn {
+	_StringsBottomSheetPostReportReportReasonsJa._(this._root);
+
+	@override final _StringsJa _root; // ignore: unused_field
+
+	// Translations
+	@override String get spam => 'スパム';
+	@override String get slander => '誹謗中傷';
+	@override String get offensiveAndLewdContent => '攻撃的、卑劣なコンテンツ';
+	@override String get misleadingInformation => '誤解を生む情報';
+	@override String get exposureOfPrivateInformation => 'プライベートな情報の提示';
+}
+
 // Path: homeScreen.post.popUpMenu
 class _StringsHomeScreenPostPopUpMenuJa implements _StringsHomeScreenPostPopUpMenuEn {
 	_StringsHomeScreenPostPopUpMenuJa._(this._root);
@@ -559,42 +595,6 @@ class _StringsHomeScreenPostPopUpMenuJa implements _StringsHomeScreenPostPopUpMe
 	@override String get report => '報告する';
 }
 
-// Path: homeScreen.bottomSheet.postDelete
-class _StringsHomeScreenBottomSheetPostDeleteJa implements _StringsHomeScreenBottomSheetPostDeleteEn {
-	_StringsHomeScreenBottomSheetPostDeleteJa._(this._root);
-
-	@override final _StringsJa _root; // ignore: unused_field
-
-	// Translations
-	@override String get title => 'このつぶやきを削除しますか？';
-	@override String get explanation => '削除されたつぶやきは、30日後に完全に削除されます。';
-}
-
-// Path: homeScreen.bottomSheet.postReport
-class _StringsHomeScreenBottomSheetPostReportJa implements _StringsHomeScreenBottomSheetPostReportEn {
-	_StringsHomeScreenBottomSheetPostReportJa._(this._root);
-
-	@override final _StringsJa _root; // ignore: unused_field
-
-	// Translations
-	@override String get title => '通報する理由を教えてください。';
-	@override late final _StringsHomeScreenBottomSheetPostReportReportReasonsJa reportReasons = _StringsHomeScreenBottomSheetPostReportReportReasonsJa._(_root);
-}
-
-// Path: homeScreen.bottomSheet.postReport.reportReasons
-class _StringsHomeScreenBottomSheetPostReportReportReasonsJa implements _StringsHomeScreenBottomSheetPostReportReportReasonsEn {
-	_StringsHomeScreenBottomSheetPostReportReportReasonsJa._(this._root);
-
-	@override final _StringsJa _root; // ignore: unused_field
-
-	// Translations
-	@override String get spam => 'スパム';
-	@override String get slander => '誹謗中傷';
-	@override String get offensiveAndLewdContent => '攻撃的、卑劣なコンテンツ';
-	@override String get misleadingInformation => '誤解を生む情報';
-	@override String get presentationOfPrivateInformation => 'プライベートな情報の提示';
-}
-
 /// Flat map(s) containing all translations.
 /// Only for edge cases! For simple maps, use the map function of this library.
 
@@ -608,27 +608,21 @@ extension on Translations {
 			case 'navigationBar.profile': return 'profile';
 			case 'navigationBar.friends': return 'friends';
 			case 'navigationBar.settings': return 'settings';
+			case 'bottomSheet.cancelButton': return 'cancel';
+			case 'bottomSheet.postDelete.title': return 'Do you want to delete this post?';
+			case 'bottomSheet.postDelete.explanation': return 'Deleted posts will be permanently removed after 30 days.';
+			case 'bottomSheet.postReport.title': return 'Please tell us the reason for reporting.';
+			case 'bottomSheet.postReport.reportReasons.spam': return 'Spam';
+			case 'bottomSheet.postReport.reportReasons.slander': return 'Slander';
+			case 'bottomSheet.postReport.reportReasons.offensiveAndLewdContent': return 'Offensive or lewd content';
+			case 'bottomSheet.postReport.reportReasons.misleadingInformation': return 'Misleading information';
+			case 'bottomSheet.postReport.reportReasons.exposureOfPrivateInformation': return 'Exposure of private information';
 			case 'homeScreen.post.popUpMenu.reaction': return 'add reaction';
 			case 'homeScreen.post.popUpMenu.comment': return 'comment';
 			case 'homeScreen.post.popUpMenu.bookMark': return 'book mark';
 			case 'homeScreen.post.popUpMenu.share': return 'share';
 			case 'homeScreen.post.popUpMenu.delete': return 'delete';
 			case 'homeScreen.post.popUpMenu.report': return 'report';
-			case 'homeScreen.bottomSheet.cancelButton': return 'cancel';
-			case 'homeScreen.bottomSheet.postDelete.title': return 'Do you want to delete this post?';
-			case 'homeScreen.bottomSheet.postDelete.explanation': return 'Deleted posts will be permanently removed after 30 days.';
-			case 'homeScreen.bottomSheet.postReport.title': return 'Please tell us the reason for reporting.';
-			case 'homeScreen.bottomSheet.postReport.reportReasons.spam': return 'Spam';
-			case 'homeScreen.bottomSheet.postReport.reportReasons.slander': return 'Slander';
-			case 'homeScreen.bottomSheet.postReport.reportReasons.offensiveAndLewdContent': return 'Offensive or lewd content';
-			case 'homeScreen.bottomSheet.postReport.reportReasons.misleadingInformation': return 'Misleading information';
-			case 'homeScreen.bottomSheet.postReport.reportReasons.exposureOfPrivateInformation': return 'Exposure of private information';
-			case 'updateScreen.post.popUpMenu.reaction': return 'add reaction';
-			case 'updateScreen.post.popUpMenu.comment': return 'comment';
-			case 'updateScreen.post.popUpMenu.bookMark': return 'book mark';
-			case 'updateScreen.post.popUpMenu.share': return 'share';
-			case 'updateScreen.post.popUpMenu.delete': return 'delete';
-			case 'updateScreen.post.popUpMenu.report': return 'report';
 			case 'postScreen.title': return 'What are you going to write this time?';
 			case 'postScreen.description': return 'Feel free to write your thoughts and events! Don\'t forget to check the community guidelines!';
 			case 'postScreen.textFieldLabel': return 'Content';
@@ -659,27 +653,21 @@ extension on _StringsJa {
 			case 'navigationBar.profile': return 'あなた';
 			case 'navigationBar.friends': return '知り合い';
 			case 'navigationBar.settings': return 'せってー';
+			case 'bottomSheet.cancelButton': return 'やっぱやめる';
+			case 'bottomSheet.postDelete.title': return 'このつぶやきを削除しますか？';
+			case 'bottomSheet.postDelete.explanation': return '削除されたつぶやきは、30日後に完全に削除されます。';
+			case 'bottomSheet.postReport.title': return '通報する理由を教えてください。';
+			case 'bottomSheet.postReport.reportReasons.spam': return 'スパム';
+			case 'bottomSheet.postReport.reportReasons.slander': return '誹謗中傷';
+			case 'bottomSheet.postReport.reportReasons.offensiveAndLewdContent': return '攻撃的、卑劣なコンテンツ';
+			case 'bottomSheet.postReport.reportReasons.misleadingInformation': return '誤解を生む情報';
+			case 'bottomSheet.postReport.reportReasons.exposureOfPrivateInformation': return 'プライベートな情報の提示';
 			case 'homeScreen.post.popUpMenu.reaction': return '絵文字を追加';
 			case 'homeScreen.post.popUpMenu.comment': return 'コメント';
 			case 'homeScreen.post.popUpMenu.bookMark': return 'ブックマーク';
 			case 'homeScreen.post.popUpMenu.share': return '共有する';
 			case 'homeScreen.post.popUpMenu.delete': return '削除する';
 			case 'homeScreen.post.popUpMenu.report': return '報告する';
-			case 'homeScreen.bottomSheet.cancelButton': return 'やっぱやめる';
-			case 'homeScreen.bottomSheet.postDelete.title': return 'このつぶやきを削除しますか？';
-			case 'homeScreen.bottomSheet.postDelete.explanation': return '削除されたつぶやきは、30日後に完全に削除されます。';
-			case 'homeScreen.bottomSheet.postReport.title': return '通報する理由を教えてください。';
-			case 'homeScreen.bottomSheet.postReport.reportReasons.spam': return 'スパム';
-			case 'homeScreen.bottomSheet.postReport.reportReasons.slander': return '誹謗中傷';
-			case 'homeScreen.bottomSheet.postReport.reportReasons.offensiveAndLewdContent': return '攻撃的、卑劣なコンテンツ';
-			case 'homeScreen.bottomSheet.postReport.reportReasons.misleadingInformation': return '誤解を生む情報';
-			case 'homeScreen.bottomSheet.postReport.reportReasons.presentationOfPrivateInformation': return 'プライベートな情報の提示';
-			case 'updateScreen.post.popUpMenu.reaction': return '絵文字を追加';
-			case 'updateScreen.post.popUpMenu.comment': return 'コメント';
-			case 'updateScreen.post.popUpMenu.bookMark': return 'ブックマーク';
-			case 'updateScreen.post.popUpMenu.share': return '共有する';
-			case 'updateScreen.post.popUpMenu.delete': return '削除する';
-			case 'updateScreen.post.popUpMenu.report': return '報告する';
 			case 'postScreen.title': return '今回は何を綴るのかな？';
 			case 'postScreen.description': return '自分の考えや出来事を気楽に書こう！コミュニティーガイドラインの確認も忘れないでねッ！';
 			case 'postScreen.textFieldLabel': return '内容';

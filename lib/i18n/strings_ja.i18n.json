@@ -14,6 +14,23 @@
         "friends": "知り合い",
         "settings": "せってー"
     },
+    "bottomSheet": {
+        "cancelButton": "やっぱやめる",
+        "postDelete": {
+            "title": "このつぶやきを削除しますか？",
+            "explanation": "削除されたつぶやきは、30日後に完全に削除されます。"
+        },
+        "postReport": {
+            "title": "通報する理由を教えてください。",
+            "reportReasons": {
+                "spam": "スパム",
+                "slander": "誹謗中傷",
+                "offensiveAndLewdContent": "攻撃的、卑劣なコンテンツ",
+                "misleadingInformation": "誤解を生む情報",
+                "exposureOfPrivateInformation": "プライベートな情報の提示"
+            }
+        }
+    },
     "homeScreen": {
         "post": {
             "popUpMenu": {
@@ -23,23 +40,6 @@
                 "share": "共有する",
                 "delete": "削除する",
                 "report": "報告する"
-            }
-        },
-        "bottomSheet": {
-            "cancelButton": "やっぱやめる",
-            "postDelete": {
-                "title": "このつぶやきを削除しますか？",
-                "explanation": "削除されたつぶやきは、30日後に完全に削除されます。"
-            },
-            "postReport": {
-                "title": "通報する理由を教えてください。",
-                "reportReasons": {
-                    "spam": "スパム",
-                    "slander": "誹謗中傷",
-                    "offensiveAndLewdContent": "攻撃的、卑劣なコンテンツ",
-                    "misleadingInformation": "誤解を生む情報",
-                    "presentationOfPrivateInformation": "プライベートな情報の提示"
-                }
             }
         }
     },
