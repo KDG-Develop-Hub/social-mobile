@@ -32,7 +32,7 @@ class CustomBottomSheet extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
     final colorTheme = Theme.of(context).colorScheme;
     final translations = Translations.of(context);
-    final homeScreenI18n = translations.homeScreen;
+    final bottomSheetI18n = translations.bottomSheet;
 
     return Container(
       width: double.infinity,
@@ -85,7 +85,7 @@ class CustomBottomSheet extends StatelessWidget {
                   foregroundColor: colorTheme.primary,
                 ),
                 onPressed: () {},
-                child: Text(homeScreenI18n.bottomSheet.cancelButton),
+                child: Text(bottomSheetI18n.cancelButton),
               ),
               TextButton(
                 style: TextButton.styleFrom(
