@@ -71,7 +71,6 @@ class PostReportBottomSheet extends HookWidget {
       ),
       buttonText: homeScreenI18n.post.popUpMenu.report,
       onPressedButton: () {},
-      buttomPadding: 24,
     );
   }
 }

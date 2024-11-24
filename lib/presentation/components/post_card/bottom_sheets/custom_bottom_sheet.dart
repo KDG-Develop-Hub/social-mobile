@@ -4,6 +4,7 @@ import 'package:gap/gap.dart';
 import 'package:social_mobile/domain/post/post.dart';
 import 'package:social_mobile/i18n/strings.g.dart';
 import 'package:social_mobile/presentation/components/post_card/contents_only_post_card.dart';
+import 'package:social_mobile/utils/extensions/context.dart';
 
 class CustomBottomSheet extends StatelessWidget {
   const CustomBottomSheet({
@@ -15,7 +16,6 @@ class CustomBottomSheet extends StatelessWidget {
     required this.onPressedButton,
     this.content,
     this.explanation = '',
-    this.buttomPadding = 0,
   });
 
   final Post post;
@@ -25,7 +25,6 @@ class CustomBottomSheet extends StatelessWidget {
   final void Function()? onPressedButton;
   final Widget? content;
   final String explanation;
-  final double buttomPadding;
 
   @override
   Widget build(BuildContext context) {
@@ -35,8 +34,9 @@ class CustomBottomSheet extends StatelessWidget {
     final bottomSheetI18n = translations.bottomSheet;
 
     return Container(
+      height: context.deviceHeight * 0.5,
       width: double.infinity,
-      padding: const EdgeInsets.fromLTRB(24, 16, 24, 0),
+      padding: const EdgeInsets.fromLTRB(24, 16, 24, 24),
       decoration: BoxDecoration(
         color: colorTheme.surface,
         borderRadius: BorderRadius.circular(28),
@@ -76,6 +76,7 @@ class CustomBottomSheet extends StatelessWidget {
             const Gap(16),
             content!,
           ],
+          const Spacer(),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -96,7 +97,6 @@ class CustomBottomSheet extends StatelessWidget {
               ),
             ],
           ),
-          Gap(buttomPadding),
         ],
       ),
     );

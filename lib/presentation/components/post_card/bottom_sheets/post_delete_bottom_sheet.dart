@@ -22,7 +22,6 @@ class PostDeleteBottomSheet extends StatelessWidget {
       post: post,
       buttonText: homeScreenI18n.post.popUpMenu.delete,
       onPressedButton: () {},
-      buttomPadding: 172,
     );
   }
 }
