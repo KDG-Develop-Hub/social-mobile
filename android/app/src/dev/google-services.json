@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "135179983158",
+    "project_id": "kdg-social-dev-28889",
+    "storage_bucket": "kdg-social-dev-28889.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:135179983158:android:c4fd29f2b3f33347527b97",
+        "android_client_info": {
+          "package_name": "com.kdg.social.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "135179983158-bsr4kaqag7f6hn6tlmoobo98eve032f1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNWuuuYFlnLGaxK0jdAp7itj8ko0Vo98g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "135179983158-bsr4kaqag7f6hn6tlmoobo98eve032f1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "135179983158-pdongj68n0km9r7p6u09n0r820s9lb47.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.kdg.social.dev"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

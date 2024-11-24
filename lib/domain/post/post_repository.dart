@@ -3,6 +3,7 @@ import 'package:social_mobile/domain/reaction/reaction.dart';
 
 // ignore: one_member_abstracts
 abstract interface class PostRepository {
+  Future<void> createPost({required Post post});
   Future<List<Post>> fetchPosts();
   Future<List<Post>> editReaction({
     required bool hasReact,

@@ -5,11 +5,16 @@ import 'package:social_mobile/domain/reaction/reaction.dart';
 import 'package:social_mobile/utils/helpers/random_string.dart';
 import 'package:uuid/uuid.dart';
 
-final mockPostRepositoryImplProvider = Provider(
-  (ref) => MockPostRepositoryImpl(),
-);
+part 'mock_post_data_source.g.dart';
 
-class MockPostRepositoryImpl implements PostRepository {
+@riverpod
+class MockPostDataSource extends _$MockPostDataSource
+    implements PostRepository {
+  @override
+  void build() {
+    return;
+  }
+
   final posts = List.generate(
     10,
     (index) {
@@ -34,6 +39,12 @@ class MockPostRepositoryImpl implements PostRepository {
       );
     },
   );
+
+  @override
+  Future<void> createPost({required Post post}) async {
+    await Future<void>.delayed(const Duration(seconds: 3));
+    posts.add(post);
+  }
 
   @override
   Future<List<Post>> fetchPosts() async {

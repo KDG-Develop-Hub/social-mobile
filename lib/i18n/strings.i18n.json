@@ -43,6 +43,21 @@
             }
         }
     },
+    "postScreen": {
+        "title": "What are you going to write this time?",
+        "description": "Feel free to write your thoughts and events! Don't forget to check the community guidelines!",
+        "textFieldLabel": "Content",
+        "buttons": {
+            "post": "Share it",
+            "cancel": "Cancel"
+        }
+    },
+    "validation": {
+        "emailRequired": "Please enter your email address",
+        "emailInvalid": "The email address format is incorrect",
+        "informationRequired": "Please enter the content",
+        "urlInvalid": "The URL format is incorrect"
+    },
     "locales(map)": {
         "en": "English",
         "ja": "Japanese"
