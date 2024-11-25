@@ -7,7 +7,7 @@ part of 'post_screen_notifier.dart';
 // **************************************************************************
 
 String _$postScreenNotifierHash() =>
-    r'687e3d178329783f47b9c21aa6ffd660ad807082';
+    r'3d67bebd0bce5f474ce4e6d3fb515b63ba0a9700';
 
 /// See also [PostScreenNotifier].
 @ProviderFor(PostScreenNotifier)

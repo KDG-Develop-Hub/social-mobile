@@ -3,18 +3,11 @@ import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:social_mobile/domain/post/post.dart';
 import 'package:social_mobile/i18n/strings.g.dart';
+import 'package:social_mobile/presentation/components/post_card/bottom_sheets/post_delete_bottom_sheet.dart';
+import 'package:social_mobile/presentation/components/post_card/bottom_sheets/post_report_bottom_sheet.dart';
 import 'package:social_mobile/presentation/components/post_card/post_menu_button.dart';
 import 'package:social_mobile/utils/gen/assets.gen.dart';
 import 'package:social_mobile/utils/helpers/share_service.dart';
-
-enum PostMenuOption {
-  edit,
-  delete,
-  reaction,
-  comment,
-  report,
-  share,
-}
 
 class PostMenuBottomSheet extends StatelessWidget {
   const PostMenuBottomSheet({
@@ -29,7 +22,45 @@ class PostMenuBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colorTheme = Theme.of(context).colorScheme;
-    final translations = Translations.of(context).updateScreen.post.popUpMenu;
+    final translations = Translations.of(context).homeScreen.post.popUpMenu;
+
+    Future<void> showPostDeleteBottomSheet() async {
+      await showModalBottomSheet<void>(
+        context: context,
+        useRootNavigator: true,
+        builder: (_) => PostDeleteBottomSheet(
+          post: Post(
+            id: '2',
+            userId: '2',
+            userName: 'imeankenshin',
+            userImageUrl:
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFkq7xtynSsGB6skS_2Cke661bJev3QkGWgA&s',
+            bookmarkedUserIds: [],
+            content: '外は天気良さげ🌞散歩しようかな？',
+            createdAt: DateTime.now(),
+          ),
+        ),
+      );
+    }
+
+    Future<void> showPostReportBottomSheet() async {
+      await showModalBottomSheet<void>(
+        context: context,
+        useRootNavigator: true,
+        builder: (_) => PostReportBottomSheet(
+          post: Post(
+            id: '2',
+            userId: '2',
+            userName: 'imeankenshin',
+            userImageUrl:
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFkq7xtynSsGB6skS_2Cke661bJev3QkGWgA&s',
+            bookmarkedUserIds: [],
+            content: '外は天気良さげ🌞散歩しようかな？',
+            createdAt: DateTime.now(),
+          ),
+        ),
+      );
+    }
 
     return Container(
       width: double.infinity,
@@ -78,13 +109,17 @@ class PostMenuBottomSheet extends StatelessWidget {
                 label: translations.share,
               ),
               PostMenuButton(
-                onPressed: () {},
+                onPressed: () async {
+                  await showPostDeleteBottomSheet();
+                },
                 icon: Assets.icons.trash,
                 label: translations.delete,
                 isRedText: true,
               ),
               PostMenuButton(
-                onPressed: () {},
+                onPressed: () async {
+                  await showPostReportBottomSheet();
+                },
                 icon: Assets.icons.flag,
                 label: translations.report,
                 isRedText: true,
