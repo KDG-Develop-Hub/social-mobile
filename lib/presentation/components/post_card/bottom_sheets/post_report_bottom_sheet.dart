@@ -69,8 +69,8 @@ class PostReportBottomSheet extends HookWidget {
               .toList(),
         ),
       ),
-      buttonText: homeScreenI18n.post.popUpMenu.report,
-      onPressedButton: () {},
+      submitButtonText: homeScreenI18n.post.popUpMenu.report,
+      onPressedSubmit: () {},
     );
   }
 }

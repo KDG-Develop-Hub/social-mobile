@@ -20,8 +20,8 @@ class PostDeleteBottomSheet extends StatelessWidget {
       title: bottomSheetI18n.postDelete.title,
       explanation: bottomSheetI18n.postDelete.explanation,
       post: post,
-      buttonText: homeScreenI18n.post.popUpMenu.delete,
-      onPressedButton: () {},
+      submitButtonText: homeScreenI18n.post.popUpMenu.delete,
+      onPressedSubmit: () {},
     );
   }
 }

@@ -15,7 +15,7 @@ class ContentsOnlyPostCard extends StatelessWidget {
 
     return Card(
       elevation: 0,
-      margin: const EdgeInsets.fromLTRB(16, 0, 16, 0),
+      margin: const EdgeInsets.symmetric(horizontal: 16),
       child: DecoratedBox(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import 'package:social_mobile/domain/post/post.dart';
 import 'package:social_mobile/i18n/strings.g.dart';
 import 'package:social_mobile/presentation/components/post_card/contents_only_post_card.dart';
@@ -12,8 +13,8 @@ class CustomBottomSheet extends StatelessWidget {
     required this.post,
     required this.iconPath,
     required this.title,
-    required this.buttonText,
-    required this.onPressedButton,
+    required this.submitButtonText,
+    required this.onPressedSubmit,
     this.content,
     this.explanation = '',
   });
@@ -21,8 +22,8 @@ class CustomBottomSheet extends StatelessWidget {
   final Post post;
   final String iconPath;
   final String title;
-  final String buttonText;
-  final void Function()? onPressedButton;
+  final String submitButtonText;
+  final void Function() onPressedSubmit;
   final Widget? content;
   final String explanation;
 
@@ -85,15 +86,17 @@ class CustomBottomSheet extends StatelessWidget {
                 style: TextButton.styleFrom(
                   foregroundColor: colorTheme.primary,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  context.pop();
+                },
                 child: Text(bottomSheetI18n.cancelButton),
               ),
               TextButton(
                 style: TextButton.styleFrom(
                   foregroundColor: colorTheme.error,
                 ),
-                onPressed: onPressedButton,
-                child: Text(buttonText),
+                onPressed: onPressedSubmit,
+                child: Text(submitButtonText),
               ),
             ],
           ),
