@@ -7,13 +7,15 @@ import 'package:social_mobile/infrastructure/firebase/firebase_instances.dart';
 
 part 'post_data_source.g.dart';
 
-@riverpod
+@Riverpod(keepAlive: true)
 class PostDataSource extends _$PostDataSource implements PostRepository {
   FirebaseFirestore get _firestore => ref.read(getFirestoreInstanceProvider);
 
+  final int _limit = 30;
+
   @override
-  void build() {
-    return;
+  DocumentSnapshot<Map<String, dynamic>>? build() {
+    return null;
   }
 
   @override
@@ -23,7 +25,13 @@ class PostDataSource extends _$PostDataSource implements PostRepository {
 
   @override
   Future<List<Post>> fetchPosts() async {
-    throw UnimplementedError();
+    final res = await _firestore
+        .collection('posts')
+        .orderBy('createdAt', descending: true)
+        .limit(_limit)
+        .get();
+    state = res.docs[res.size - 1];
+    return res.docs.map((doc) => Post.fromJson(doc.data())).toList();
   }
 
   @override
@@ -32,5 +40,20 @@ class PostDataSource extends _$PostDataSource implements PostRepository {
     required Reaction reaction,
   }) async {
     throw UnimplementedError();
+  }
+
+  @override
+  Future<List<Post>> loadMorePosts() async {
+    if (state == null) {
+      return [];
+    }
+    final res = await _firestore
+        .collection('posts')
+        .orderBy('createdAt', descending: true)
+        .startAfterDocument(state!)
+        .limit(_limit)
+        .get();
+    res.docs.isEmpty ? state = null : state = res.docs[res.size - 1];
+    return res.docs.map((doc) => Post.fromJson(doc.data())).toList();
   }
 }
