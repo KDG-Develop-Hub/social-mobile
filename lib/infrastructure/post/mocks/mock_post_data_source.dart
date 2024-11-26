@@ -82,4 +82,9 @@ class MockPostDataSource extends _$MockPostDataSource
 
     return newPosts;
   }
+
+  @override
+  Future<List<Post>> loadMorePosts() async {
+    throw UnimplementedError();
+  }
 }
