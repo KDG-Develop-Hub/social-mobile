@@ -4,7 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:social_mobile/i18n/strings.g.dart';
 import 'package:social_mobile/presentation/components/loading.dart';
 import 'package:social_mobile/presentation/components/post_card/post_card.dart';
-import 'package:social_mobile/presentation/home/provider/home_notifier.dart';
+import 'package:social_mobile/presentation/home/home_screen_notifier.dart';
 import 'package:social_mobile/utils/gen/assets.gen.dart';
 import 'package:social_mobile/utils/routes/app_router.dart';
 
@@ -13,7 +13,8 @@ class HomeScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final state = ref.watch(homeNotifierProvider);
+    final state = ref.watch(homeScreenNotifierProvider);
+    final notifier = ref.read(homeScreenNotifierProvider.notifier);
     final translations = Translations.of(context);
     final textStyle = Theme.of(context).textTheme;
 
@@ -26,20 +27,36 @@ class HomeScreen extends ConsumerWidget {
         centerTitle: false,
       ),
       body: switch (state) {
-        AsyncData(:final value) => RefreshIndicator(
-            onRefresh: () async =>
-                ref.read(homeNotifierProvider.notifier).refresh(),
-            child: ListView.builder(
-              itemCount: value.length,
-              itemBuilder: (_, index) => PostCard(
-                post: value[index],
-                onPostTap: () {},
-                onReactionTap: (reaction, {required hasReact}) async {
-                  await ref.read(homeNotifierProvider.notifier).editReaction(
-                        hasReact: hasReact,
-                        reaction: reaction,
-                      );
-                },
+        AsyncData(:final value) => NotificationListener<ScrollEndNotification>(
+            onNotification: (n) {
+              notifier.loadingMore(n);
+              return true;
+            },
+            child: RefreshIndicator(
+              onRefresh: () async => notifier.refresh(),
+              child: CustomScrollView(
+                slivers: [
+                  SliverList(
+                    delegate: SliverChildBuilderDelegate(
+                      (context, index) {
+                        final post = value.posts[index];
+                        return PostCard(
+                          post: post,
+                          onPostTap: () async {},
+                          onReactionTap: (reaction, {required hasReact}) async {
+                            await notifier.editReaction(
+                              hasReact: hasReact,
+                              reaction: reaction,
+                            );
+                          },
+                        );
+                      },
+                      childCount: value.posts.length,
+                    ),
+                  ),
+                  if (value.isLoadingMore)
+                    const SliverToBoxAdapter(child: Loading()),
+                ],
               ),
             ),
           ),
