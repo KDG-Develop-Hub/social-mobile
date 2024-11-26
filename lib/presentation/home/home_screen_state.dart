@@ -8,5 +8,5 @@ abstract class HomeScreenState with _$HomeScreenState {
   const factory HomeScreenState({
     required List<Post> posts,
     @Default(false) bool isLoadingMore,
-}) = _HomeScreenState;
+  }) = _HomeScreenState;
 }
