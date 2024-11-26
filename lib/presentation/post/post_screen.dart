@@ -6,6 +6,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:social_mobile/i18n/strings.g.dart';
+import 'package:social_mobile/presentation/home/home_screen_notifier.dart';
 import 'package:social_mobile/presentation/post/post_screen_notifier.dart';
 import 'package:social_mobile/utils/gen/assets.gen.dart';
 import 'package:social_mobile/utils/helpers/validator.dart';
@@ -144,6 +145,7 @@ class PostScreen extends HookConsumerWidget {
                                   content: controller.text,
                                   onSuccess: () async {
                                     const HomeScreenRouteData().go(context);
+                                    ref.invalidate(homeScreenNotifierProvider);
                                   },
                                 );
                               }
