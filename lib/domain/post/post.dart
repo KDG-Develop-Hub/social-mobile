@@ -13,7 +13,7 @@ abstract class Post with _$Post {
     required String userName,
     required String userImageUrl,
     required String content,
-    required List<String> bookmarkedUserIds,
+    List<String>? bookmarkedUserIds,
     List<Reaction>? reactions,
     List<String>? imageUrls,
     @DateTimeConverter() required DateTime createdAt,

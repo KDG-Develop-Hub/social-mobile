@@ -12,8 +12,8 @@ _$PostImpl _$$PostImplFromJson(Map<String, dynamic> json) => _$PostImpl(
       userName: json['userName'] as String,
       userImageUrl: json['userImageUrl'] as String,
       content: json['content'] as String,
-      bookmarkedUserIds: (json['bookmarkedUserIds'] as List<dynamic>)
-          .map((e) => e as String)
+      bookmarkedUserIds: (json['bookmarkedUserIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
           .toList(),
       reactions: (json['reactions'] as List<dynamic>?)
           ?.map((e) => Reaction.fromJson(e as Map<String, dynamic>))

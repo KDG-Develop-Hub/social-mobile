@@ -25,7 +25,7 @@ mixin _$Post {
   String get userName => throw _privateConstructorUsedError;
   String get userImageUrl => throw _privateConstructorUsedError;
   String get content => throw _privateConstructorUsedError;
-  List<String> get bookmarkedUserIds => throw _privateConstructorUsedError;
+  List<String>? get bookmarkedUserIds => throw _privateConstructorUsedError;
   List<Reaction>? get reactions => throw _privateConstructorUsedError;
   List<String>? get imageUrls => throw _privateConstructorUsedError;
   @DateTimeConverter()
@@ -49,7 +49,7 @@ abstract class $PostCopyWith<$Res> {
       String userName,
       String userImageUrl,
       String content,
-      List<String> bookmarkedUserIds,
+      List<String>? bookmarkedUserIds,
       List<Reaction>? reactions,
       List<String>? imageUrls,
       @DateTimeConverter() DateTime createdAt,
@@ -74,7 +74,7 @@ class _$PostCopyWithImpl<$Res, $Val extends Post>
     Object? userName = null,
     Object? userImageUrl = null,
     Object? content = null,
-    Object? bookmarkedUserIds = null,
+    Object? bookmarkedUserIds = freezed,
     Object? reactions = freezed,
     Object? imageUrls = freezed,
     Object? createdAt = null,
@@ -101,10 +101,10 @@ class _$PostCopyWithImpl<$Res, $Val extends Post>
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
               as String,
-      bookmarkedUserIds: null == bookmarkedUserIds
+      bookmarkedUserIds: freezed == bookmarkedUserIds
           ? _value.bookmarkedUserIds
           : bookmarkedUserIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<String>?,
       reactions: freezed == reactions
           ? _value.reactions
           : reactions // ignore: cast_nullable_to_non_nullable
@@ -138,7 +138,7 @@ abstract class _$$PostImplCopyWith<$Res> implements $PostCopyWith<$Res> {
       String userName,
       String userImageUrl,
       String content,
-      List<String> bookmarkedUserIds,
+      List<String>? bookmarkedUserIds,
       List<Reaction>? reactions,
       List<String>? imageUrls,
       @DateTimeConverter() DateTime createdAt,
@@ -160,7 +160,7 @@ class __$$PostImplCopyWithImpl<$Res>
     Object? userName = null,
     Object? userImageUrl = null,
     Object? content = null,
-    Object? bookmarkedUserIds = null,
+    Object? bookmarkedUserIds = freezed,
     Object? reactions = freezed,
     Object? imageUrls = freezed,
     Object? createdAt = null,
@@ -187,10 +187,10 @@ class __$$PostImplCopyWithImpl<$Res>
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
               as String,
-      bookmarkedUserIds: null == bookmarkedUserIds
+      bookmarkedUserIds: freezed == bookmarkedUserIds
           ? _value._bookmarkedUserIds
           : bookmarkedUserIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<String>?,
       reactions: freezed == reactions
           ? _value._reactions
           : reactions // ignore: cast_nullable_to_non_nullable
@@ -220,7 +220,7 @@ class _$PostImpl implements _Post {
       required this.userName,
       required this.userImageUrl,
       required this.content,
-      required final List<String> bookmarkedUserIds,
+      final List<String>? bookmarkedUserIds,
       final List<Reaction>? reactions,
       final List<String>? imageUrls,
       @DateTimeConverter() required this.createdAt,
@@ -242,13 +242,15 @@ class _$PostImpl implements _Post {
   final String userImageUrl;
   @override
   final String content;
-  final List<String> _bookmarkedUserIds;
+  final List<String>? _bookmarkedUserIds;
   @override
-  List<String> get bookmarkedUserIds {
+  List<String>? get bookmarkedUserIds {
+    final value = _bookmarkedUserIds;
+    if (value == null) return null;
     if (_bookmarkedUserIds is EqualUnmodifiableListView)
       return _bookmarkedUserIds;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_bookmarkedUserIds);
+    return EqualUnmodifiableListView(value);
   }
 
   final List<Reaction>? _reactions;
@@ -343,7 +345,7 @@ abstract class _Post implements Post {
       required final String userName,
       required final String userImageUrl,
       required final String content,
-      required final List<String> bookmarkedUserIds,
+      final List<String>? bookmarkedUserIds,
       final List<Reaction>? reactions,
       final List<String>? imageUrls,
       @DateTimeConverter() required final DateTime createdAt,
@@ -362,7 +364,7 @@ abstract class _Post implements Post {
   @override
   String get content;
   @override
-  List<String> get bookmarkedUserIds;
+  List<String>? get bookmarkedUserIds;
   @override
   List<Reaction>? get reactions;
   @override
